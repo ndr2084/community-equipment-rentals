@@ -6,10 +6,12 @@
 .login-form{
   display: flex;
   flex-direction: column;
-  padding: 1.0em 1.0em ;
-  font-size: var(--default-font-size);
-  gap: 30px;
-  width: clamp(200px, 22vw, 300px);
+  padding: 0.2em 1em 0.2em 1em ;
+  gap: 15px;
+  width: clamp(150px, 22vw, 300px);
+  max-height:fit-content;
+  justify-content: center;
+  font-size: clamp(0.5rem, 2.5vw, 2rem);
 
 }
 
@@ -23,10 +25,12 @@
 .login-form input{
   border-radius: 16px;
   background-color: rgb(39, 37, 37);
-  height: 35px;
-  padding: 1.0em;
+  padding: 0.5em;
   color: var(--default-font-color);
-  font-weight: 700;
+  height: clamp(35px, 1vh, 40px);
+  font-size: 0.56rem;
+
+
 }
 
 label{
@@ -75,7 +79,6 @@ label{
 
 .login-page{
   display: flex;
-  border: 1px solid white;
 
 }
 
