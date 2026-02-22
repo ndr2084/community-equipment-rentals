@@ -1,0 +1,26 @@
+ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  color: white;
+  max-height: 10vh;
+  min-height: 3vh;
+  gap: 1em;
+  font-size: clamp( 0.8rem, 2vw, 1.2rem );
+  margin: 0 auto;
+  padding: 0.2em 0.5em;
+}
+
+li:hover{
+  color: rgb(244, 245, 239);
+  text-shadow: -2px 0 3px rgb(204, 255, 0);
+}
+
+li:active{
+  color: rgb(214, 235, 157);
+  text-shadow: 1px 0 3px rgb(163, 236, 236);
+
+}
+
