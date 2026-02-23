@@ -23,12 +23,12 @@
         <form [formGroup]="profileForm" class="login-form">
           <h1 id="login-header">Login</h1>
           <label for="first-name"></label>
-          <input id="first-name" type="text" formControlName="firstName" placeholder="First Name *" />
+          <input class="default-input" type="text" formControlName="firstName" placeholder="First Name *" />
           <label for="last-name"></label>
-          <input id="last-name" type="text" formControlName="lastName" placeholder="Last Name" />
+          <input class="default-input" type="text" formControlName="lastName" placeholder="Last Name" />
           <label for="last-name"></label>
-          <input id="discord-username" type="text" formControlName="discordUsername" placeholder="Discord Username *" />
-          <input type="submit" value="Submit" id="submit-button">
+          <input class="default-input" type="text" formControlName="discordUsername" placeholder="Discord Username *" />
+          <input type="submit" value="Submit" class=" default-button primary">
         </form>
       </app-container>
     </div>
