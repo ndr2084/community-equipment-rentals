@@ -5,8 +5,7 @@ ul {
   justify-content: center;
   list-style-type: none;
   color: white;
-  max-height: 10vh;
-  min-height: 3vh;
+  height: 10vh;
   gap: 1em;
   font-size: clamp( 0.8rem, 2vw, 1.2rem );
   margin: 0 auto;

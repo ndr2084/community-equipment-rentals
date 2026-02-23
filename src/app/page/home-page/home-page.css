@@ -1,0 +1,26 @@
+.about-me-photo{
+  background-image: url("../../../../public/man_bouldering.jpg");
+  width: 35vw;
+  height: 87vh;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.about-article{
+  display: flex;
+  justify-content: center;
+}
+
+.article-container{
+  overflow: scroll;
+  height: 87vh;
+  width: 35vw;
+  margin: 10px;
+  padding: 10px;
+}
+
+
+

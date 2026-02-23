@@ -1,47 +1,33 @@
-.mobile-login-title-container{
+.mobile-login-title-container {
   display: none;
 }
 
-.login-title{
-  font-size: var(--huge-font-size);
-  -webkit-text-stroke: 2px rgba(217, 255, 0, 0.474);
-
-
-}
-
-.login-title-container{
+.login-title-container {
   display: flex;
   flex-direction: column;
 
   max-width: fit-content;
 }
 
-.login-form{
+.huge-title {
+  padding: 0 0 0 10px;
+}
+
+.login-form {
   display: flex;
   flex-direction: column;
   padding: 0.2em 1em;
-  gap: 15px;
-  /*width: clamp(150px, 22vw, 450px);*/
-  width: clamp(200px, 25vw, 500px);
-
+  gap: clamp(0.5rem, 2.5vw, 2rem);
   justify-content: center;
   font-size: clamp(0.5rem, 2.5vw, 2rem);
-
 }
 
-.login-form > h1{
-  margin: 0 auto;
-  text-align: center;
+.login-title {
   font-size: var(--large-font-size);
   font-weight: var(--heavy-font-weight);
 }
 
-
-
-label{
-  display: none;
-}
-.login-form-container{
+.login-form-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,90 +36,49 @@ label{
   background-color: rgba(5, 39, 70, 0.099);
 }
 
-
-
-.login-page{
+.login-page {
   display: flex;
-
 }
 
-.company-graphics{
+.company-graphics {
   width: 60vw;
-  background-image: url('../../../../public/female-climber.jpg');
+  background-image: url("../../../../public/female-climber.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-.login-title{
-  padding: 0px 0px 0px 20px;
-  color: white;
-  font-size: 2.5em;
-}
-
-
-#login-header{
-  color: white;
-  font-size: 1.2em;
-}
-
-@media screen and (min-width: 0px) and (max-width: 1000px){
-
-  .company-graphics{
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+  .company-graphics {
     display: none;
   }
 
-  .login-form-container{
+  .login-form-container {
+    display: flex;
     width: 100vw;
-    background-image: url('../../../../public/female-climber.jpg');
+    height: 100vh;
+    background-image: url("../../../../public/female-climber.jpg");
     background-repeat: none;
     background-position: center;
     background-size: cover;
-    height: 100vh;
+  }
+  .mobile-login-title-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 10px 0px;
+    width: fit-content;
+  }
+
+  .mobile-login-form-components-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .huge-title {
+    font-size: var(--large-font-size);
+    -webkit-text-stroke: 2px rgba(217, 255, 0, 0.474);
+    padding: 0px 0px 0px 10px;
+  }
 }
-.mobile-login-title-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 0px 0px 10px 0px;
-  width: fit-content;
-
-}
-
-.login-form input{
-  display: flex;
-  flex-direction: column;
-  padding: 0.2em 1em;
-  /*width: clamp(150px, 22vw, 450px);*/
-  width: clamp(200px, 25vw, 700px);
-  justify-content: center;
-};
-
-.login-form{
-  display: flex;
-  gap: 5px;
-  width: fit-content;
-}
-
-
-.mobile-login-title-container > h1{
-  font-size: 1.5em;
-  -webkit-text-stroke: 2px rgba(217, 255, 0, 0.474);
-  padding: 0px 0px 0px 2px;
-
-}
-
-#login-header{
-  color: white;
-  font-size: 1.5em;
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.15);
-}
-
-
-.mobile-login-form-components-container{
-  max-height: 100vh;
-}
-}
-
-
-

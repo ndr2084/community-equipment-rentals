@@ -53,23 +53,35 @@ h1{
 /*GLOBAL FORM LOGIC BEGINS*/
 /*Default input begins*/
 .default-input{
-  border-radius: 16px;
-  background-color: rgb(39, 37, 37);
+  background-color: rgba(39, 37, 37, 0);
   padding: 0.5em;
   color: var(--default-font-color);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.088);
+  font-weight: var(--heavy-font-weight);
   height: 32px;
-  font-size: 10px;
-  border: 1px solid rgba(128, 128, 128, 0.303);
+  width: 300px;
+  font-size: 12px;
+  border: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.181); /* Removes top, left, right borders */
+
 }
 
 .default-input:hover{
   text-shadow: 0.5px 0 0px rgb(211, 211, 211);
-  border: 1px solid rgba(128, 128, 128, 0.181);
-  box-shadow:
+  border-bottom: 1px solid rgba(181, 181, 181, 0.686);
+}
 
-              0 0 2px #4e4e4e;
+.default-input:focus{
+  outline: none;
+  text-shadow: 0.5px 0 0px rgb(211, 211, 211);
+  border-bottom: 1px solid rgba(181, 181, 181, 0.686);
 }
 /*Default input ends*/
+
+/*Setting label to no display*/
+label{
+  display: none;
+}
 /*GLOBAL FORM LOGIC ENDS*/
 
 
@@ -80,10 +92,10 @@ h1{
 .default-button{
   border-radius: 16px;
   background-color: rgb(39, 37, 37);
-  padding: 0.5em;
   color: var(--default-font-color);
   height: 32px;
-  font-size: 10px;
+  width: 300px;
+  font-size: 12px;
   border: 1px solid rgba(128, 128, 128, 0.303);
 }
 
@@ -93,17 +105,18 @@ h1{
   border: none;
   cursor: pointer;
   padding: 0.1em;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(43, 73, 242);
   transition:
     background-color 0.1s ease 0.010s,
     text-shadow 0.1s ease 0.012s,
     border 0.3s ease 0.012s, box-shadow 0.05s ease 0.010s;
   border: 1px solid rgba(128, 128, 128, 0.322);
+  margin: 8px;
 }
 
 .primary:hover{
-  background-color: rgb(0, 0, 0);
-  text-shadow: 0.5px 0 0px rgb(211, 211, 211);
+  background-color: rgb(64, 92, 255);
+  text-shadow: 0.5px 0px rgb(211, 211, 211);
   border: 1px solid rgba(128, 128, 128, 0.879);
   box-shadow: 0 0 0px #104885,
               0px 1px 1px #819096,
@@ -112,8 +125,8 @@ h1{
 
 .primary:active{
   color: rgb(255, 255, 255);
-  text-shadow: 0 0px 3px rgb(163, 236, 236);
-  background-color: rgb(3, 3, 3);
+  text-shadow: 0 0px 3px rgb(38, 124, 124);
+  background-color: rgb(0, 20, 130);
   box-shadow: 0 0 0px #104885,
               0 1px 1px #6d818a,
               0 0 1px #ffffff;
@@ -121,3 +134,23 @@ h1{
 
 /*Primary button ends*/
 /*GLOBAL BUTTON LOGIC ENDS*/
+
+/*GLOBAL TYPOGRAPHY BEGINS*/
+
+/*Huge title begins*/
+.huge-title{
+  font-size: var(--huge-font-size);
+  -webkit-text-stroke: 2px rgba(217, 255, 0, 0.474);
+  padding: 0px 0px 0px 2px;
+}
+/*Huge title ends*/
+
+
+/*Huge dynamic title begins*/
+.huge-title-dynamic {
+  font-size: clamp( 0.8rem, 2vw, 1.4rem );
+  -webkit-text-stroke: 2px rgba(217, 255, 0, 0.474);
+}
+/*Huge dynamic title ends*/
+
+/*GLOBAL TYPOGRAPHY ENDS*/
