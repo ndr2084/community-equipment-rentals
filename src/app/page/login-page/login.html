@@ -1,24 +1,37 @@
 <div class="login-page">
 
   <div class="company-graphics">
-    <h1 class="login-title">Community</h1>
-    <h1 class="login-title">Equipment</h1>
-    <h1 class="login-title">Rentals</h1>
+    <div class="login-title-container">
+      <h1 class="login-title">Community </h1>
+      <h1 class="login-title">Equipment</h1>
+      <h1 class="login-title">Rentals</h1>
+    </div>
   </div>
 
+
   <div class="login-form-container">
-    <app-container>
-      <form [formGroup]="profileForm" class="login-form">
-        <h1 class="login-header">Login</h1>
-        <label for="first-name"></label>
-        <input id="first-name" type="text" formControlName="firstName" placeholder="First Name *" />
-        <label for="last-name"></label>
-        <input id="last-name" type="text" formControlName="lastName" placeholder="Last Name" />
-        <label for="last-name"></label>
-        <input id="discord-username" type="text" formControlName="discordUsername" placeholder="Discord Username *" />
-        <input type="submit" value="Submit" id="submit-button">
-      </form>
-    </app-container>
+
+    <div class="mobile-login-form-components-container">
+
+      <div class="mobile-login-title-container">
+        <h1 class="login-title-mobile">Community</h1>
+        <h1 class="login-title-mobile">Equipment</h1>
+        <h1 class="login-title-mobile">Rentals</h1>
+      </div>
+
+      <app-container>
+        <form [formGroup]="profileForm" class="login-form">
+          <h1 id="login-header">Login</h1>
+          <label for="first-name"></label>
+          <input id="first-name" type="text" formControlName="firstName" placeholder="First Name *" />
+          <label for="last-name"></label>
+          <input id="last-name" type="text" formControlName="lastName" placeholder="Last Name" />
+          <label for="last-name"></label>
+          <input id="discord-username" type="text" formControlName="discordUsername" placeholder="Discord Username *" />
+          <input type="submit" value="Submit" id="submit-button">
+        </form>
+      </app-container>
+    </div>
   </div>
 
 </div>
