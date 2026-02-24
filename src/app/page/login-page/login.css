@@ -9,22 +9,16 @@
   max-width: fit-content;
 }
 
-.huge-title {
-  padding: 0 0 0 10px;
-}
+
 
 .login-form {
   display: flex;
   flex-direction: column;
-  padding: 0.2em 1em;
+  padding: 0.2vh 1vw;
   gap: clamp(0.5rem, 2.5vw, 2rem);
   justify-content: center;
-  font-size: clamp(0.5rem, 2.5vw, 2rem);
-}
+  font-size: clamp( 1.0rem, 3.0vw, 2.5rem );
 
-.login-title {
-  font-size: var(--large-font-size);
-  font-weight: var(--heavy-font-weight);
 }
 
 .login-form-container {
@@ -61,6 +55,7 @@
     background-repeat: none;
     background-position: center;
     background-size: cover;
+    overflow: scroll;
   }
   .mobile-login-title-container {
     display: flex;
@@ -76,9 +71,5 @@
     margin: auto;
   }
 
-  .huge-title {
-    font-size: var(--large-font-size);
-    -webkit-text-stroke: 2px rgba(217, 255, 0, 0.474);
-    padding: 0px 0px 0px 10px;
-  }
+
 }

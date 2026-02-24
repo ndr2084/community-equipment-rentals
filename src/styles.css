@@ -5,6 +5,8 @@
   --default-background-color: black;
   --default-font-color: white;
   --default-font-family: "Space Mono", monospace;
+  --default-border-radius: 1vw;
+  --default-font-size: 16px;
   --heavy-font-weight: 700;
   --heavier-font-weight: 800;
   --heaviest-font-weight: 900;
@@ -14,7 +16,6 @@
   --lightest-font-weight:100;
   --tiny-font-size: 0.5rem;
   --small-font-size: 0.8rem;
-  --default-font-size: 1.2rem;
   --large-font-size: 1.5rem;
   --huge-font-size: 2.0rem;
 
@@ -23,36 +24,33 @@
   font-family: var(--default-font-family);
   font-weight: var(--default-font-weight);
   font-size: var(--default-font-size);
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+
+
 }
 
-  body{
-    height: 100%;
-    width: 100%;
+html,body{
+    overflow: hidden;
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to top, #000000, #080003, #0d0009, #0f0010, #0e0116);
+
   }
 
 *, *::before, *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-p{
-  font-size: var(--small-font-size);
-  font-weight: 500;
-}
 
 
-h1{
-  font-size: var(--default-font-size);
-  font-weight: var(--default-font-weight);
 }
 
 /*GLOBAL FORM LOGIC BEGINS*/
 /*Default input begins*/
-.default-input{
+input.default-text{
   background-color: rgba(39, 37, 37, 0);
   padding: 0.5em;
   color: var(--default-font-color);
@@ -66,12 +64,12 @@ h1{
 
 }
 
-.default-input:hover{
+input.default-input:hover{
   text-shadow: 0.5px 0 0px rgb(211, 211, 211);
   border-bottom: 1px solid rgba(181, 181, 181, 0.686);
 }
 
-.default-input:focus{
+input.default-input:focus{
   outline: none;
   text-shadow: 0.5px 0 0px rgb(211, 211, 211);
   border-bottom: 1px solid rgba(181, 181, 181, 0.686);
@@ -89,7 +87,7 @@ label{
 
 /*GLOBAL BUTTON LOGIC BEGINS*/
 
-.default-button{
+input.default-button{
   border-radius: 16px;
   background-color: rgb(39, 37, 37);
   color: var(--default-font-color);
@@ -101,7 +99,7 @@ label{
 
 /*Primary button begins*/
 
-.primary{
+input.primary{
   border: none;
   cursor: pointer;
   padding: 0.1em;
@@ -114,7 +112,7 @@ label{
   margin: 8px;
 }
 
-.primary:hover{
+input.primary:hover{
   background-color: rgb(64, 92, 255);
   text-shadow: 0.5px 0px rgb(211, 211, 211);
   border: 1px solid rgba(128, 128, 128, 0.879);
@@ -123,7 +121,7 @@ label{
               0 0 1px #ffffff;
 }
 
-.primary:active{
+input.primary:active{
   color: rgb(255, 255, 255);
   text-shadow: 0 0px 3px rgb(38, 124, 124);
   background-color: rgb(0, 20, 130);
@@ -136,21 +134,22 @@ label{
 /*GLOBAL BUTTON LOGIC ENDS*/
 
 /*GLOBAL TYPOGRAPHY BEGINS*/
-
-/*Huge title begins*/
-.huge-title{
-  font-size: var(--huge-font-size);
-  -webkit-text-stroke: 2px rgba(217, 255, 0, 0.474);
-  padding: 0px 0px 0px 2px;
-}
-/*Huge title ends*/
-
-
 /*Huge dynamic title begins*/
-.huge-title-dynamic {
-  font-size: clamp( 0.8rem, 2vw, 1.4rem );
-  -webkit-text-stroke: 2px rgba(217, 255, 0, 0.474);
+h1.huge-title-dynamic {
+  font-size: clamp( 1.4rem, 3.0vw, 2.5rem );
+  padding: clamp(0.2rem, 0.5vw, 1.2rem);
+  font-weight: 500;
 }
-/*Huge dynamic title ends*/
 
+p.default{
+  padding: clamp(0.5rem, 0.8vw, 1.2rem);
+  font-size: var(--small-font-size);
+  font-weight: 500;}
+/*Huge dynamic title ends*/
 /*GLOBAL TYPOGRAPHY ENDS*/
+
+h1.form-title {
+  font-size: var(--large-font-size);
+  font-weight: var(--heavy-font-weight);
+  padding: clamp(0.3rem, 0.3vw, 0.5rem);
+}

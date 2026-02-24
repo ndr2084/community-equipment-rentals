@@ -1,6 +1,6 @@
 .container{
   background-color: rgba(0, 0, 0, 0.232);
-  border-radius: 6px;
-  box-shadow: inset 0 0 0 1px #242222;
-  box-shadow: 0 0 2px 0px #888;
+  border-radius: var(--default-border-radius);
+  box-shadow: inset 0 0 0 0.03vw #242222;
+
 }

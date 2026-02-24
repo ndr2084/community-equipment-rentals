@@ -1,26 +1,27 @@
-.about-me-photo{
-  background-image: url("../../../../public/man_bouldering.jpg");
-  width: 35vw;
-  height: 87vh;
-  background-position: center;
-  background-size: cover;
-  border-radius: 10px;
-  margin: 10px;
-  padding: 10px;
-}
-
 .about-article{
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-areas:
+  "article-photo article-text";
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  margin: 1vw;
+  gap: 1vw;
+  padding: 0;
 }
 
-.article-container{
+.article-photo-container{
+  background-image: url(./images/man_bouldering.jpg);
+  border-radius: var(--default-border-radius);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  grid-area: article-photo;
+  min-height: 85vh;
+}
+
+
+.article-content{
+  max-height: 85vh;
   overflow: scroll;
-  height: 87vh;
-  width: 35vw;
-  margin: 10px;
-  padding: 10px;
 }
-
 
 

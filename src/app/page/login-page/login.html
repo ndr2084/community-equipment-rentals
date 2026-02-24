@@ -2,9 +2,9 @@
 
   <div class="company-graphics">
     <div class="login-title-container">
-      <h1 class="huge-title">Community </h1>
-      <h1 class="huge-title">Equipment</h1>
-      <h1 class="huge-title">Rentals</h1>
+      <h1 class="huge-title-dynamic">Community </h1>
+      <h1 class="huge-title-dynamic">Equipment</h1>
+      <h1 class="huge-title-dynamic">Rentals</h1>
     </div>
   </div>
 
@@ -14,24 +14,23 @@
     <div class="mobile-login-form-components-container">
 
       <div class="mobile-login-title-container">
-        <h1 class="huge-title">Community</h1>
-        <h1 class="huge-title">Equipment</h1>
-        <h1 class="huge-title">Rentals</h1>
+        <h1 class="huge-title-dynamic">Community </h1>
+        <h1 class="huge-title-dynamic">Equipment</h1>
+        <h1 class="huge-title-dynamic">Rentals</h1>
       </div>
 
       <app-container>
         <form [formGroup]="profileForm" class="login-form">
-          <h1 class="login-title">Login</h1>
+          <h1 class="form-title">Login</h1>
           <label for="first-name"></label>
-          <input class="default-input" type="text" formControlName="firstName" placeholder="First Name *" />
+          <input class="default-text" type="text" formControlName="firstName" placeholder="First Name *" />
           <label for="last-name"></label>
-          <input class="default-input" type="text" formControlName="lastName" placeholder="Last Name" />
+          <input class="default-text" type="text" formControlName="lastName" placeholder="Last Name" />
           <label for="last-name"></label>
-          <input class="default-input" type="text" formControlName="discordUsername" placeholder="Discord Username *" />
+          <input class="default-text" type="text" formControlName="discordUsername" placeholder="Discord Username *" />
           <input type="submit" value="Submit" class=" default-button primary">
         </form>
       </app-container>
     </div>
   </div>
-
 </div>

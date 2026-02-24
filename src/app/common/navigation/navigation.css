@@ -2,14 +2,13 @@ ul {
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: 10vh;
   justify-content: center;
   list-style-type: none;
   color: white;
-  height: 10vh;
   gap: 1em;
   font-size: clamp( 0.8rem, 2vw, 1.2rem );
-  margin: 0 auto;
-  padding: 0.2em 0.5em;
+  margin: 0 0 0.5vw 0;
 }
 
 li:hover{
