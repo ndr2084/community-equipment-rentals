@@ -18,10 +18,13 @@
   min-height: 85vh;
 }
 
-
-.article-content{
+#scrolling-content{
+  min-height: 85vh;
   max-height: 85vh;
   overflow: scroll;
+
 }
+
+@media (
 
 
