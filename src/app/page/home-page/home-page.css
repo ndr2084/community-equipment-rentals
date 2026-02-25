@@ -30,7 +30,7 @@
   #article-photo{
     background-image: url(./images/man_bouldering.jpg);
     border-radius: var(--default-border-radius);
-    background-position: center 70%;
+    background-position: center 69%;
     background-size:cover;
     height: 30vh;
     padding: 0px;
