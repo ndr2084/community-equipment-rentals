@@ -1,30 +1,62 @@
-.about-article{
-  display: grid;
-  grid-template-areas:
-  "article-photo article-text";
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  margin: 1vw;
-  gap: 1vw;
-  padding: 0;
-}
-
-.article-photo-container{
+#article-photo{
   background-image: url(./images/man_bouldering.jpg);
   border-radius: var(--default-border-radius);
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-  grid-area: article-photo;
-  min-height: 85vh;
+  height: 98vh;
+  min-width: clamp(30vw, calc(-234px + 63vw), 900px);
+
 }
 
 #scrolling-content{
-  min-height: 85vh;
-  max-height: 85vh;
   overflow: scroll;
+  height: 98vh;
+}
+
+
+#flexbox-container{
+  display: flex;
+  flex-direction: row;
+  gap: 0.5vw;
+  margin: 0.5vw;
+  max-width: 100vw;
+}
+
+@media screen and (min-width: 0px) and (max-width: 1000px){
+  #flexbox-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  #article-photo{
+    background-image: url(./images/man_bouldering.jpg);
+    border-radius: var(--default-border-radius);
+    background-repeat: no-repeat;
+    background-position: center 70%;
+    background-size:cover;
+    margin: 0 auto;
+    width: clamp(300px, calc(0px + 100vw), 800px);
+    height: 55vh;
+    padding: 0px;
+    overflow: scroll;
+    max-width: 99vw;
+
+  }
+
+  .about-article{
+    overflow: hidden;
+    margin: auto;
+  }
+
+  #scrolling-content-container-id{
+    margin: auto;
+    width: clamp(300px, calc(0px + 100vw), 800px);
+    max-width: 99vw;
+  }
 
 }
 
-@media (
+
 
 
