@@ -3,25 +3,21 @@
   position: absolute;
   background-color: rgba(3, 3, 3, 0.739);
   border-radius: var(--default-border-radius-for-navigation);
+  padding: 10px;
 }
 
 ul, .fade-in-left, #animated-nav-elements {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 7vh;
-  justify-content: center;
+  justify-content: left;
   list-style-type: none;
   color: white;
-  gap: 2em;
+  gap: 1em ;
   font-size: var(--default-font-size-for-navigation);
-  padding: 1vw;
 }
 
-#minimize-button{
-  margin: 0;
-  padding: 5px 5px 0 0;
-}
+
 
 
 li:hover{
@@ -36,14 +32,6 @@ li:active{
 
 /*trying to do shit the angular way ig*/
 
-.hamburger_close{
-  padding: 0px 0px 2px 0px;
-}
-
-.hamburger_open{
-  padding: 0px 0px 0px 0px;
-}
-
 @keyframes fadeInLeft {
   0% {
     transform: translateX(-10%);
@@ -55,20 +43,10 @@ li:active{
   }
 }
 
-.fade-in-left {
-  animation: fadeInLeft 0.5s forwards;
+.fade-in-left:not(.hamburger_open) {
+  animation: fadeInLeft 0.23s forwards;
 }
 
-@keyframes fadeOutRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-}
 
 
 

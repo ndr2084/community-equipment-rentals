@@ -6,9 +6,9 @@
   --default-font-color: white;
   --default-font-family: "Space Mono", monospace;
   --default-border-radius-for-media: 2vw;
-  --default-border-radius-for-navigation: 10vw;
+  --default-border-radius-for-navigation: 20px;
   --default-font-size: 16px;
-  --default-font-size-for-navigation: clamp( 0.5rem, 1.8vw, 1.2rem);
+  --default-font-size-for-navigation: clamp( 0.7rem, 1.5vw, 1.5rem);
   --heavy-font-weight: 700;
   --heavier-font-weight: 800;
   --heaviest-font-weight: 900;
