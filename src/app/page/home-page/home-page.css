@@ -1,46 +1,55 @@
+.about-article{
+  overflow: scroll;
+
+}
+
+
 #article-photo{
   background-image: url(./images/man_bouldering.jpg);
-  border-radius: var(--default-border-radius);
+  border-radius: var(--default-border-radius-for-media);
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-  height: 98vh;
   min-width: 50vw;
+
 
 }
 
 #scrolling-content{
+  max-height: 95.5vh;
+  padding: 1vh 1vw;
   overflow: scroll;
-  height: 98vh;
 }
 
 
 #flexbox-container{
   display: flex;
   flex-direction: row;
-  gap: 0.5vw;
-  margin: 0.5vw;
+  gap: 1vw;
+  padding: 2vh 1vw;
+  height: 99vh;
 }
 
 @media screen and (min-width: 0px) and (max-width: 1000px){
   #flexbox-container{
     flex-direction: column;
+
   }
 
   #article-photo{
     background-image: url(./images/man_bouldering.jpg);
-    border-radius: var(--default-border-radius);
+    border-radius: var(--default-border-radius-for-media);
     background-position: center 69%;
     background-size:cover;
-    height: 30vh;
+    height: 27.5vh;
     padding: 0px;
     overflow: scroll;
-    min-width: 99vw;
+
 
   }
 
   #scrolling-content{
-    height: 67vh;
+    height: 69vh;
   }
 
 }

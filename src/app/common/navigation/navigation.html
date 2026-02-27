@@ -1,10 +1,15 @@
-<app-container>
-  <nav>
-    <ul>
-      <li>Service</li>
-      <li>About</li>
-      <li>Blog</li>
-      <li>Contact</li>
-    </ul>
-  </nav>
-</app-container>
+<nav id="free-flow-component" (mouseenter)="toggle()" (mouseleave)="toggle()">
+  @if(mouseInNavBar()){
+  <ul [animate.enter]="enterClass()">
+    <li>Service</li>
+    <li>About</li>
+    <li>Blog</li>
+    <li>Contact</li>
+  </ul>
+  }
+  @else{
+  <ul>
+    <p>HI!</p>
+  </ul>
+  }
+</nav>

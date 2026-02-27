@@ -5,8 +5,10 @@
   --default-background-color: black;
   --default-font-color: white;
   --default-font-family: "Space Mono", monospace;
-  --default-border-radius: 1vw;
+  --default-border-radius-for-media: 2vw;
+  --default-border-radius-for-navigation: 10vw;
   --default-font-size: 16px;
+  --default-font-size-for-navigation: clamp( 0.8rem, 2vw, 1.2rem);
   --heavy-font-weight: 700;
   --heavier-font-weight: 800;
   --heaviest-font-weight: 900;
@@ -28,24 +30,21 @@
 
 }
 
-html,body{
-    overflow: hidden;
-    background-color: white;
-    height: 100vh;
-    width: 100vw;
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-    background-image: linear-gradient(to top, #000000, #080003, #0d0009, #0f0010, #0e0116);
+html, body{
 
+    height: 100vh;
+    width: 100%;
+    font-size: 16px;
+    overflow: hidden;
   }
 
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
-
+}
+body{
+  background-image: linear-gradient(to top, #000000, #080003, #0d0009, #0f0010, #0e0116);
 }
 
 /*GLOBAL FORM LOGIC BEGINS*/

@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
-import { Container } from "../container/container";
-
+import { Component, ElementRef, inject, signal } from '@angular/core';
 @Component({
   selector: 'app-navigation',
-  imports: [Container],
+  imports: [],
   templateUrl: './navigation.html',
   styleUrl: './navigation.css',
 })
 export class Navigation {
 
+  mouseInNavBar = signal(false);
+
+  toggle(){
+    this.mouseInNavBar.update((mouseInNavBar) => !mouseInNavBar)
+  }
+
+  enterClass = signal('enter-animation');
 }

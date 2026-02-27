@@ -1,14 +1,21 @@
+#free-flow-component{
+  z-index: 1;
+  position: absolute;
+  background-color: rgba(3, 3, 3, 0.739);
+  border-radius: var(--default-border-radius-for-navigation);
+}
+
 ul {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 10vh;
+  height: 50px;
   justify-content: center;
   list-style-type: none;
   color: white;
   gap: 1em;
-  font-size: clamp( 0.8rem, 2vw, 1.2rem );
-  margin: 0 0 0.5vw 0;
+  font-size: var(--default-font-size-for-navigation);
+  padding: 1vw;
 }
 
 li:hover{
@@ -19,6 +26,25 @@ li:hover{
 li:active{
   color: rgb(214, 235, 157);
   text-shadow: 1px 0 3px rgb(163, 236, 236);
-
 }
+
+/*trying to do shit the angular way ig*/
+
+.enter-animation{
+  animation: slide-fade 1s;
+}
+
+@keyframes slide-fade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
 
