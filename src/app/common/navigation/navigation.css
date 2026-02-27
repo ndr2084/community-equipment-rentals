@@ -4,6 +4,7 @@
   background-color: rgba(3, 3, 3, 0.739);
   border-radius: var(--default-border-radius-for-navigation);
   padding: 10px;
+  margin: 10px;
 }
 
 ul, .fade-in-left, #animated-nav-elements {
@@ -20,7 +21,7 @@ ul, .fade-in-left, #animated-nav-elements {
 
 
 
-li:hover{
+li:hover, .closed-list:hover{
   color: rgb(244, 245, 239);
   text-shadow: -2px 0 3px rgb(204, 255, 0);
 }
