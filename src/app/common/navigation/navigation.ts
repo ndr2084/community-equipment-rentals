@@ -13,5 +13,6 @@ export class Navigation {
     this.mouseInNavBar.update((mouseInNavBar) => !mouseInNavBar)
   }
 
-  enterClass = signal('enter-animation');
+  enter_animation = signal('enter-animation');
+  exit_animation = signal('exit-animation');
 }

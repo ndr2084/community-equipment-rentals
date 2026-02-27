@@ -1,15 +1,21 @@
-<nav id="free-flow-component" (mouseenter)="toggle()" (mouseleave)="toggle()">
-  @if(mouseInNavBar()){
-  <ul [animate.enter]="enterClass()">
+@if(!mouseInNavBar()){
+<nav id="free-flow-component" class="fade-in-left">
+  <ul [animate.enter]="enter_animation()">
+    <span id="animated-nav-elements" [animate.enter]="enter_animation()">
+    <li class="hamburger_open" (click)="toggle()">𓃑</li>
+    <span class="fade-in-left">
     <li>Service</li>
     <li>About</li>
     <li>Blog</li>
     <li>Contact</li>
+  </span>
+  </span>
   </ul>
-  }
-  @else{
-  <ul>
-    <p>HI!</p>
-  </ul>
-  }
 </nav>
+} @else{
+  <nav id="free-flow-component">
+    <ul class="fade-out-right">
+      <li class="hamburger_close" (click)="toggle()"> 𓃑 </li>
+    </ul>
+  </nav>
+}

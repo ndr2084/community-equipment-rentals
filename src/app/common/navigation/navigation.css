@@ -5,18 +5,24 @@
   border-radius: var(--default-border-radius-for-navigation);
 }
 
-ul {
+ul, .fade-in-left, #animated-nav-elements {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 50px;
+  height: 7vh;
   justify-content: center;
   list-style-type: none;
   color: white;
-  gap: 1em;
+  gap: 2em;
   font-size: var(--default-font-size-for-navigation);
   padding: 1vw;
 }
+
+#minimize-button{
+  margin: 0;
+  padding: 5px 5px 0 0;
+}
+
 
 li:hover{
   color: rgb(244, 245, 239);
@@ -30,20 +36,41 @@ li:active{
 
 /*trying to do shit the angular way ig*/
 
-.enter-animation{
-  animation: slide-fade 1s;
+.hamburger_close{
+  padding: 0px 0px 2px 0px;
 }
 
-@keyframes slide-fade {
-  from {
+.hamburger_open{
+  padding: 0px 0px 0px 0px;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-10%);
     opacity: 0;
-    transform: translateY(20px);
   }
-  to {
+  100% {
+    transform: translateX(0);
     opacity: 1;
-    transform: translateY(0);
   }
 }
+
+.fade-in-left {
+  animation: fadeInLeft 0.5s forwards;
+}
+
+@keyframes fadeOutRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+
 
 
 
