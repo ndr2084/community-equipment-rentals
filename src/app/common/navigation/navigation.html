@@ -1,18 +1,11 @@
-@if(!mouseInNavBar()){
-<nav id="free-flow-component">
-  <ul>
-    <li (click)="toggle()">𓃑</li>
-    <li class="fade-in-left">Service</li>
-    <li class="fade-in-left">About</li>
-    <li class="fade-in-left">Blog</li>
-    <li class="fade-in-left">Contact</li>
+<nav class="nav-component" [class]="!mouseInNavBar()? 'nav-component' : 'fuck-you padding'" >
+  <ul class="unordered-list" >
+    <li (click)="toggle()" >𓃑</li>
+  </ul>
+  <ul class="unordered-list">
+    <li>Services</li>
+    <li>About</li>
+    <li>Blog</li>
+    <li>Contact</li>
   </ul>
 </nav>
-} @else{
-  <nav id="free-flow-component">
-    <ul (click)="toggle()" class="closed-list">
-      <li>𓃑</li>
-      <li class="fade-in-left" >See More</li>
-    </ul>
-  </nav>
-}

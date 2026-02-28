@@ -12,7 +12,4 @@ export class Navigation {
   toggle(){
     this.mouseInNavBar.update((mouseInNavBar) => !mouseInNavBar)
   }
-
-  enter_animation = signal('enter-animation');
-  exit_animation = signal('exit-animation');
 }
