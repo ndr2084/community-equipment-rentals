@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
-import { Navigation } from "../../common/navigation/navigation";
 import { Container } from "../../common/container/container";
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-login-page',
   imports: [Container, ReactiveFormsModule],
-  templateUrl: './login.html',
-  styleUrl: './login.css',
+  templateUrl: './login-page.html',
+  styleUrl: './login-page.css',
 })
-export class Login {
+export class LoginPage {
   profileForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),

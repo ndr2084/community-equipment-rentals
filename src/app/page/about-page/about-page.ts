@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Container } from "../../common/container/container";
 
 @Component({
-  selector: 'app-home-page',
+  selector: 'app-about-page',
   imports: [Container],
-  templateUrl: './home-page.html',
-  styleUrl: './home-page.css',
+  templateUrl: './about-page.html',
+  styleUrl: './about-page.css',
 })
-export class HomePage {
+export class AboutPage {
 
 }

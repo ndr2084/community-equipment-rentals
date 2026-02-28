@@ -1,14 +1,19 @@
 import { Routes } from '@angular/router';
-import {HomePage} from './page/home-page/home-page';
-import {Login} from './page/login-page/login';
+import {AboutPage} from './page/about-page/about-page';
+import {LoginPage} from './page/login-page/login-page';
+import { ServicePage } from './page/service-page/service-page';
 
 export const routes: Routes = [
   {
-    path: '',
-    component: HomePage,
+    path: 'about-page',
+    component: AboutPage,
   },
 
-  { path: 'login',
-    component: Login,
+  { path: 'login-page',
+    component: LoginPage,
+  },
+
+  {path: 'service-page',
+    component: ServicePage,
   }
 ];

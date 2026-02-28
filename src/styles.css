@@ -5,7 +5,7 @@
   --default-background-color: black;
   --default-font-color: white;
   --default-font-family: "Space Mono", monospace;
-  --default-border-radius-for-media: clamp(0.5em, calc(0.5em + 5px), 1em);
+  --default-border-radius-for-media: 5vh;
   --default-border-radius-for-navigation: 100px;
   --default-font-size: 16px;
   --default-font-size-for-navigation: 1.5vw;
@@ -20,6 +20,7 @@
   --small-font-size: 0.8rem;
   --large-font-size: 1.5rem;
   --huge-font-size: 2.0rem;
+  --default-padding: 1vh 1vw;
 
   background-color: var(--default-background-color);
   color: var(--default-font-color);
@@ -44,7 +45,7 @@ html, body{
   padding: 0;
 }
 body{
-  background-image: linear-gradient(to top, #000000, #080003, #0d0009, #0f0010, #0e0116);
+  background-image: linear-gradient(to top, #000000, #050102, #010101, #070007, #07010b);
 }
 
 /*GLOBAL FORM LOGIC BEGINS*/
@@ -149,3 +150,9 @@ h1.form-title {
   font-weight: var(--heavy-font-weight);
   padding: clamp(0.3rem, 0.3vw, 0.5rem);
 }
+
+a , li, ul{
+  all: unset;
+}
+
+

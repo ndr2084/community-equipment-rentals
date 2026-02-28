@@ -11,16 +11,11 @@
   background-position: bottom;
   background-size: cover;
   min-width: 50vw;
+  min-height: 50vh;
+  overflow: hidden;
 
 
 }
-
-#scrolling-content{
-  max-height: 95.5vh;
-  padding: 1vh 1vw;
-  overflow: scroll;
-}
-
 
 #flexbox-container{
   display: flex;
@@ -37,13 +32,9 @@
   }
 
   #article-photo{
-    background-image: url(./images/man_bouldering.jpg);
-    border-radius: var(--default-border-radius-for-media);
     background-position: center 69%;
     background-size:cover;
-    height: 27.5vh;
     padding: 0px;
-    overflow: scroll;
 
 
   }
