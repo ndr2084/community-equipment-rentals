@@ -1,4 +1,4 @@
-.nav-component{
+.nav-component-open{
   z-index: 99;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.874);
@@ -7,7 +7,7 @@
   margin: 0.5vw;
   display: flex;
   gap: 1.5vw;
-  transition: 0.2s;
+  transition: 0.2s ease-in;
   width: 33vw;
   overflow: hidden;
 }
@@ -33,15 +33,11 @@ li:active{
   text-shadow: 1px 0 3px rgb(163, 236, 236);
 }
 
-.fuck-you  {
+.nav-component-closed {
   transition: 0.2s;
   width: 3.5vw;
-}
-
-.padding{
   padding: 0.5vw 0.5vw 0.55vw 0.68vw;
 }
-
 
 
 
