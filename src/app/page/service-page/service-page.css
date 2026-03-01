@@ -30,6 +30,12 @@
     box-shadow: rgb(255, 255, 255) 0px 0px 5px;
   }
 
+  .container-content:active {
+    transform: scale3d(1.05, 1.05, 1.05);
+    background:  #ffffff32;
+    box-shadow: rgb(255, 255, 255) 0px 0px 5px;
+  }
+
 
 
 
