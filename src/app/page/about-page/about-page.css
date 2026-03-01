@@ -15,6 +15,7 @@
   overflow: hidden;
 
 
+
 }
 
 #flexbox-container{
@@ -29,6 +30,7 @@
   #flexbox-container{
     flex-direction: column;
 
+
   }
 
   #article-photo{
@@ -37,10 +39,6 @@
     padding: 0px;
 
 
-  }
-
-  #scrolling-content{
-    height: 69vh;
   }
 
 }

@@ -1,16 +1,45 @@
+.service-page{
+  height: 100vh;
+  width: 100vw;
+  overflow: scroll;
+}
+
 .card-container{
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 80%;
+  gap: 10px;
 }
 
-.center{
+.container-content{
+  width: 20em;
+  height: 10em;
+}
+
+p.center{
   text-align: center;
 }
+
+.huge-title-dynamic{
+  text-align: center;
+}
+
 
 @media screen and (min-width: 0px) and (max-width: 1000px){
 
   .card-container{
     flex-direction: column;
+  }
+
+  .container-content{
+    width: 80vw;
+    height: fit-content;
+  }
+
+  p.margin{
+    margin: 10em 2em 0em 2em;
   }
 
 }
