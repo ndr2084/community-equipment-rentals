@@ -1,7 +1,7 @@
 .service-page{
   height: 100vh;
   width: 100vw;
-  overflow: scroll;
+  padding: 1em;
 }
 
 .card-container{
@@ -13,10 +13,26 @@
   gap: 10px;
 }
 
+
 .container-content{
   width: 20em;
   height: 10em;
-}
+    overflow: hidden;
+    transition: all .5s ease;
+    border-radius: var(--default-border-radius-for-media);
+    box-shadow: rgba(255, 255, 255, 0.11) 1px 1px 1px;
+    background-color: black;
+  }
+
+  .container-content:hover {
+    transform: scale3d(1.03, 1.03, 1.03);
+    background:  #00000086;
+    box-shadow: rgb(255, 255, 255) 0px 0px 5px;
+  }
+
+
+
+
 
 p.center{
   text-align: center;
@@ -27,19 +43,32 @@ p.center{
 }
 
 
+
+
 @media screen and (min-width: 0px) and (max-width: 1000px){
 
   .card-container{
     flex-direction: column;
   }
 
+  .service-page{
+    overflow: scroll;
+  }
+
+
   .container-content{
-    width: 80vw;
+    width: 60vw;
     height: fit-content;
+
   }
 
   p.margin{
-    margin: 10em 2em 0em 2em;
+    margin: 5em 2em 0em 2em;
   }
+
+  p.default{
+  text-align: center;
+  margin: auto;
+ }
 
 }
