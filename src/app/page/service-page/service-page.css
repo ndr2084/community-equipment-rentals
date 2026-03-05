@@ -1,10 +1,10 @@
-.service-page{
+.service-page {
   height: 100vh;
   width: 100vw;
   padding: 1em;
 }
 
-.card-container{
+.card-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -13,68 +13,55 @@
   gap: 10px;
 }
 
-
-.container-content{
+.container-content {
   width: 20em;
   height: 10em;
-    overflow: hidden;
-    transition: all .5s ease;
-    border-radius: var(--default-border-radius-for-media);
-    box-shadow: rgba(255, 255, 255, 0.11) 1px 1px 1px;
-    background-color: black;
-  }
+  overflow: hidden;
+  transition: all 0.5s ease;
+  border-radius: var(--default-border-radius-for-media);
+  box-shadow: rgba(255, 255, 255, 0.11) 1px 1px 1px;
+  background-color: black;
+}
 
-  .container-content:hover {
-    transform: scale3d(1.03, 1.03, 1.03);
-    background:  #00000086;
-    box-shadow: rgb(255, 255, 255) 0px 0px 5px;
-  }
+.container-content:hover {
+  transform: scale3d(1.03, 1.03, 1.03);
+  box-shadow: rgb(255, 255, 255) 0px 0px 5px;
+}
 
-  .container-content:active {
-    transform: scale3d(1.05, 1.05, 1.05);
-    background:  #ffffff32;
-    box-shadow: rgb(255, 255, 255) 0px 0px 5px;
-  }
+.background {
+  transform: scale3d(1.03, 1.03, 1.03);
+  background-color: #ffffff32;
+  box-shadow: rgb(255, 255, 255) 0px 0px 5px;
+}
 
-
-
-
-
-p.center{
+p.center {
   text-align: center;
 }
 
-.huge-title-dynamic{
+.huge-title-dynamic {
   text-align: center;
 }
 
-
-
-
-@media screen and (min-width: 0px) and (max-width: 1000px){
-
-  .card-container{
+@media screen and (min-width: 0px) and (max-width: 1000px) {
+  .card-container {
     flex-direction: column;
   }
 
-  .service-page{
+  .service-page {
     overflow: scroll;
   }
 
-
-  .container-content{
+  .container-content {
     width: 60vw;
     height: fit-content;
-
   }
 
-  p.margin{
+  p.margin {
     margin: 5em 2em 0em 2em;
   }
 
-  p.default{
-  text-align: center;
-  margin: auto;
- }
-
+  p.default {
+    text-align: center;
+    margin: auto;
+  }
 }

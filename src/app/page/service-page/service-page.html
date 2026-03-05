@@ -5,24 +5,32 @@
 
   <div class="card-container">
 
-    <div class="container-content">
+    <div (click)="toggleBuy()" class="container-content" [class.background]="buyButtonClicked()">
       <h1 class="huge-title-dynamic">Buy</h1>
       <p class="default">Get your hands on some previously loved equipment at a fraction of the cost </p>
     </div>
 
-
-    <div class="container-content">
+    <div (click)="toggleSell()" class="container-content" [class.background]="sellButtonClicked()">
       <h1 class="huge-title-dynamic">Sell</h1>
       <p class="default">Free up your space for new shinier toys</p>
     </div>
 
-
-
-    <div class="container-content">
+    <div (click)="toggleRequest()" class="container-content" [class.background]="requestButtonClicked()">
       <h1 class="huge-title-dynamic">Request</h1>
       <p class="default">Not seeing what you want? Let the community know what you need!</p>
-
-
     </div>
   </div>
+  @if(buyButtonClicked()){
+    <p class="default">buy buy buy!</p>
+  }
+
+  @if(sellButtonClicked()){
+    <p class="default">sell sell sell!</p>
+  }
+
+  @if(requestButtonClicked()){
+    <p class="default">request request request!</p>
+  }
 </div>
+
+
