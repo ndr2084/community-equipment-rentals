@@ -136,8 +136,14 @@ h1.huge-title-dynamic {
   font-weight: 500;
 }
 
+h1.large-title-dynamic {
+  font-size: clamp( 1.0rem, 1.5vw, 2rem );
+  padding: clamp(0.2rem, 0.5vw, 1.2rem);
+  font-weight: 500;
+}
+
 p.default{
-  padding: clamp(0.5rem, 0.8vw, 1.2rem);
+  padding: clamp(0.5rem, 0.8vw, 2rem);
   font-size: var(--small-font-size);
   font-weight: 500;}
 /*Huge dynamic title ends*/
