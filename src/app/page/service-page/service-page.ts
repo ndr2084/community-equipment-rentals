@@ -1,4 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ProductInterface } from '../../interface/product-interface';
+import { ProductService } from '../../service/product-service';
 
 @Component({
   selector: 'app-service-page',
@@ -6,7 +9,17 @@ import { Component, signal } from '@angular/core';
   templateUrl: './service-page.html',
   styleUrl: './service-page.css',
 })
-export class ServicePage {
+export class ServicePage implements OnInit {
+
+  constructor(private productService: ProductService ) {};
+
+  ngOnInit(){
+    this.productService.getAllProduct().subscribe({
+    next : (data) =>{
+      console.log();
+    }
+  });
+}
 
 
   changeButtonBackgroundOnClick = signal(false);
