@@ -13,6 +13,12 @@
     <div (click)="toggleSell()" class="container-content" [class.background]="sellButtonClicked()">
       <h1 class="large-title-dynamic center">Sell</h1>
       <p class="default">Free up your space for new shinier toys</p>
+
+    <!-- SOMETHING LIKE THE BELOW IS NECESSARY TO USE - IT AUTO UNSUBSCRIBES FROM OBSERVABLES
+      <div *ngIf="data$ | async as data">
+        {{ data.name }}
+      </div>
+      -->
     </div>
 
     <div (click)="toggleRequest()" class="container-content" [class.background]="requestButtonClicked()">
