@@ -7,6 +7,30 @@
       "productSellerName": "Elite Beauty Boutique",
       "productSellerLocation": "Paris, France",
       "productImage": "https://www.thecut.com"
+    },
+    {
+      "productName": "Velvet Matte Luxe Lipstick",
+      "productPrice": 42.0,
+      "productPostDate": "2024-03-05",
+      "productSellerName": "Elite Beauty Boutique",
+      "productSellerLocation": "Paris, France",
+      "productImage": "https://www.thecut.com"
+    },
+    {
+      "productName": "Velvet Matte Luxe Lipstick",
+      "productPrice": 35.0,
+      "productPostDate": "2024-03-05",
+      "productSellerName": "Elite Beauty Boutique",
+      "productSellerLocation": "Paris, France",
+      "productImage": "https://www.thecut.com"
+    },
+    {
+      "productName": "Velvet Matte Luxe Lipstick",
+      "productPrice": 5.0,
+      "productPostDate": "2024-03-05",
+      "productSellerName": "Elite Beauty Boutique",
+      "productSellerLocation": "Paris, France",
+      "productImage": "https://www.thecut.com"
     }
   ]
 }
