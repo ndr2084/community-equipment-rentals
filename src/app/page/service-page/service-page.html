@@ -27,7 +27,7 @@
     </div>
   </div>
   @if(buyButtonClicked()){
-  <div class="grid-flex-container">
+
   <div class="grid-display">
     @if (product().length > 0){
 
@@ -38,7 +38,7 @@
       </app-product-card>
 
       <div class="product-information-flexbox-container-parent">
-        <div class="product-information-flexbox-container">
+        <div>
           <div class="product-seller-location">{{products.productSellerLocation}}</div>
           <div class="product-price">{{products.productPrice}}</div>
           <div class="product-name">{{products.productName}}</div>
@@ -51,7 +51,6 @@
     }
     }
   </div>
-</div>
   }
 
   @if(sellButtonClicked()){
