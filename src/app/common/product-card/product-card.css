@@ -1,0 +1,7 @@
+.product-card{
+  width: 400px;
+  height: 350px;
+  background: rgb(50, 43, 72);
+  border-radius: var(--default-border-radius-for-media);
+  font-size: var(--small-font-size);
+}

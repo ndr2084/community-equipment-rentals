@@ -5,4 +5,6 @@ export interface ProductInterface {
   productSellerName: string;
   productSellerLocation: string;
   productImage: string;
+  productId: Number;
+  productSellerProfilePhoto: string;
 }

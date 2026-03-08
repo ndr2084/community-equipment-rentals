@@ -2,10 +2,12 @@ import { Component, inject, OnInit, signal} from '@angular/core';
 import { ProductService } from '../../service/product-service';
 import { Subscription } from 'rxjs';
 import { ProductInterface } from '../../interface/product-interface';
+import { Container } from "../../common/container/container";
+import { ProductCard } from "../../common/product-card/product-card";
 
 @Component({
   selector: 'app-service-page',
-  imports: [],
+  imports: [Container, ProductCard],
   templateUrl: './service-page.html',
   styleUrl: './service-page.css',
 })
@@ -25,6 +27,7 @@ next : (data) =>{
     }
   });
   }
+
 
   changeButtonBackgroundOnClick = signal(false);
   buyButtonClicked = signal(false);

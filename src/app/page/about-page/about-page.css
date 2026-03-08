@@ -1,8 +1,6 @@
 .about-article{
   overflow: scroll;
-
 }
-
 
 #article-photo{
   background-image: url(./images/man_bouldering.jpg);
@@ -13,9 +11,6 @@
   min-width: 50vw;
   min-height: 50vh;
   overflow: hidden;
-
-
-
 }
 
 #flexbox-container{
