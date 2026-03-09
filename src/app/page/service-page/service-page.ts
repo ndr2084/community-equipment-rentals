@@ -33,6 +33,7 @@ next : (data) =>{
   buyButtonClicked = signal(false);
   sellButtonClicked = signal(false);
   requestButtonClicked = signal(false);
+  messageSellerOnClick = signal(false);
 
   /*only show one and only one of the 3 options at any time (buy, sell, request*/
 
@@ -71,6 +72,13 @@ next : (data) =>{
     }
 
     this.requestButtonClicked.update((requestButtonClicked) => !requestButtonClicked)
+  }
+
+  /*toggles the modal on and off from view*/
+  messerSeller(){
+    if(this.messageSellerOnClick()){
+      this.messageSellerOnClick.update((messageSellerOnClick) => !this.messageSellerOnClick)
+    }
   }
 }
 

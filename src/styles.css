@@ -187,8 +187,12 @@ a , li, ul{
 }
 
 /*EFFECTS BEGIN*/
-.fade-in-transition{
-  animation: fadeIn 0.2s;
+.fade-in-transition-fast{
+  animation: fadeIn 0.18s;
+}
+
+.fade-in-transition-slow{
+  animation: fadeIn 0.5s;
 }
 
 @keyframes fadeIn{

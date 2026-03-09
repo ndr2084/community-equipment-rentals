@@ -24,13 +24,13 @@
     </div>
   </div>
   @if(buyButtonClicked()){
-    <p class="sub-text center brand-color-yellow fade-in-transition">Get your hands on some previously loved equipment</p>
+    <p class="sub-text center brand-color-yellow fade-in-transition-slow">Get your hands on some previously loved equipment</p>
 
   <div class="grid-display">
     @if (product().length > 0){
 
     @for (products of product(); track products.productName){
-    <div class="product-container ">
+    <div class="product-container fade-in-transition-fast">
       <app-product-card class="mobile-width">
           <!--insert-photo-here-->
       </app-product-card>
@@ -50,11 +50,13 @@
   </div>
   }
 
+  <div></div>
+
   @if(sellButtonClicked()){
-    <p class="sub-text center brand-color-yellow fade-in-transition">Make some cash for new shiny toys</p>
+    <p class="sub-text center brand-color-yellow fade-in-transition-slow">Make some cash for new shiny toys</p>
   }
 
   @if(requestButtonClicked()){
-    <p class="sub-text center brand-color-yellow fade-in-transition">Not seeing what you want? Let the community hear your needs!</p>
+    <p class="sub-text center brand-color-yellow fade-in-transition-slow">Not seeing what you want? Let the community hear your needs!</p>
   }
 </div>
