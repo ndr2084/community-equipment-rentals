@@ -7,9 +7,3 @@ export interface BuyingFormInterface {
   messageBody: string;
 }
 
-const buyingFormModel = signal<BuyingFormInterface>({
-  name: '',
-  subject: '',
-  isInSameCity: false,
-  messageBody: '',
-})
