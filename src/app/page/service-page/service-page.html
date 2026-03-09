@@ -1,18 +1,16 @@
 <div class="service-page">
   <h1 class="huge-title-dynamic center">Services</h1>
-  <p class="default center margin">Created for you; Powered by you. Find what you're looking for, today.</p>
-
+  <p class="default-text center-text">Created for you; Powered by you. Find what you're looking for, today.</p>
 
   <div class="card-container">
 
     <div (click)="toggleBuy()" class="container-content" [class.background]="buyButtonClicked()">
-      <h1 class="large-title-dynamic center">Buy</h1>
-      <p class="default">Get your hands on some previously loved equipment at a fraction of the cost </p>
+      <p class="large-text center">Buy</p>
     </div>
 
     <div (click)="toggleSell()" class="container-content" [class.background]="sellButtonClicked()">
-      <h1 class="large-title-dynamic center">Sell</h1>
-      <p class="default">Free up your space for new shinier toys</p>
+      <p class="large-text center">Sell</p>
+
 
       <!-- SOMETHING LIKE THE BELOW IS NECESSARY TO USE - IT AUTO UNSUBSCRIBES FROM OBSERVABLES
       <div *ngIf="data$ | async as data">
@@ -22,26 +20,25 @@
     </div>
 
     <div (click)="toggleRequest()" class="container-content" [class.background]="requestButtonClicked()">
-      <h1 class="large-title-dynamic center">Request</h1>
-      <p class="default">Not seeing what you want? Let the community know what you need!</p>
+      <p class="large-text center">Request</p>
     </div>
   </div>
   @if(buyButtonClicked()){
+    <p class="sub-text center brand-color-yellow fade-in-transition">Get your hands on some previously loved equipment</p>
 
   <div class="grid-display">
     @if (product().length > 0){
 
     @for (products of product(); track products.productName){
-    <div class="product-container">
-      <app-product-card>
-
+    <div class="product-container ">
+      <app-product-card class="mobile-width">
+          <!--insert-photo-here-->
       </app-product-card>
-
       <div class="product-information-flexbox-container-parent">
-        <div>
-          <div class="product-seller-location">{{products.productSellerLocation}}</div>
-          <div class="product-price">{{products.productPrice}}</div>
-          <div class="product-name">{{products.productName}}</div>
+        <div class="product-information">
+          <div class="product-seller-location sub-text brand-color-grey">{{products.productSellerLocation}}</div>
+          <div class="product-price default-text">{{products.productPrice}}</div>
+          <div class="product-name default-text">{{products.productName}}</div>
         </div>
         <div class="product-seller-profile-photo">
           <img class="profile-photo" [src]="products.productSellerProfilePhoto">
@@ -54,10 +51,10 @@
   }
 
   @if(sellButtonClicked()){
-  <p class="default">sell sell sell!</p>
+    <p class="sub-text center brand-color-yellow fade-in-transition">Make some cash for new shiny toys</p>
   }
 
   @if(requestButtonClicked()){
-  <p class="default">request request request!</p>
+    <p class="sub-text center brand-color-yellow fade-in-transition">Not seeing what you want? Let the community hear your needs!</p>
   }
 </div>

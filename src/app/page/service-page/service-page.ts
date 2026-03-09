@@ -7,7 +7,7 @@ import { ProductCard } from "../../common/product-card/product-card";
 
 @Component({
   selector: 'app-service-page',
-  imports: [Container, ProductCard],
+  imports: [ProductCard],
   templateUrl: './service-page.html',
   styleUrl: './service-page.css',
 })

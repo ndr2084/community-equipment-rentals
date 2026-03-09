@@ -2,6 +2,17 @@
   width: clamp(250px, calc(234.52px + 6.192vw), 350px);
   height: clamp(250px, calc(243.994px + 3.003vw), 300px);
   background: rgb(50, 43, 72);
-  border-radius: var(--default-border-radius-for-media);
-  font-size: var(--small-font-size);
+  border-top-right-radius: var(--default-border-radius-for-media);
+  border-top-left-radius: var(--default-border-radius-for-media);
+}
+
+@media screen and (min-width: 0px) and (max-width: 600px) {
+
+  .product-card{
+  width: 340px;
+  height: 225px;
+  background: rgb(50, 43, 72);
+  border-top-right-radius: var(--default-border-radius-for-media);
+  border-top-left-radius: var(--default-border-radius-for-media);
+  }
 }

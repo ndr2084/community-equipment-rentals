@@ -5,7 +5,7 @@
   --default-background-color: black;
   --default-font-color: white;
   --default-font-family: "Space Mono", monospace;
-  --default-border-radius-for-media: 5vh;
+  --default-border-radius-for-media: 10px;
   --default-border-radius-for-navigation: 100px;
   --default-font-size: 16px;
   --default-font-size-for-navigation: 1.5vw;
@@ -20,7 +20,8 @@
   --small-font-size: 0.8rem;
   --large-font-size: 1.5rem;
   --huge-font-size: 2.0rem;
-  --default-padding: 1vh 1vw;
+  --default-padding: 0 15px;
+  --default-line-height: 2em;
 
   background-color: var(--default-background-color);
   color: var(--default-font-color);
@@ -94,7 +95,7 @@ input.default-button{
 
 /*Primary button begins*/
 
-input.primary{
+.primary{
   border: none;
   cursor: pointer;
   padding: 0.1em;
@@ -130,33 +131,73 @@ input.primary:active{
 
 /*GLOBAL TYPOGRAPHY BEGINS*/
 /*Huge dynamic title begins*/
-h1.huge-title-dynamic {
+.huge-title-dynamic {
   font-size: clamp( 1.4rem, 3.0vw, 2.5rem );
   padding: clamp(0.2rem, 0.5vw, 1.2rem);
   font-weight: 500;
 }
 
-h1.large-title-dynamic {
+.large-title-dynamic {
   font-size: clamp( 1.0rem, 1.5vw, 2rem );
-  padding: clamp(0.2rem, 0.5vw, 1.2rem);
+  padding: clamp(2px, calc(0.318px + 0.841vw), 12px);
   font-weight: 500;
 }
 
-p.default{
-  padding: clamp(0.5rem, 0.8vw, 2rem);
+.default-text{
+  font-size: var(--default-font-size);
+  font-weight: 500;
+  line-height: var(--default-line-height);
+  padding: var(--default-padding);
+}
+
+.large-text{
+  font-size: var(--large-font-size);
+  font-weight: 500;
+  line-height: var(--default-line-height);
+  padding: var(--default-padding);
+}
+
+.sub-text{
   font-size: var(--small-font-size);
-  font-weight: 500;}
+  padding: var(--default-padding);
+}
+
+.brand-color-grey{
+  color: grey;
+}
+
+.brand-color-yellow{
+  color: yellow;
+}
 /*Huge dynamic title ends*/
 /*GLOBAL TYPOGRAPHY ENDS*/
 
-h1.form-title {
+.form-title {
   font-size: var(--large-font-size);
   font-weight: var(--heavy-font-weight);
   padding: clamp(0.3rem, 0.3vw, 0.5rem);
 }
 
+.center-text {
+  text-align: center;
+}
+
 a , li, ul{
   all: unset;
 }
+
+/*EFFECTS BEGIN*/
+.fade-in-transition{
+  animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn{
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+/*EFFECTS END*/
+
+
 
 

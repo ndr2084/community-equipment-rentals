@@ -6,19 +6,16 @@
 }
 
 .card-container {
+  margin: 1em;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 1em;
-
-  gap: 10px;
+  gap: 12px;
 }
 
 .container-content {
-  width: 20em;
-  height: 10em;
-  overflow: hidden;
+  width: 10em;
   transition: all 0.5s ease;
   border-radius: var(--default-border-radius-for-media);
   box-shadow: rgba(255, 255, 255, 0.11) 1px 1px 1px;
@@ -56,8 +53,6 @@ p.center {
 }
 
 .product-information-flexbox-container-parent{
-  border: 1px solid yellow;
-  padding: 0 15px;
   width: 90%;
   display: flex;
   justify-content: space-between;
@@ -85,38 +80,26 @@ p.center {
 }
 
 .product-container{
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: var(--default-border-radius-for-media);
+  background: rgba(47, 47, 47, 0.604);
+  transition: all 0.1s ease;
+}
+
+.product-container:hover{
+  box-shadow: rgb(255, 255, 255) 0px 0px 5px;
 }
 
 
 
 
-
-@media screen and (min-width: 600px) and (max-width: 1000px) {
-  .card-container {
-    flex-direction: column;
-  }
+@media screen and (min-width: 900px) and (max-width: 1000px) {
 
   .service-page {
     overflow: scroll;
-  }
-
-  .container-content {
-    width: 60vw;
-    height: fit-content;
-  }
-
-  p.margin {
-    margin: 5em 2em 0em 2em;
-  }
-
-  p.default {
-    text-align: center;
-    margin: auto;
   }
 
   .grid-display{
@@ -125,89 +108,65 @@ p.center {
     padding: auto;
     margin: 0 auto;
     align-items: center;
-    column-gap: 20px;
-    grid-auto-rows: 450px;
+    column-gap: 10px;
+    grid-auto-rows: 400px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  .card-container {
+    flex-direction: row;
+  }
+
+  .service-page {
+    overflow: scroll;
+  }
+
+  .grid-display{
+    display: grid;
+    max-width: fit-content;
+    padding: auto;
+    margin: 0 auto;
+    column-gap: 10px;
+    grid-auto-rows: 390px;
+    align-items: center;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (min-width: 0px) and (max-width: 600px) {
-  .card-container {
-    flex-direction: column;
-  }
+
 
   .service-page {
     overflow: scroll;
   }
 
-  .container-content {
-    width: 60vw;
-    height: fit-content;
-  }
-
-  p.margin {
-    margin: 5em 2em 0em 2em;
-  }
-
-  p.default {
-    text-align: center;
-    margin: auto;
-  }
-
   .grid-display{
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     max-width: fit-content;
-    padding: auto;
-    margin: 0 auto;
+    grid-auto-rows: 350px;
     align-items: center;
-    column-gap: 20px;
-    grid-auto-rows: 450px;
     grid-template-columns: repeat(1, 1fr);
   }
+
+  .product-container{
+    width: 340px;
+  }
+
+  .product-information-flexbox-container-parent{
+    width: 90%;
+
+  }
 }
 
-@media screen and (min-width: 600px) and (max-width: 1000px) {
-  .card-container {
-    flex-direction: column;
-  }
-
-  .service-page {
-    overflow: scroll;
-  }
-
-  .container-content {
-    width: 60vw;
-    height: fit-content;
-  }
-
-  p.margin {
-    margin: 5em 2em 0em 2em;
-  }
-
-  p.default {
-    text-align: center;
-    margin: auto;
-  }
+@media screen and (min-width: 1350px){
 
   .grid-display{
     display: grid;
     max-width: fit-content;
-    padding: auto;
-    margin: 0 auto;
-    align-items: center;
-    column-gap: 20px;
-    grid-auto-rows: 450px;
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (min-width: 1300px){
-
-  .grid-display{
-    display: grid;
-    max-width: fit-content;
-    padding: auto;
-    margin: 0 auto;
     align-items: center;
     column-gap: 20px;
     grid-auto-rows: 450px;
