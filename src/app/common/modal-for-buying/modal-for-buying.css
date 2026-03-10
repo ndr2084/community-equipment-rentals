@@ -1,4 +1,10 @@
-textarea{
-  width: 300px;
-  height: 150px;
+.z-index-1{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: var(--z-index-modal);
+  max-height: 100%;
+  background: black;
+  overflow: scroll;
 }

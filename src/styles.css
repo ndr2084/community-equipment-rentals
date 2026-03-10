@@ -24,6 +24,7 @@
   --large-button-width: 300px;
   --default-form-padding: 32px;
   --default-form-gap: 32px;
+  --z-index-modal: 1000;
 
   background-color: var(--default-background-color);
   color: var(--default-font-color);
@@ -242,6 +243,8 @@ button {
   padding: var(--default-padding);
   line-height: var(--default-line-height);
   border-radius: var(--default-border-radius-for-media);
+  width: 300px;
+  height: 150px;
 }
 
 /*FORM STYLING ENDS*/
