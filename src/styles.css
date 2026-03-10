@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-
-:root{
+:root {
   --default-background-color: black;
   --default-font-color: white;
   --default-font-family: "Space Mono", monospace;
@@ -15,60 +14,80 @@
   --default-font-weight: 400;
   --light-font-weight: 300;
   --lighter-font-weight: 200;
-  --lightest-font-weight:100;
+  --lightest-font-weight: 100;
   --tiny-font-size: 0.5rem;
   --small-font-size: 0.8rem;
-  --large-font-size: 1.5rem;
-  --huge-font-size: 2.0rem;
-  --default-padding: 0 15px;
+  --large-font-size: 1.2rem;
+  --huge-font-size: 2rem;
   --default-line-height: 2em;
+  --default-form-width: 300px;
+  --large-button-width: 300px;
+  --default-form-padding: 32px;
+  --default-form-gap: 32px;
 
   background-color: var(--default-background-color);
   color: var(--default-font-color);
   font-family: var(--default-font-family);
   font-weight: var(--default-font-weight);
   font-size: var(--default-font-size);
-
-
 }
 
-html, body{
-    width: 100%;
-    font-size: 16px;
-    overflow: hidden;
-  }
+html,
+body {
+  width: 100%;
+  font-size: var(--default-font-size);
+  overflow: hidden;
+}
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-body{
-  background-image: linear-gradient(to top, #000000, #050102, #010101, #070007, #07010b);
+body {
+  background-image: linear-gradient(
+    to top,
+    #000000,
+    #050102,
+    #010101,
+    #070007,
+    #07010b
+  );
 }
 
 /*GLOBAL FORM LOGIC BEGINS*/
 /*Default input begins*/
-input.default-text{
-  background-color: rgba(39, 37, 37, 0);
-  padding: 0.5em;
+.default-text {
+  background: none;
   color: var(--default-font-color);
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.088);
-  font-weight: var(--heavy-font-weight);
-  height: 32px;
-  width: 300px;
-  font-size: 12px;
-  border: none;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.181); /* Removes top, left, right borders */
 
+  width: var(--default-form-width);
+  font-size: var(--default-font-size);
 }
 
-input.default-input:hover{
+input{
+  border: none;
+}
+
+label {
+  display: none;
+}
+
+a,
+li,
+ul,
+button {
+  all: unset;
+}
+
+.default-input:hover {
   text-shadow: 0.5px 0 0px rgb(211, 211, 211);
   border-bottom: 1px solid rgba(181, 181, 181, 0.686);
 }
 
-input.default-input:focus{
+.default-input:focus {
   outline: none;
   text-shadow: 0.5px 0 0px rgb(211, 211, 211);
   border-bottom: 1px solid rgba(181, 181, 181, 0.686);
@@ -76,132 +95,153 @@ input.default-input:focus{
 /*Default input ends*/
 
 /*Setting label to no display*/
-label{
-  display: none;
-}
+
 /*GLOBAL FORM LOGIC ENDS*/
 
 /*GLOBAL BUTTON LOGIC BEGINS*/
 
-input.default-button{
-  border-radius: 16px;
+.button-large {
+  border-radius: var(--default-border-radius-for-media);
   background-color: rgb(39, 37, 37);
   color: var(--default-font-color);
-  height: 32px;
-  width: 300px;
-  font-size: 12px;
+  width: var(--large-button-width);
   border: 1px solid rgba(128, 128, 128, 0.303);
 }
 
 /*Primary button begins*/
 
-.primary{
+.primary {
   border: none;
   cursor: pointer;
-  padding: 0.1em;
-  background-color: rgb(43, 73, 242);
-  transition:
-    background-color 0.1s ease 0.010s,
-    text-shadow 0.1s ease 0.012s,
-    border 0.3s ease 0.012s, box-shadow 0.05s ease 0.010s;
+  background-color: rgb(15, 32, 128);
+  transition: all 0.12s ease;
   border: 1px solid rgba(128, 128, 128, 0.322);
-  margin: 8px;
 }
 
-input.primary:hover{
-  background-color: rgb(64, 92, 255);
-  text-shadow: 0.5px 0px rgb(211, 211, 211);
+.primary:hover {
   border: 1px solid rgba(128, 128, 128, 0.879);
-  box-shadow: 0 0 0px #104885,
-              0px 1px 1px #819096,
-              0 0 1px #ffffff;
+
 }
 
-input.primary:active{
+.primary:active {
+  border: 1px solid rgba(225, 226, 231, 0.726);
+  background-color:  rgb(8, 18, 75);
+}
+
+.secondary:active {
   color: rgb(255, 255, 255);
   text-shadow: 0 0px 3px rgb(38, 124, 124);
   background-color: rgb(0, 20, 130);
-  box-shadow: 0 0 0px #104885,
-              0 1px 1px #6d818a,
-              0 0 1px #ffffff;
+  box-shadow:
+    0 0 0px #104885,
+    0 1px 1px #6d818a,
+    0 0 1px #ffffff;
 }
 
 /*Primary button ends*/
 /*GLOBAL BUTTON LOGIC ENDS*/
 
 /*GLOBAL TYPOGRAPHY BEGINS*/
-/*Huge dynamic title begins*/
 .huge-title-dynamic {
-  font-size: clamp( 1.4rem, 3.0vw, 2.5rem );
+  font-size: clamp(1.4rem, 3vw, 2.5rem);
   padding: clamp(0.2rem, 0.5vw, 1.2rem);
   font-weight: 500;
 }
 
 .large-title-dynamic {
-  font-size: clamp( 1.0rem, 1.5vw, 2rem );
+  font-size: clamp(1rem, 1.5vw, 2rem);
   padding: clamp(2px, calc(0.318px + 0.841vw), 12px);
   font-weight: 500;
-}
-
-.default-text{
-  font-size: var(--default-font-size);
-  font-weight: 500;
-  line-height: var(--default-line-height);
-  padding: var(--default-padding);
-}
-
-.large-text{
-  font-size: var(--large-font-size);
-  font-weight: 500;
-  line-height: var(--default-line-height);
-  padding: var(--default-padding);
-}
-
-.sub-text{
-  font-size: var(--small-font-size);
-  padding: var(--default-padding);
-}
-
-.brand-color-grey{
-  color: grey;
-}
-
-.brand-color-yellow{
-  color: yellow;
-}
-/*Huge dynamic title ends*/
-/*GLOBAL TYPOGRAPHY ENDS*/
-
-.form-title {
-  font-size: var(--large-font-size);
-  font-weight: var(--heavy-font-weight);
-  padding: clamp(0.3rem, 0.3vw, 0.5rem);
 }
 
 .center-text {
   text-align: center;
 }
 
-a , li, ul{
-  all: unset;
+.default-text {
+  font-size: var(--default-font-size);
+  font-weight: 500;
+  line-height: var(--default-line-height);
+  padding: var(--default-padding);
 }
 
+.large-text {
+  font-size: var(--large-font-size);
+  font-weight: 500;
+  line-height: var(--default-line-height);
+  padding: var(--default-padding);
+  color: white;
+}
+
+.small-text {
+  font-size: var(--small-font-size);
+  padding: var(--default-padding);
+}
+
+.sub-text {
+  font-size: var(--small-font-size);
+  padding: var(--default-padding);
+}
+
+.brand-color-grey {
+  color: grey;
+}
+
+.brand-color-yellow {
+  color: yellow;
+}
+
+/*GLOBAL TYPOGRAPHY ENDS*/
+
+
 /*EFFECTS BEGIN*/
-.fade-in-transition-fast{
+.fade-in-transition-fast {
   animation: fadeIn 0.18s;
 }
 
-.fade-in-transition-slow{
+.fade-in-transition-slow {
   animation: fadeIn 0.5s;
 }
 
-@keyframes fadeIn{
-  0% {opacity: 0}
-  100% {opacity: 1}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*EFFECTS END*/
 
+.form-title {
+  font-size: var(--large-font-size);
+  font-weight: var(--heavy-font-weight);
+}
 
+/*FORM STYLING BEGINS*/
 
+.default-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--default-form-gap);
+  padding: var(--default-form-padding);
 
+}
+
+.default-input {
+  /* Removes top, left, and right borders */
+  border: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.181);
+
+}
+
+.default-text-area {
+  background: none;
+  color: white;
+  padding: var(--default-padding);
+  line-height: var(--default-line-height);
+  border-radius: var(--default-border-radius-for-media);
+}
+
+/*FORM STYLING ENDS*/

@@ -9,15 +9,6 @@
   max-width: fit-content;
 }
 
-.login-form {
-  display: flex;
-  flex-direction: column;
-  padding: 0.2vh 1vw;
-  gap: clamp(0.5rem, 2.5vw, 2rem);
-  justify-content: center;
-  font-size: clamp( 1.0rem, 3.0vw, 2.5rem );
-}
-
 .login-form-container {
   display: flex;
   align-items: center;

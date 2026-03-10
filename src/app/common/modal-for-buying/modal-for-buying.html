@@ -1,3 +1,17 @@
-<div class="modal-for-buying">
-  
-</div>
+<app-container>
+  <form [formGroup]="formForBuying" (ngSubmit)="onSubmit()" class="default-form">
+    <h1 class="form-title">Message Seller</h1>
+    <label for="first-name"></label>
+    <input class="default-text default-input" id="first-name" type="text" formControlName="firstName" placeholder="First Name *" />
+
+    <label for="last-name"></label>
+    <input class="default-text default-input" id="last-name" type="text" formControlName="lastName" placeholder="Last Name *" />
+
+    <label for="subject-of-message"></label>
+    <input class="default-text default-input" id="subject-of-message" type="text" formControlName="subjectOfMessage" placeholder="Subject" />
+
+    <label for="message-body"></label>
+    <textarea class="default-text-area" id="message-body" formControlName="messageBody" placeholder="Enter message..."></textarea>
+    <input type="submit" value="Submit" class="button-large primary default-text"[disabled]="!formForBuying.valid">
+  </form>
+</app-container>

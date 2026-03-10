@@ -1,13 +1,14 @@
-import { Component, inject, OnInit, signal} from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { ProductService } from '../../service/product-service';
 import { Subscription } from 'rxjs';
 import { ProductInterface } from '../../interface/product-interface';
 import { Container } from "../../common/container/container";
 import { ProductCard } from "../../common/product-card/product-card";
+import { ModalForBuying } from "../../common/modal-for-buying/modal-for-buying";
 
 @Component({
   selector: 'app-service-page',
-  imports: [ProductCard],
+  imports: [ProductCard, ModalForBuying],
   templateUrl: './service-page.html',
   styleUrl: './service-page.css',
 })
@@ -15,17 +16,17 @@ export class ServicePage implements OnInit {
 
 
 
-private readonly productService = inject(ProductService);
-readonly product = signal<ProductInterface[]>([]);
+  private readonly productService = inject(ProductService);
+  readonly product = signal<ProductInterface[]>([]);
 
 
   ngOnInit(): void {
     this.productService.getAllProduct()
-    .subscribe({
-next : (data) =>{
-      this.product.set(data);
-    }
-  });
+      .subscribe({
+        next: (data) => {
+          this.product.set(data);
+        }
+      });
   }
 
 
@@ -33,8 +34,7 @@ next : (data) =>{
   buyButtonClicked = signal(false);
   sellButtonClicked = signal(false);
   requestButtonClicked = signal(false);
-  messageSellerOnClick = signal(false);
-
+  messageSellerClicked = signal(false);
   /*only show one and only one of the 3 options at any time (buy, sell, request*/
 
   toggleBuy() {
@@ -75,10 +75,8 @@ next : (data) =>{
   }
 
   /*toggles the modal on and off from view*/
-  messerSeller(){
-    if(this.messageSellerOnClick()){
-      this.messageSellerOnClick.update((messageSellerOnClick) => !this.messageSellerOnClick)
-    }
+  toggleMessageSellerModal() {
+    this.messageSellerClicked.update((messageSellerClicked) => !messageSellerClicked)
   }
 }
 

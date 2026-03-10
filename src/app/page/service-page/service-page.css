@@ -15,30 +15,35 @@
 }
 
 .container-content {
-  width: 10em;
-  transition: all 0.2s ease;
+  border: 1px solid rgba(128, 128, 128, 0.092);
+  width: 150px;
+  transition: all 0.12s ease;
   border-radius: var(--default-border-radius-for-media);
   box-shadow: rgba(255, 255, 255, 0.11) 1px 1px 1px;
   background-color: black;
 }
 
 .container-content:hover {
-  transform: scale3d(1.03, 1.03, 1.03);
-  box-shadow: rgb(255, 255, 255) 0px 0px 5px;
+  /*transform: scale3d(1.03, 1.03, 1.03);*/
+  box-shadow: rgba(255, 255, 255, 0.371) 0px 0px 2px;
 }
+
+.container-content:active {
+  /*transform: scale3d(1.03, 1.03, 1.03);*/
+  border: 1px solid rgba(255, 255, 255, 0.398);
+}
+
+.container-content:not(:hover) {
+  /*transform: scale3d(1.03, 1.03, 1.03);*/
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px;
+}
+
+
 
 .background {
   transform: scale3d(1.03, 1.03, 1.03);
   background-color: #ffffff32;
   box-shadow: rgb(255, 255, 255) 0px 0px 5px;
-}
-
-p.center {
-  text-align: center;
-}
-
-.center{
-  text-align: center;
 }
 
 .grid-display{
@@ -53,14 +58,12 @@ p.center {
 }
 
 .product-information-flexbox-container-parent{
-  width: 90%;
   display: flex;
   justify-content: space-between;
-  width: clamp(250px, calc(234.52px + 6.192vw), 350px);
+
+
 
 }
-
-
 
 .product-seller-profile-photo{
   display: flex;
@@ -72,7 +75,6 @@ p.center {
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  margin: 5px;
 }
 
 .product-photo{

@@ -20,15 +20,15 @@
       </div>
 
         <app-container>
-        <form [formGroup]="profileForm" class="login-form">
+        <form [formGroup]="profileForm" class="default-form">
           <h1 class="form-title">Login</h1>
           <label for="first-name"></label>
-          <input class="default-text" type="text" formControlName="firstName" placeholder="First Name *" />
+          <input class="default-text default-input" type="text" formControlName="firstName" placeholder="First Name *" />
           <label for="last-name"></label>
-          <input class="default-text" type="text" formControlName="lastName" placeholder="Last Name" />
+          <input class="default-text default-input" type="text" formControlName="lastName" placeholder="Last Name" />
           <label for="last-name"></label>
-          <input class="default-text" type="text" formControlName="discordUsername" placeholder="Discord Username *" />
-          <input type="submit" value="Submit" class=" default-button primary">
+          <input class="default-text default-input" type="text" formControlName="discordUsername" placeholder="Discord Username *" />
+          <input type="submit" value="Submit" class=" button-large primary default-text">
         </form>
       </app-container>
     </div>

@@ -1,44 +1,38 @@
 <div class="service-page">
-  <h1 class="huge-title-dynamic center">Services</h1>
-  <p class="default-text center-text">Created for you; Powered by you. Find what you're looking for, today.</p>
+  <h1 class="huge-title-dynamic center-text">Services</h1>
+  <p class="center-text">Created for you; Powered by you. Find what you're looking for, today.</p>
 
   <div class="card-container">
 
-    <div (click)="toggleBuy()" class="container-content" [class.background]="buyButtonClicked()">
-      <p class="large-text center">Buy</p>
-    </div>
+    <label for="buy-button"></label>
+    <input (click)="toggleBuy()" type="button" class="container-content large-text" [class.background]="buyButtonClicked()" value="Buy">
 
     <div (click)="toggleSell()" class="container-content" [class.background]="sellButtonClicked()">
-      <p class="large-text center">Sell</p>
-
-
-      <!-- SOMETHING LIKE THE BELOW IS NECESSARY TO USE - IT AUTO UNSUBSCRIBES FROM OBSERVABLES
-      <div *ngIf="data$ | async as data">
-        {{ data.name }}
-      </div>
-      -->
+      <p class="large-text center-text">Sell</p>
     </div>
 
     <div (click)="toggleRequest()" class="container-content" [class.background]="requestButtonClicked()">
-      <p class="large-text center">Request</p>
+      <p class="large-text center-text">Request</p>
     </div>
   </div>
+
+
   @if(buyButtonClicked()){
-    <p class="sub-text center brand-color-yellow fade-in-transition-slow">Get your hands on some previously loved equipment</p>
+    <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Get your hands on some previously loved equipment</p>
 
   <div class="grid-display">
     @if (product().length > 0){
 
     @for (products of product(); track products.productName){
-    <div class="product-container fade-in-transition-fast">
-      <app-product-card class="mobile-width">
+    <div class="product-container fade-in-transition-fast" (click)="toggleMessageSellerModal()">
+      <app-product-card>
           <!--insert-photo-here-->
       </app-product-card>
       <div class="product-information-flexbox-container-parent">
         <div class="product-information">
-          <div class="product-seller-location sub-text brand-color-grey">{{products.productSellerLocation}}</div>
-          <div class="product-price default-text">{{products.productPrice}}</div>
-          <div class="product-name default-text">{{products.productName}}</div>
+          <div class="sub-text brand-color-grey">{{products.productSellerLocation}}</div>
+          <div class="small-text">{{products.productPrice}}</div>
+          <div class="small-text">{{products.productName}}</div>
         </div>
         <div class="product-seller-profile-photo">
           <img class="profile-photo" [src]="products.productSellerProfilePhoto">
@@ -50,13 +44,15 @@
   </div>
   }
 
-  <div></div>
+  @if(messageSellerClicked()){
+    <app-modal-for-buying></app-modal-for-buying>
+  }
 
   @if(sellButtonClicked()){
-    <p class="sub-text center brand-color-yellow fade-in-transition-slow">Make some cash for new shiny toys</p>
+    <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Make some cash for new shiny toys</p>
   }
 
   @if(requestButtonClicked()){
-    <p class="sub-text center brand-color-yellow fade-in-transition-slow">Not seeing what you want? Let the community hear your needs!</p>
+    <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Not seeing what you want? Let the community hear your needs!</p>
   }
 </div>
