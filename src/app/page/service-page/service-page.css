@@ -30,6 +30,7 @@
 .product-information-flexbox-container-parent{
   display: flex;
   justify-content: space-between;
+  gap: 16px;
 
 
 
@@ -65,10 +66,6 @@
 .product-container:hover{
   box-shadow: rgb(255, 255, 255) 0px 0px 5px;
 }
-
-
-
-
 
 @media screen and (min-width: 900px) and (max-width: 1000px) {
 

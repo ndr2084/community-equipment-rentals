@@ -8,6 +8,13 @@
   --default-border-radius-for-navigation: 100px;
   --default-font-size: 16px;
   --default-font-size-for-navigation: 1.5vw;
+  --default-padding: 12px;
+  --disabled-screen-tint: rgba(0, 0, 0, 0.739);
+  --default-line-height: 2em;
+  --default-form-width: 300px;
+  --default-button-gap: 16px;
+  --default-form-padding: 32px;
+  --default-form-gap: 32px;
   --heavy-font-weight: 700;
   --heavier-font-weight: 800;
   --heaviest-font-weight: 900;
@@ -19,15 +26,10 @@
   --small-font-size: 0.8rem;
   --large-font-size: 1.2rem;
   --huge-font-size: 2rem;
-  --default-line-height: 2em;
-  --default-form-width: 300px;
   --large-button-width: 300px;
   --medium-button-width: 150px;
   --small-button-width: 75px;
-  --default-form-padding: 32px;
-  --default-form-gap: 32px;
   --z-index-modal: 1000;
-  --disabled-screen-tint: rgba(0, 0, 0, 0.739);
 
   background-color: var(--default-background-color);
   color: var(--default-font-color);
@@ -125,18 +127,18 @@ button {
 /*Primary button begins*/
 
 .primary {
+  transition: all 0.12s ease;
   border: none;
   background-color: rgb(15, 32, 128);
-  transition: all 0.12s ease;
   border: 1px solid rgba(128, 128, 128, 0.322);
 }
 
 .primary:hover {
-  border: 1px solid rgba(128, 128, 128, 0.879);
+  border: 1px solid rgba(128, 128, 128, 0.628);
 }
 
 .primary:active {
-  border: 1px solid rgba(225, 226, 231, 0.726);
+  border: 1px solid rgba(225, 226, 231, 0.401);
   background-color: rgb(8, 18, 75);
 }
 
@@ -169,14 +171,18 @@ button {
 /*Danger button begins*/
 
 .danger{
-  background: rgba(255, 60, 0, 0.461) ;
-  border: 1px solid rgb(94, 97, 105);
-}
-
-.danger:active{
+  transition: all 0.12s ease;
+  background: rgba(255, 60, 0, 0.442) ;
+  border: 1px solid rgba(94, 97, 105, 0.22);
 }
 
 .danger:hover{
+ border: 1px solid rgba(128, 128, 128, 0.612);
+}
+
+.danger:active{
+  border: 1px solid rgba(225, 226, 231, 0.533);
+  background-color: rgb(80, 17, 2);
 }
 
 /*Danger button ends*/
@@ -226,25 +232,24 @@ button {
   font-size: var(--default-font-size);
   font-weight: 500;
   line-height: var(--default-line-height);
-  padding: var(--default-padding);
+
 }
 
 .large-text {
   font-size: var(--large-font-size);
   font-weight: 500;
   line-height: var(--default-line-height);
-  padding: var(--default-padding);
   color: white;
 }
 
 .small-text {
   font-size: var(--small-font-size);
-  padding: var(--default-padding);
+
 }
 
 .sub-text {
   font-size: var(--small-font-size);
-  padding: var(--default-padding);
+
 }
 
 .brand-color-grey {
@@ -303,11 +308,11 @@ button {
 .default-text-area {
   background: none;
   color: white;
-  padding: var(--default-padding);
   line-height: var(--default-line-height);
   border-radius: var(--default-border-radius-for-media);
   width: 300px;
   height: 150px;
+  padding: var(--default-padding);
 }
 
 /*FORM STYLING ENDS*/
