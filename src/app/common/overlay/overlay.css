@@ -1,0 +1,10 @@
+.overlay{
+  position: fixed; /* positioning in center of page */
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%,-50%);
+  height: 100%; /* size */
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.739); /* background color */
+  z-index: 10001;
+}

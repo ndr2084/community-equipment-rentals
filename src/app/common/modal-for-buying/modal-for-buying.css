@@ -1,4 +1,4 @@
-.z-index-1{
+.modal{
   position: fixed;
   top: 50%;
   left: 50%;
@@ -8,3 +8,10 @@
   background: black;
   overflow: scroll;
 }
+
+.title-and-exit-button-flex-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+

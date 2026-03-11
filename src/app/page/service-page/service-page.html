@@ -1,58 +1,61 @@
 <div class="service-page">
-  <h1 class="huge-title-dynamic center-text">Services</h1>
-  <p class="center-text">Created for you; Powered by you. Find what you're looking for, today.</p>
+  <div class="blackout-screen">
+    <h1 class="huge-title-dynamic center-text">Services</h1>
+    <p class="center-text">Created for you; Powered by you. Find what you're looking for, today.</p>
 
-  <div class="card-container">
+    <div class="card-container">
 
-    <label for="buy-button"></label>
-    <input (click)="toggleBuy()" type="button" class="container-content large-text" [class.background]="buyButtonClicked()" value="Buy">
+      <label for="buy-button"></label>
+      <input (click)="toggleBuy()" type="button" class=" button button-medium secondary large-text"
+        [class.secondary-change-background-on-click]="buyButtonClicked()" value="Buy">
 
-    <div (click)="toggleSell()" class="container-content" [class.background]="sellButtonClicked()">
-      <p class="large-text center-text">Sell</p>
+      <label for="sell-button"></label>
+      <input (click)="toggleSell()" type="button" class=" button button-medium secondary large-text" [class.secondary-change-background-on-click]="sellButtonClicked()" value="Sell">
+
+      <label for="request-button"></label>
+      <input (click)="toggleRequest()" type="button" class=" button button-medium secondary large-text" [class.secondary-change-background-on-click]="requestButtonClicked()" value="Request">
     </div>
 
-    <div (click)="toggleRequest()" class="container-content" [class.background]="requestButtonClicked()">
-      <p class="large-text center-text">Request</p>
-    </div>
-  </div>
 
+    @if(buyButtonClicked()){
+    <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Get your hands on some previously loved
+      equipment</p>
 
-  @if(buyButtonClicked()){
-    <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Get your hands on some previously loved equipment</p>
+    <div class="grid-display">
+      @if (product().length > 0){
 
-  <div class="grid-display">
-    @if (product().length > 0){
-
-    @for (products of product(); track products.productName){
-    <div class="product-container fade-in-transition-fast" (click)="toggleMessageSellerModal()">
-      <app-product-card>
+      @for (products of product(); track products.productName){
+      <div class="product-container fade-in-transition-fast" (click)="toggleMessageSellerModal()">
+        <app-product-card>
           <!--insert-photo-here-->
-      </app-product-card>
-      <div class="product-information-flexbox-container-parent">
-        <div class="product-information">
-          <div class="sub-text brand-color-grey">{{products.productSellerLocation}}</div>
-          <div class="small-text">{{products.productPrice}}</div>
-          <div class="small-text">{{products.productName}}</div>
-        </div>
-        <div class="product-seller-profile-photo">
-          <img class="profile-photo" [src]="products.productSellerProfilePhoto">
+        </app-product-card>
+        <div class="product-information-flexbox-container-parent">
+          <div class="product-information">
+            <div class="sub-text brand-color-grey">{{products.productSellerLocation}}</div>
+            <div class="small-text">{{products.productPrice}}</div>
+            <div class="small-text">{{products.productName}}</div>
+          </div>
+          <div class="product-seller-profile-photo">
+            <img class="profile-photo" [src]="products.productSellerProfilePhoto">
+          </div>
         </div>
       </div>
+      }
+      }
     </div>
     }
+
+    @if(messageSellerClicked()){
+    <app-modal-for-buying></app-modal-for-buying>
+    }
+
+    @if(sellButtonClicked()){
+    <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Make some cash for new shiny toys</p>
+    }
+
+    @if(requestButtonClicked()){
+    <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Not seeing what you want? Let the
+      community hear your needs!</p>
     }
   </div>
-  }
-
-  @if(messageSellerClicked()){
-    <app-modal-for-buying></app-modal-for-buying>
-  }
-
-  @if(sellButtonClicked()){
-    <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Make some cash for new shiny toys</p>
-  }
-
-  @if(requestButtonClicked()){
-    <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Not seeing what you want? Let the community hear your needs!</p>
-  }
 </div>
