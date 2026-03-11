@@ -23,9 +23,11 @@
   --default-form-width: 300px;
   --large-button-width: 300px;
   --medium-button-width: 150px;
+  --small-button-width: 75px;
   --default-form-padding: 32px;
   --default-form-gap: 32px;
   --z-index-modal: 1000;
+  --disabled-screen-tint: rgba(0, 0, 0, 0.739);
 
   background-color: var(--default-background-color);
   color: var(--default-font-color);
@@ -105,6 +107,7 @@ button {
 .button {
   border-radius: var(--default-border-radius-for-media);
   color: var(--default-font-color);
+  cursor: pointer;
 }
 
 .button-medium {
@@ -115,11 +118,14 @@ button {
   width: var(--large-button-width);
 }
 
+.button-small{
+  width: var(--small-button-width);
+}
+
 /*Primary button begins*/
 
 .primary {
   border: none;
-  cursor: pointer;
   background-color: rgb(15, 32, 128);
   transition: all 0.12s ease;
   border: 1px solid rgba(128, 128, 128, 0.322);
@@ -159,6 +165,21 @@ button {
 }
 
 /*Secondary button ends*/
+
+/*Danger button begins*/
+
+.danger{
+  background: rgba(255, 60, 0, 0.461) ;
+  border: 1px solid rgb(94, 97, 105);
+}
+
+.danger:active{
+}
+
+.danger:hover{
+}
+
+/*Danger button ends*/
 
 /*Button animations begin*/
 

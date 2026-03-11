@@ -1,10 +1,8 @@
 <app-overlay>
   <app-container class="modal">
     <form [formGroup]="formForBuying" (ngSubmit)="onSubmit()" class="default-form">
-      <div class="title-and-exit-button-flex-container">
+
       <h1 class="form-title">Message Seller</h1>
-      <input type="button" value="X">
-      </div>
       <label for="first-name"></label>
       <input class="default-text default-input" id="first-name" type="text" formControlName="firstName"
         placeholder="First Name *" />
@@ -20,7 +18,12 @@
       <label for="message-body"></label>
       <textarea class="default-text-area" id="message-body" formControlName="messageBody"
         placeholder="Enter message..."></textarea>
-      <input type="submit" value="Submit" class="button-large primary default-text" [disabled]="!formForBuying.valid">
+      <div class="button-group">
+        <input type="button" value="Close" class="button button-small danger default-text">
+        <input type="submit" value="Send message" class="button button-medium primary default-text"
+          [disabled]="!formForBuying.valid">
+
+      </div>
     </form>
   </app-container>
 </app-overlay>

@@ -9,9 +9,10 @@
   overflow: scroll;
 }
 
-.title-and-exit-button-flex-container{
+.button-group{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 16px;
 }
 
