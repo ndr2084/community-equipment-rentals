@@ -22,7 +22,7 @@
   --light-font-weight: 300;
   --lighter-font-weight: 200;
   --lightest-font-weight: 100;
-  --tiny-font-size: 0.5rem;
+  --tiny-font-size: 0.6rem;
   --small-font-size: 0.8rem;
   --large-font-size: 1.2rem;
   --huge-font-size: 2rem;
@@ -212,6 +212,7 @@ button {
 /*GLOBAL BUTTON LOGIC ENDS*/
 
 /*GLOBAL TYPOGRAPHY BEGINS*/
+
 .huge-title-dynamic {
   font-size: clamp(1.4rem, 3vw, 2.5rem);
   padding: clamp(0.2rem, 0.5vw, 1.2rem);
@@ -226,6 +227,11 @@ button {
 
 .center-text {
   text-align: center;
+}
+
+.tiny-text{
+  font-size: var(--tiny-font-size);
+  padding: var(--default-padding);
 }
 
 .default-text {

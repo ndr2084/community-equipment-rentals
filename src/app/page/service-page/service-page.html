@@ -46,7 +46,7 @@
     }
 
     @if(messageSellerClicked()){
-    <app-modal-for-buying></app-modal-for-buying>
+    <app-modal-for-buying (discard)="toggleMessageSellerModal()"></app-modal-for-buying>
     }
 
     @if(sellButtonClicked()){

@@ -18,12 +18,33 @@
       <label for="message-body"></label>
       <textarea class="default-text-area" id="message-body" formControlName="messageBody"
         placeholder="Enter message..."></textarea>
+
+
+
+      @if(!closeButtonClicked()) {
       <div class="button-group">
-        <input type="button" value="Close" class="button button-small danger default-text">
+        <input (click)="toggleClose()" type="button" value="Close" class="button button-small danger default-text">
         <input type="submit" value="Send message" class="button button-medium primary default-text"
           [disabled]="!formForBuying.valid">
-
       </div>
+      }
+
+      @if(closeButtonClicked()){
+      <app-warning-popup>
+        <p class="tiny-text">Warning: You have an unsent message. Are you sure you want to discard it?</p>
+      </app-warning-popup>
+      <div class="button-group">
+        <input type="button" value="Continue editing" class="button button-medium danger default-text">
+        <input (click)="onClose()" type="submit" value="Discard" class="button button-small primary default-text">
+      </div>
+      }
+
+      @if(discardButtonClicked()){
+
+      }
+
+
+
     </form>
   </app-container>
 </app-overlay>

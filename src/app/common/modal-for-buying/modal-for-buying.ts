@@ -1,17 +1,33 @@
-import { Component, signal, WritableSignal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, signal, WritableSignal, ChangeDetectionStrategy, output } from '@angular/core';
 import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { Container } from "../container/container";
 import { Overlay } from "../overlay/overlay";
+import { WarningPopup } from "../warning-popup/warning-popup";
 @Component({
   selector: 'app-modal-for-buying',
-  imports: [ReactiveFormsModule, Container, Overlay],
+  imports: [ReactiveFormsModule, Container, Overlay, WarningPopup],
   templateUrl: './modal-for-buying.html',
   styleUrl: './modal-for-buying.css',
 })
 export class ModalForBuying {
-onSubmit() {
-  console.warn(this.formForBuying.value);
-}
+
+  closeButtonClicked = signal(false);
+  discardButtonClicked = signal(false);
+
+  discard = output<void>();
+
+  toggleClose() {
+      this.closeButtonClicked.update((closeButtonClicked) => !closeButtonClicked);
+  }
+
+  onClose(){
+    this.discard.emit();
+  }
+
+
+  onSubmit() {
+    console.warn(this.formForBuying.value);
+  }
 
   formForBuying = new FormGroup({
     firstName: new FormControl(''),
@@ -20,7 +36,4 @@ onSubmit() {
     subjectOfMessage: new FormControl(''),
     messageBody: new FormControl(''),
   });
-
 }
-
-

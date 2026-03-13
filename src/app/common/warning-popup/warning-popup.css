@@ -1,0 +1,6 @@
+.warning-popup{
+  border-radius: var(--default-border-radius-for-media);
+  background-color: rgb(109, 67, 67);
+  max-width: var(--default-form-width);
+  border: 1px solid rgba(121, 9, 9, 0.636);
+}

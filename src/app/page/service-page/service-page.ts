@@ -74,9 +74,10 @@ export class ServicePage implements OnInit {
     this.requestButtonClicked.update((requestButtonClicked) => !requestButtonClicked)
   }
 
-  /*toggles the modal on and off from view*/
   toggleMessageSellerModal() {
     this.messageSellerClicked.update((messageSellerClicked) => !messageSellerClicked)
   }
+
+
 }
 
