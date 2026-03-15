@@ -286,6 +286,23 @@ button {
   }
 }
 
+.illuminate-border-transition:hover{
+  animation: illuminateBorder 0.2s ease-in-out forwards;
+}
+
+@keyframes illuminateBorder{
+  0%{
+    box-shadow: rgb(255, 255, 255) 0px 0px 1px;
+  }
+
+  50%{
+    box-shadow: rgb(255, 255, 255) 0px 0px 3px;
+  }
+  100%{
+    box-shadow: rgb(255, 255, 255) 0px 0px 5px;
+  }
+}
+
 /*General Animations End*/
 
 
@@ -322,3 +339,24 @@ button {
 }
 
 /*FORM STYLING ENDS*/
+
+/*MODAL STYLING BEGINS*/
+.modal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: var(--z-index-modal);
+  max-height: 100%;
+  background: black;
+  overflow: scroll;
+  border-radius: var(--default-border-radius-for-media);
+}
+
+.button-group{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: var(--default-button-gap);
+}
+/*MODAL STYLING ENDS*/

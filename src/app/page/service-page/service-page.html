@@ -10,13 +10,20 @@
         [class.secondary-change-background-on-click]="buyButtonClicked()" value="Buy">
 
       <label for="sell-button"></label>
-      <input (click)="toggleSell()" type="button" class=" button button-medium secondary large-text" [class.secondary-change-background-on-click]="sellButtonClicked()" value="Sell">
+      <input (click)="toggleSell()" type="button" class=" button button-medium secondary large-text"
+        [class.secondary-change-background-on-click]="sellButtonClicked()" value="Sell">
+
+      <label for="rent-button"></label>
+      <input (click)="toggleRental()" type="button" class=" button button-medium secondary large-text"
+        [class.secondary-change-background-on-click]="rentalButtonClicked()" value="Rentals">
 
       <label for="request-button"></label>
-      <input (click)="toggleRequest()" type="button" class=" button button-medium secondary large-text" [class.secondary-change-background-on-click]="requestButtonClicked()" value="Request">
+      <input (click)="toggleRequest()" type="button" class=" button button-medium secondary large-text"
+        [class.secondary-change-background-on-click]="requestButtonClicked()" value="Request">
+
     </div>
 
-
+    <!-- BUY BUTTON AND ASSOCIATED COMPONENTS BEGINS -->
     @if(buyButtonClicked()){
     <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Get your hands on some previously loved
       equipment</p>
@@ -48,10 +55,22 @@
     @if(messageSellerClicked()){
     <app-modal-for-buying (discard)="toggleMessageSellerModal()"></app-modal-for-buying>
     }
+    <!-- BUY BUTTON AND ASSOCIATED COMPONENTS ENDS -->
 
     @if(sellButtonClicked()){
     <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Make some cash for new shiny toys</p>
+    <div class="form-flex-container">
+      <app-form-for-selling (discard)="toggleSellItemModal()">
+      </app-form-for-selling>
+    </div>
     }
+
+    @if(rentalButtonClicked()){
+      <app-product-card>
+        <p class="illuminate-border-transition">deez Nuts!</p>
+      </app-product-card>
+    }
+
 
     @if(requestButtonClicked()){
     <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Not seeing what you want? Let the

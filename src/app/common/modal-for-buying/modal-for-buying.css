@@ -1,19 +1,2 @@
-.modal{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: var(--z-index-modal);
-  max-height: 100%;
-  background: black;
-  overflow: scroll;
-  border-radius: var(--default-border-radius-for-media);
-}
 
-.button-group{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  gap: var(--default-button-gap);
-}
 

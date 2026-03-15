@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './product-card.html',
   styleUrl: './product-card.css',
+  host: {'class': 'illuminate-border-transition'}
 })
 export class ProductCard {
 

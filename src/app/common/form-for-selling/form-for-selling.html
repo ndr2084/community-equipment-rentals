@@ -1,0 +1,38 @@
+<app-container>
+    <form [formGroup]="formForSelling" (ngSubmit)="onSubmit()" class="default-form">
+
+      <h1 class="form-title">Item for sale</h1>
+      <label for="product-name"></label>
+      <input class="default-text default-input" id="product-name" type="text" formControlName="productName"
+        placeholder="Product name *" />
+
+      <label for="product-price"></label>
+      <input class="default-text default-input" id="product-price" type="text" formControlName="productPrice"
+        placeholder="Product price*" />
+
+      <label for="product-location"></label>
+      <input class="default-text default-input" id="subject-of-message" type="text" formControlName="productLocation"
+        placeholder="City you're selling from" />
+
+      <label for="product-info"></label>
+      <textarea class="default-text-area" id="message-body" formControlName="productInfo"
+        placeholder="Ex: Hardly used, well taken care of. Pick up ASAP"></textarea>
+
+      @if(closeButtonClicked()) {
+      <div class="button-group">
+        <input (click)="toggleClose()" type="button" value="Close" class="button button-small danger default-text">
+        <input type="button" value="Send message" class="button button-medium primary default-text">
+      </div>
+      }
+
+      @if(!closeButtonClicked()){
+      <app-warning-popup>
+        <p class="tiny-text">Warning: You have an unsent message. Are you sure you want to discard it?</p>
+      </app-warning-popup>
+      <div class="button-group">
+        <input (click)="toggleClose()" type="button" value="Continue editing" class="button button-medium danger default-text">
+        <input (click)="onClose()" type="button" value="Discard" class="button button-small primary default-text">
+      </div>
+      }
+    </form>
+  </app-container>

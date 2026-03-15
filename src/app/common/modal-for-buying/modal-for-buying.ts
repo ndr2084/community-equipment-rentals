@@ -10,9 +10,21 @@ import { WarningPopup } from "../warning-popup/warning-popup";
   styleUrl: './modal-for-buying.css',
 })
 export class ModalForBuying {
+  formForBuying = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    isInSameCity: new FormControl(''),
+    subjectOfMessage: new FormControl(''),
+    messageBody: new FormControl(''),
+  });
 
   closeButtonClicked = signal(false);
-  discardButtonClicked = signal(false);
+  //discardButtonClicked = signal(false);
+
+  /*you gotta do something diff with this man*/
+  onSubmit() {
+    console.warn(this.formForBuying.value);
+  }
 
   discard = output<void>();
 
@@ -25,15 +37,4 @@ export class ModalForBuying {
   }
 
 
-  onSubmit() {
-    console.warn(this.formForBuying.value);
-  }
-
-  formForBuying = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    isInSameCity: new FormControl(''),
-    subjectOfMessage: new FormControl(''),
-    messageBody: new FormControl(''),
-  });
 }

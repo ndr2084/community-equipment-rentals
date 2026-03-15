@@ -31,9 +31,6 @@
   display: flex;
   justify-content: space-between;
   gap: 16px;
-
-
-
 }
 
 .product-seller-profile-photo{
@@ -67,6 +64,14 @@
   box-shadow: rgb(255, 255, 255) 0px 0px 5px;
 }
 
+.form-flex-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
 @media screen and (min-width: 900px) and (max-width: 1000px) {
 
   .service-page {
@@ -84,7 +89,6 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 @media screen and (min-width: 600px) and (max-width: 900px) {
   .card-container {
     flex-direction: row;

@@ -5,14 +5,18 @@ import { ProductInterface } from '../../interface/product-interface';
 import { Container } from "../../common/container/container";
 import { ProductCard } from "../../common/product-card/product-card";
 import { ModalForBuying } from "../../common/modal-for-buying/modal-for-buying";
+import { FormForSelling } from "../../common/form-for-selling/form-for-selling";
 
 @Component({
   selector: 'app-service-page',
-  imports: [ProductCard, ModalForBuying],
+  imports: [ProductCard, ModalForBuying, FormForSelling],
   templateUrl: './service-page.html',
   styleUrl: './service-page.css',
 })
 export class ServicePage implements OnInit {
+toggleRent() {
+throw new Error('Method not implemented.');
+}
 
 
 
@@ -35,6 +39,7 @@ export class ServicePage implements OnInit {
   sellButtonClicked = signal(false);
   requestButtonClicked = signal(false);
   messageSellerClicked = signal(false);
+  rentalButtonClicked = signal(false);
   /*only show one and only one of the 3 options at any time (buy, sell, request*/
 
   toggleBuy() {
@@ -47,7 +52,15 @@ export class ServicePage implements OnInit {
       this.requestButtonClicked.update((requestButtonClicked) => !requestButtonClicked)
     }
 
+    if (this.rentalButtonClicked()){
+      this.rentalButtonClicked.update((rentalButtonClicked) => !rentalButtonClicked);
+    }
+
     this.buyButtonClicked.update((buyButtonClicked) => !buyButtonClicked)
+  }
+
+  toggleMessageSellerModal() {
+    this.messageSellerClicked.update((messageSellerClicked) => !messageSellerClicked)
   }
 
   toggleSell() {
@@ -59,7 +72,15 @@ export class ServicePage implements OnInit {
       this.requestButtonClicked.update((requestButtonClicked) => !requestButtonClicked)
     }
 
+    if (this.rentalButtonClicked()){
+      this.rentalButtonClicked.update((rentalButtonClicked) => !rentalButtonClicked);
+    }
+
     this.sellButtonClicked.update((sellButtonClicked) => !sellButtonClicked)
+  }
+
+  toggleSellItemModal(){
+    this.sellButtonClicked.update((sellButtonClicked) => !sellButtonClicked);
   }
 
   toggleRequest() {
@@ -71,12 +92,32 @@ export class ServicePage implements OnInit {
       this.buyButtonClicked.update((buyButtonClicked) => !buyButtonClicked)
     }
 
+    if (this.rentalButtonClicked()){
+      this.rentalButtonClicked.update((rentalButtonClicked) => !rentalButtonClicked);
+    }
+
     this.requestButtonClicked.update((requestButtonClicked) => !requestButtonClicked)
   }
 
-  toggleMessageSellerModal() {
-    this.messageSellerClicked.update((messageSellerClicked) => !messageSellerClicked)
+  toggleRental(){
+
+    if (this.sellButtonClicked()) {
+      this.sellButtonClicked.update((sellButtonClicked) => !sellButtonClicked)
+    }
+
+    if (this.requestButtonClicked()) {
+      this.requestButtonClicked.update((requestButtonClicked) => !requestButtonClicked)
+    }
+    if (this.buyButtonClicked()){
+      this.buyButtonClicked.update((buyButtonClicked) => !buyButtonClicked)
+    }
+    this.rentalButtonClicked.update((rentalButtonClicked) => !rentalButtonClicked);
   }
+
+
+
+
+
 
 
 }
