@@ -1,6 +1,13 @@
-.info-flexbox{
+.info-flexbox {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  width: fit-content;
+  width: clamp(250px, calc(234.52px + 6.192vw), 350px);
+  padding: 8px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  .info-flexbox {
+    width: 340px;
+  }
 }

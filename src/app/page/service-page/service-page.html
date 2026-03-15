@@ -3,7 +3,7 @@
     <h1 class="huge-title-dynamic center-text">Services</h1>
     <p class="center-text">Created for you; Powered by you. Find what you're looking for, today.</p>
 
-    <div class="card-container">
+    <div class="button-container">
 
       <label for="buy-button"></label>
       <input (click)="toggleBuy()" type="button" class=" button button-medium secondary large-text"
@@ -28,11 +28,11 @@
     <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Get your hands on some previously loved
       equipment</p>
 
-    <div class="grid-display">
+    <div class="grid-image-gallery">
       @if (product().length > 0){
 
       @for (products of product(); track products.productName){
-      <app-card (click)="toggleMessageSellerModal()">
+      <app-card (click)="toggleMessageSellerModal()" class="illuminate-border-transition">
         <app-photo-for-card>
           <!--insert-photo-here-->
         </app-photo-for-card>
@@ -66,9 +66,23 @@
     }
 
     @if(rentalButtonClicked()){
-    <app-photo-for-card>
-      <p class="illuminate-border-transition">deez Nuts!</p>
-    </app-photo-for-card>
+    <div class="card-flex-container">
+      <app-card>
+        <app-photo-for-card>
+        </app-photo-for-card>
+          <app-info-for-card>
+            <p>Rent from a community member</p>
+          </app-info-for-card>
+      </app-card>
+
+      <app-card>
+        <app-photo-for-card>
+        </app-photo-for-card>
+        <app-info-for-card>
+            <p>Let others rent your equipment and shit yourself for a small fee!</p>
+          </app-info-for-card>
+      </app-card>
+    </div>
     }
 
 

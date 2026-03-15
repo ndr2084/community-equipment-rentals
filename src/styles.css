@@ -15,6 +15,9 @@
   --default-button-gap: 16px;
   --default-form-padding: 32px;
   --default-form-gap: 32px;
+  --column-gap-desktop: 16px;
+  --column-gap-mobile: 10px;
+  --row-gap-mobile: 10px;
   --heavy-font-weight: 700;
   --heavier-font-weight: 800;
   --heaviest-font-weight: 900;

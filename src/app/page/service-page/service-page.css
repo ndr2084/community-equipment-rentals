@@ -5,7 +5,7 @@
   overflow: scroll;
 }
 
-.card-container {
+.button-container {
   margin: 1em;
   display: flex;
   flex-direction: row;
@@ -14,15 +14,13 @@
   gap: 12px;
 }
 
-
-
-.grid-display{
+.grid-image-gallery{
   display: grid;
   max-width: fit-content;
   padding: auto;
   margin: 0 auto;
   align-items: center;
-  column-gap: 20px;
+  column-gap: var(--column-gap-desktop);
   grid-auto-rows: 450px;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -43,7 +41,6 @@
   width: 450px;
   height: 150px;
 }
-
 
 .product-container{
   display: flex;
@@ -67,19 +64,37 @@
   align-items: center;
 }
 
+.card-flex-container{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+@media screen and (min-width: 1350px){
+
+  .grid-image-gallery{
+    display: grid;
+    max-width: fit-content;
+    align-items: center;
+    column-gap: var(--column-gap-desktop);
+    grid-auto-rows: 450px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 @media screen and (min-width: 900px) and (max-width: 1000px) {
 
   .service-page {
     overflow: scroll;
   }
 
-  .grid-display{
+  .grid-image-gallery{
     display: grid;
     max-width: fit-content;
     padding: auto;
     margin: 0 auto;
     align-items: center;
-    column-gap: 10px;
+    column-gap: var(--column-gap-mobile);
     grid-auto-rows: 400px;
     grid-template-columns: repeat(3, 1fr);
   }
@@ -93,12 +108,12 @@
     overflow: scroll;
   }
 
-  .grid-display{
+  .grid-image-gallery{
     display: grid;
     max-width: fit-content;
     padding: auto;
     margin: 0 auto;
-    column-gap: 10px;
+    column-gap: var(--column-gap-mobile);
     grid-auto-rows: 390px;
     align-items: center;
     grid-template-columns: repeat(2, 1fr);
@@ -107,39 +122,13 @@
 
 @media screen and (min-width: 0px) and (max-width: 600px) {
 
-
-  .service-page {
-    overflow: scroll;
-  }
-
-  .grid-display{
+  .grid-image-gallery{
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    max-width: fit-content;
-    grid-auto-rows: 350px;
-    align-items: center;
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .product-container{
-    width: 340px;
-  }
-
-  .product-information-flexbox-container-parent{
-    width: 90%;
-
-  }
-}
-
-@media screen and (min-width: 1350px){
-
-  .grid-display{
-    display: grid;
+    gap: var(--row-gap-mobile);
     max-width: fit-content;
     align-items: center;
-    column-gap: 20px;
-    grid-auto-rows: 450px;
-    grid-template-columns: repeat(4, 1fr);
   }
+
 }
+
