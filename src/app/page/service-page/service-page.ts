@@ -3,13 +3,15 @@ import { ProductService } from '../../service/product-service';
 import { Subscription } from 'rxjs';
 import { ProductInterface } from '../../interface/product-interface';
 import { Container } from "../../common/container/container";
-import { ProductCard } from "../../common/product-card/product-card";
+import { PhotoForCard } from "../../common/photo-for-card/photo-for-card";
 import { ModalForBuying } from "../../common/modal-for-buying/modal-for-buying";
 import { FormForSelling } from "../../common/form-for-selling/form-for-selling";
+import { Card } from "../../common/card/card";
+import { InfoForCard } from "../../common/info-for-card/info-for-card";
 
 @Component({
   selector: 'app-service-page',
-  imports: [ProductCard, ModalForBuying, FormForSelling],
+  imports: [PhotoForCard, ModalForBuying, FormForSelling, Card, InfoForCard],
   templateUrl: './service-page.html',
   styleUrl: './service-page.css',
 })

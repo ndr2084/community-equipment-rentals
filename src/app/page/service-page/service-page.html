@@ -32,11 +32,11 @@
       @if (product().length > 0){
 
       @for (products of product(); track products.productName){
-      <div class="product-container fade-in-transition-fast" (click)="toggleMessageSellerModal()">
-        <app-product-card>
+      <app-card (click)="toggleMessageSellerModal()">
+        <app-photo-for-card>
           <!--insert-photo-here-->
-        </app-product-card>
-        <div class="product-information-flexbox-container-parent">
+        </app-photo-for-card>
+        <app-info-for-card>
           <div class="product-information">
             <div class="sub-text brand-color-grey">{{products.productSellerLocation}}</div>
             <div class="small-text">{{products.productPrice}}</div>
@@ -45,8 +45,8 @@
           <div class="product-seller-profile-photo">
             <img class="profile-photo" [src]="products.productSellerProfilePhoto">
           </div>
-        </div>
-      </div>
+        </app-info-for-card>
+      </app-card>
       }
       }
     </div>
@@ -66,9 +66,9 @@
     }
 
     @if(rentalButtonClicked()){
-      <app-product-card>
-        <p class="illuminate-border-transition">deez Nuts!</p>
-      </app-product-card>
+    <app-photo-for-card>
+      <p class="illuminate-border-transition">deez Nuts!</p>
+    </app-photo-for-card>
     }
 
 

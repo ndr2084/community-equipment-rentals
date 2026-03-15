@@ -287,6 +287,7 @@ button {
 }
 
 .illuminate-border-transition:hover{
+  border-radius: var(--default-border-radius-for-media);
   animation: illuminateBorder 0.2s ease-in-out forwards;
 }
 
