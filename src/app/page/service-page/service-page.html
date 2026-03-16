@@ -66,22 +66,26 @@
     }
 
     @if(rentalButtonClicked()){
-    <div class="card-flex-container">
-      <app-card>
-        <app-photo-for-card>
-        </app-photo-for-card>
-          <app-info-for-card>
-            <p>Rent from a community member</p>
-          </app-info-for-card>
-      </app-card>
+    <div class="hero-flex-container">
+      <div class="hero-business-photo">
+        <app-hero>
+          <div class="hero-content-box illuminate-border-transition">
+          <h1>Rental Program Initiative</h1>
+          <p>Become part of the business. Allow members to rent your equipment</p>
+          <label for="sell-button"></label>
+          <input type="button" class=" button button-medium secondary large-text" value="Get Started">
+        </div>
+        </app-hero>
+      </div>
 
-      <app-card>
-        <app-photo-for-card>
-        </app-photo-for-card>
-        <app-info-for-card>
-            <p>Let others rent your equipment and shit yourself for a small fee!</p>
-          </app-info-for-card>
-      </app-card>
+      <app-hero class="illuminate-border-transition">
+        <div class="hero-content-box">
+        <h1>Rent From a Member</h1>
+        <p>Find what you need for your next trip from a fellow community member.</p>
+        <label for="sell-button"></label>
+        <input type="button" class=" button button-medium secondary large-text" value="Browse Items">
+      </div>
+      </app-hero>
     </div>
     }
 

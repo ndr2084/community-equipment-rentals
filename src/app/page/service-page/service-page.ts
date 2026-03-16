@@ -8,10 +8,11 @@ import { ModalForBuying } from "../../common/modal-for-buying/modal-for-buying";
 import { FormForSelling } from "../../common/form-for-selling/form-for-selling";
 import { Card } from "../../common/card/card";
 import { InfoForCard } from "../../common/info-for-card/info-for-card";
+import { Hero } from "../../common/hero/hero";
 
 @Component({
   selector: 'app-service-page',
-  imports: [PhotoForCard, ModalForBuying, FormForSelling, Card, InfoForCard],
+  imports: [PhotoForCard, ModalForBuying, FormForSelling, Card, InfoForCard, Hero],
   templateUrl: './service-page.html',
   styleUrl: './service-page.css',
 })
