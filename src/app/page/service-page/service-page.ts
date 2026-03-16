@@ -43,6 +43,7 @@ throw new Error('Method not implemented.');
   requestButtonClicked = signal(false);
   messageSellerClicked = signal(false);
   rentalButtonClicked = signal(false);
+  browseItemsButtonClicked = signal(false);
   /*only show one and only one of the 3 options at any time (buy, sell, request*/
 
   toggleBuy() {
@@ -115,6 +116,10 @@ throw new Error('Method not implemented.');
       this.buyButtonClicked.update((buyButtonClicked) => !buyButtonClicked)
     }
     this.rentalButtonClicked.update((rentalButtonClicked) => !rentalButtonClicked);
+  }
+
+  toggleBrowseItems(){
+    this.browseItemsButtonClicked.update((browseItemsButtonClicked) => !browseItemsButtonClicked)
   }
 
 

@@ -69,26 +69,54 @@
     <div class="hero-flex-container">
       <div class="hero-business-photo">
         <app-hero>
-          <div class="hero-content-box illuminate-border-transition">
-          <h1>Rental Program Initiative</h1>
-          <p>Become part of the business. Allow members to rent your equipment</p>
-          <label for="sell-button"></label>
-          <input type="button" class=" button button-medium secondary large-text" value="Get Started">
-        </div>
+          <div class="hero-content-box">
+            <h1>Rental Program Initiative</h1>
+            <p>Become part of the business. Allow members to rent your equipment</p>
+            <label for="sell-button"></label>
+            <input type="button" class=" button button-medium secondary large-text" value="Get Started">
+          </div>
         </app-hero>
       </div>
-
-      <app-hero class="illuminate-border-transition">
-        <div class="hero-content-box">
-        <h1>Rent From a Member</h1>
-        <p>Find what you need for your next trip from a fellow community member.</p>
-        <label for="sell-button"></label>
-        <input type="button" class=" button button-medium secondary large-text" value="Browse Items">
+      <div class="hero-business-photo-1">
+        <app-hero class="illuminate-border-transition">
+          <div class="hero-content-box">
+            <h1>Rent From a Member</h1>
+            <p>Support your neighbours. Find what you need from your fellow community.</p>
+            <label for="sell-button"></label>
+            <input (click)="toggleBrowseItems()" type="button" class=" button button-medium secondary large-text" value="Browse Items">
+          </div>
+        </app-hero>
       </div>
-      </app-hero>
     </div>
-    }
+  }
+      @if(browseItemsButtonClicked()){
+        <div class="grid-image-gallery">
+          @if (product().length > 0){
 
+          @for (products of product(); track products.productName){
+          <app-card (click)="toggleMessageSellerModal()" class="illuminate-border-transition">
+            <app-photo-for-card>
+              <!--insert-photo-here-->
+            </app-photo-for-card>
+            <app-info-for-card>
+              <div class="product-information">
+                <div class="sub-text brand-color-grey">{{products.productSellerLocation}}</div>
+                <div class="small-text">{{products.productPrice}}</div>
+                <div class="small-text">{{products.productName}}</div>
+              </div>
+              <div class="product-seller-profile-photo">
+                <img class="profile-photo" [src]="products.productSellerProfilePhoto">
+              </div>
+            </app-info-for-card>
+          </app-card>
+          }
+          }
+        </div>
+        }
+
+        @if(messageSellerClicked()){
+        <app-modal-for-buying (discard)="toggleMessageSellerModal()"></app-modal-for-buying>
+        }
 
     @if(requestButtonClicked()){
     <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Not seeing what you want? Let the

@@ -81,7 +81,14 @@
 }
 
 .hero-business-photo{
-  background-image: url(./handshake-outdoors.png);
+  background-image: url(./hand-shake-new.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  border-radius: var(--default-border-radius-for-media);
+}
+.hero-business-photo-1{
+  background-image: url(./equipment-exchange.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -96,13 +103,9 @@
   align-items: center;
   padding: var(--default-form-padding);
   border-radius: var(--default-border-radius-for-media);
-
   gap: var(--default-form-gap);
-
   width: 350px;
   height: 400px;
-
-  border-bottom: 1px solid white;
 }
 
 
