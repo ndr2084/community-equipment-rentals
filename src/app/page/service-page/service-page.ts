@@ -9,10 +9,12 @@ import { FormForSelling } from "../../common/form-for-selling/form-for-selling";
 import { Card } from "../../common/card/card";
 import { InfoForCard } from "../../common/info-for-card/info-for-card";
 import { Hero } from "../../common/hero/hero";
+import { PhotoGalleryGrid } from '../../common/photo-gallery-grid/photo-gallery-grid';
+import { ModalForRentalProgram } from "../../common/modal-for-rental-program/modal-for-rental-program";
 
 @Component({
   selector: 'app-service-page',
-  imports: [PhotoForCard, ModalForBuying, FormForSelling, Card, InfoForCard, Hero],
+  imports: [PhotoForCard, ModalForBuying, FormForSelling, Card, InfoForCard, Hero, PhotoGalleryGrid, ModalForRentalProgram],
   templateUrl: './service-page.html',
   styleUrl: './service-page.css',
 })
@@ -44,6 +46,7 @@ throw new Error('Method not implemented.');
   messageSellerClicked = signal(false);
   rentalButtonClicked = signal(false);
   browseItemsButtonClicked = signal(false);
+  getStartedButtonClicked = signal(false);
   /*only show one and only one of the 3 options at any time (buy, sell, request*/
 
   toggleBuy() {
@@ -58,6 +61,10 @@ throw new Error('Method not implemented.');
 
     if (this.rentalButtonClicked()){
       this.rentalButtonClicked.update((rentalButtonClicked) => !rentalButtonClicked);
+    }
+
+    if (this.browseItemsButtonClicked()){
+      this.browseItemsButtonClicked.update((browseItemsButtonClicked) => !browseItemsButtonClicked)
     }
 
     this.buyButtonClicked.update((buyButtonClicked) => !buyButtonClicked)
@@ -80,6 +87,10 @@ throw new Error('Method not implemented.');
       this.rentalButtonClicked.update((rentalButtonClicked) => !rentalButtonClicked);
     }
 
+    if (this.browseItemsButtonClicked()){
+      this.browseItemsButtonClicked.update((browseItemsButtonClicked) => !browseItemsButtonClicked)
+    }
+
     this.sellButtonClicked.update((sellButtonClicked) => !sellButtonClicked)
   }
 
@@ -100,6 +111,10 @@ throw new Error('Method not implemented.');
       this.rentalButtonClicked.update((rentalButtonClicked) => !rentalButtonClicked);
     }
 
+    if (this.browseItemsButtonClicked()){
+      this.browseItemsButtonClicked.update((browseItemsButtonClicked) => !browseItemsButtonClicked)
+    }
+
     this.requestButtonClicked.update((requestButtonClicked) => !requestButtonClicked)
   }
 
@@ -115,6 +130,10 @@ throw new Error('Method not implemented.');
     if (this.buyButtonClicked()){
       this.buyButtonClicked.update((buyButtonClicked) => !buyButtonClicked)
     }
+
+    if (this.browseItemsButtonClicked()){
+      this.browseItemsButtonClicked.update((browseItemsButtonClicked) => !browseItemsButtonClicked)
+    }
     this.rentalButtonClicked.update((rentalButtonClicked) => !rentalButtonClicked);
   }
 
@@ -122,11 +141,8 @@ throw new Error('Method not implemented.');
     this.browseItemsButtonClicked.update((browseItemsButtonClicked) => !browseItemsButtonClicked)
   }
 
-
-
-
-
-
-
+  toggleGetStarted(){
+    this.getStartedButtonClicked.update((getStartedButtonClicked) => !getStartedButtonClicked);
+  }
 }
 

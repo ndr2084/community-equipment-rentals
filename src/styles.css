@@ -68,13 +68,6 @@ body {
 
 /*GLOBAL FORM LOGIC BEGINS*/
 /*Default input begins*/
-.default-text {
-  background: none;
-  color: var(--default-font-color);
-
-  width: var(--default-form-width);
-  font-size: var(--default-font-size);
-}
 
 input {
   border: none;
@@ -313,7 +306,6 @@ button {
 
 /*FORM STYLING BEGINS*/
 
-
 .form-title {
   font-size: var(--large-font-size);
   font-weight: var(--heavy-font-weight);
@@ -324,12 +316,17 @@ button {
   flex-direction: column;
   gap: var(--default-form-gap);
   padding: var(--default-form-padding);
+  width: clamp(300px, calc(100px + 66.667vw), 650px);
 }
 
 .default-input {
   /* Removes top, left, and right borders */
   border: none;
   border-bottom: 1px solid rgba(128, 128, 128, 0.181);
+  background: none;
+  color: white;
+  width: calc(100% / var(--fields));
+  font-size: var(--small-font-size);
 }
 
 .default-text-area {
@@ -337,7 +334,7 @@ button {
   color: white;
   line-height: var(--default-line-height);
   border-radius: var(--default-border-radius-for-media);
-  width: 300px;
+  min-width: fit-content;
   height: 150px;
   padding: var(--default-padding);
 }
@@ -354,7 +351,7 @@ button {
   max-height: 100%;
   background: black;
   overflow: scroll;
-  border-radius: var(--default-border-radius-for-media);
+  width: fit-content;
 }
 
 .button-group{

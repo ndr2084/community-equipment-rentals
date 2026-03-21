@@ -18,6 +18,7 @@ export class ModalForBuying {
     messageBody: new FormControl(''),
   });
 
+  discard = output<void>();
   closeButtonClicked = signal(false);
   //discardButtonClicked = signal(false);
 
@@ -25,8 +26,6 @@ export class ModalForBuying {
   onSubmit() {
     console.warn(this.formForBuying.value);
   }
-
-  discard = output<void>();
 
   toggleClose() {
       this.closeButtonClicked.update((closeButtonClicked) => !closeButtonClicked);

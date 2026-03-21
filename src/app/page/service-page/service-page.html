@@ -28,7 +28,7 @@
     <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Get your hands on some previously loved
       equipment</p>
 
-    <div class="grid-image-gallery">
+      <app-photo-gallery-grid>
       @if (product().length > 0){
 
       @for (products of product(); track products.productName){
@@ -49,7 +49,7 @@
       </app-card>
       }
       }
-    </div>
+    </app-photo-gallery-grid>
     }
 
     @if(messageSellerClicked()){
@@ -73,7 +73,7 @@
             <h1>Rental Program Initiative</h1>
             <p>Become part of the business. Allow members to rent your equipment</p>
             <label for="sell-button"></label>
-            <input type="button" class=" button button-medium secondary large-text" value="Get Started">
+            <input (click)="toggleGetStarted()" type="button" class=" button button-medium secondary large-text" value="Get Started">
           </div>
         </app-hero>
       </div>
@@ -90,7 +90,7 @@
     </div>
   }
       @if(browseItemsButtonClicked()){
-        <div class="grid-image-gallery">
+      <app-photo-gallery-grid>
           @if (product().length > 0){
 
           @for (products of product(); track products.productName){
@@ -111,12 +111,20 @@
           </app-card>
           }
           }
-        </div>
+        </app-photo-gallery-grid>
         }
 
         @if(messageSellerClicked()){
         <app-modal-for-buying (discard)="toggleMessageSellerModal()"></app-modal-for-buying>
         }
+
+    @if(getStartedButtonClicked()){
+      <app-modal-for-rental-program></app-modal-for-rental-program>
+
+    }
+
+
+
 
     @if(requestButtonClicked()){
     <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Not seeing what you want? Let the

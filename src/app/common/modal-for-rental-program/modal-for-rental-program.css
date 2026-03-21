@@ -1,0 +1,12 @@
+.field-flexbox{
+  display: flex;
+  flex-direction: row;
+  gap: var(--column-gap-desktop);
+  min-width: fit-content;
+}
+
+.appointment-picker-container{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

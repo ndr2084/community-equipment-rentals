@@ -14,17 +14,6 @@
   gap: 12px;
 }
 
-.grid-image-gallery{
-  display: grid;
-  max-width: fit-content;
-  padding: auto;
-  margin: 0 auto;
-  align-items: center;
-  column-gap: var(--column-gap-desktop);
-  grid-auto-rows: 450px;
-  grid-template-columns: repeat(3, 1fr);
-}
-
 .product-seller-profile-photo{
   display: flex;
   justify-content: center;
@@ -111,31 +100,12 @@
 
 @media screen and (min-width: 1350px){
 
-  .grid-image-gallery{
-    display: grid;
-    max-width: fit-content;
-    align-items: center;
-    column-gap: var(--column-gap-desktop);
-    grid-auto-rows: 450px;
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 @media screen and (min-width: 900px) and (max-width: 1000px) {
 
   .service-page {
     overflow: scroll;
-  }
-
-  .grid-image-gallery{
-    display: grid;
-    max-width: fit-content;
-    padding: auto;
-    margin: 0 auto;
-    align-items: center;
-    column-gap: var(--column-gap-mobile);
-    grid-auto-rows: 400px;
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media screen and (min-width: 600px) and (max-width: 900px) {
@@ -146,28 +116,9 @@
   .service-page {
     overflow: scroll;
   }
-
-  .grid-image-gallery{
-    display: grid;
-    max-width: fit-content;
-    padding: auto;
-    margin: 0 auto;
-    column-gap: var(--column-gap-mobile);
-    grid-auto-rows: 390px;
-    align-items: center;
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media screen and (min-width: 0px) and (max-width: 600px) {
-
-  .grid-image-gallery{
-    display: flex;
-    flex-direction: column;
-    gap: var(--row-gap-mobile);
-    max-width: fit-content;
-    align-items: center;
-  }
 
   .hero-flex-container{
     display: flex;
