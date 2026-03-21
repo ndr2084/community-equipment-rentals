@@ -230,6 +230,11 @@ button {
   padding: var(--default-padding);
 }
 
+.underline{
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.188);
+}
+
 .default-text {
   font-size: var(--default-font-size);
   font-weight: 500;
