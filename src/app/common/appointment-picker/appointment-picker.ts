@@ -132,6 +132,7 @@ export class AppointmentPicker {
     return 0;
   }
 
+  //TODO: TEST MY OUTPUT
   startMonthOnCalculatedDay = (): number => {
     let sum = this.yearCodeFormula(this.currentYear);
     sum = sum + this.monthCodeFormula(this.currentMonth);
@@ -145,5 +146,4 @@ export class AppointmentPicker {
     sum = sum + this.leapYearFormula(this.currentYear);
     return sum % 7;
   }
-
 }
