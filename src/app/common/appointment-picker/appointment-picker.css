@@ -3,6 +3,7 @@
   flex-direction: row;
   width: fit-content;
   justify-content: space-between;
+  align-items: center;
 }
 
 .page-content {
@@ -16,9 +17,8 @@
   display: flex;
   flex-direction: column;
   height: fit-content;
-  background: white;
-  border-radius: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.161);
+  border-radius: var(--default-border-radius-for-media);
+  border: 1px solid #ffffff12;
   background: black;
   width: 50%;
 }
@@ -30,18 +30,20 @@
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.11);
   padding: 3px 8px;
+  font-size: 12px;
 }
 
 .month-and-year {
   display: flex;
   justify-content: space-around;
+
 }
 
 .month {
   display: flex;
   width: 100%;
   padding: 3px 7px;
-  font-size: 10px;
+  font-size: 12px;
   justify-content: left;
   align-items: center;
 }
@@ -53,10 +55,10 @@
   padding-left: 10px;
   justify-content: left;
   align-items: center;
-  font-size: 10px;
+  font-size: 12px;
 }
 
-.week {
+.name-of-day {
   display: flex;
   font-size: 8px;
   justify-content: left;
@@ -65,29 +67,30 @@
   flex-flow: row wrap;
 }
 
-.week-date {
+.all-days-in-month {
   display: flex;
   font-size: 8px;
   justify-content: left;
   background: rgb(118, 143, 178);
   width: 100%;
   background: rgb(11, 11, 11);
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: var(--default-border-radius-for-media);
+  border-bottom-right-radius: var(--default-border-radius-for-media);
   flex-flow: row wrap;
 }
 
-.day {
+.day-of-week {
   display: flex;
   color: rgb(0, 0, 255);
   width: calc(100% / 7);
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 8px 0;
+  padding: 4px 0;
+  font-size: 10px;
 }
 
-.date {
+.date-as-number{
   display: flex;
   color: rgb(255, 255, 255);
   min-width: calc(100% / 7);
@@ -96,8 +99,8 @@
   text-align: center;
   padding: 8px 0;
   border-radius: 100px;
-  border-right: 1px solid rgba(0, 0, 0, 0.02);
-  border-top: 1px solid rgba(0, 0, 0, 0.02);
+  font-size: 11px;
+  font-weight: 400;
 }
 
 .bg-custom {
@@ -109,10 +112,10 @@
   flex-direction: column;
   width: 65%;
   background: rgb(0, 0, 0);
-  border-bottom: 1px solid black;
   padding: 3px 8px;
-  max-height: 228px;
+height: 265px;
   gap: 6px;
+
 }
 
 .date-time-picker {
@@ -121,27 +124,33 @@
   height: 15px;
   justify-content: space-between;
   align-items: center;
-
+  padding: 3px 5px;
 }
 
 .date-time-picker-buttons {
   display: flex;
   flex-direction: row;
-  gap: 6px;
-  color: black;
+  gap: 0px;
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: var(--default-border-radius-for-media);
 }
 
 
-.appointment-picker-button {
+.full-date-picker-button {
   font-size: var(--default-font-size);
   width: 25px;
   height: 25px;
   box-shadow: none;
   border: none;
   animation: none;
+}
 
+.full-date-picker-button:hover {
+  background: rgba(230, 230, 230, 0.05);
+}
+
+.full-date-picker-button:active{
+  background: #262626;
 }
 
 .time-slots {
@@ -162,6 +171,7 @@
   border-bottom-left-radius: var(--default-border-radius-for-media);
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
+
 }
 
 .right {

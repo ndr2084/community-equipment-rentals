@@ -2,7 +2,7 @@
   <app-container class="modal">
     <form [formGroup]="formForRentalProgramInitiative" (ngSubmit)="onSubmit()" class="default-form">
 
-      <h1 class="form-title landscape-form">Application</h1>
+      <h1 class="form-title landscape-form">Rental Program Application</h1>
       <div class="field-flexbox" style="--fields: 2">
         <label for="first-name"></label>
         <input class="default-text default-input field" id="first-name" type="text" formControlName="firstName"
@@ -31,7 +31,7 @@
       <input type="button" value="Choose Appointment Slot" class="button button-large secondary default-text" />
     -->
 <div class="appointment-picker-container">
-      <p class="small-text underline">Choose Phone Appointment Slot</p>
+      <p class="brand-color-grey large-text">Choose Phone Appointment Slot</p>
       <label for="appointment-picker"></label>
       <app-appointment-picker></app-appointment-picker>
     </div>

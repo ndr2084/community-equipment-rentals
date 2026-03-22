@@ -19,12 +19,7 @@
   --column-gap-mobile: 10px;
   --row-gap-mobile: 10px;
   --heavy-font-weight: 700;
-  --heavier-font-weight: 800;
-  --heaviest-font-weight: 900;
   --default-font-weight: 400;
-  --light-font-weight: 300;
-  --lighter-font-weight: 200;
-  --lightest-font-weight: 100;
   --tiny-font-size: 0.6rem;
   --small-font-size: 0.8rem;
   --large-font-size: 1.2rem;
@@ -144,11 +139,7 @@ button {
 .secondary {
   border: 1px solid rgba(128, 128, 128, 0.092);
   background-color: black;
-  box-shadow: rgba(255, 255, 255, 0.11) 0px 1px 1px;
-}
-
-.secondary:hover{
-  background: rgba(255, 255, 255, 0.03);
+  box-shadow: rgba(255, 255, 255, 0.11) 0px 0px 1px;
 }
 
 .secondary:active {
@@ -156,7 +147,7 @@ button {
 }
 
 .secondary-change-button-style-on-click {
-  background-color: #100f0fcc;
+  background-color: #ffffff07;
   border: 1px solid rgba(255, 255, 255, 0.511);
 
 }
