@@ -29,14 +29,14 @@
         <p>Tuesday, March 2026</p>
 
         <div class="date-time-picker-buttons">
-          <input type="button" class="small-button backward" placeholder="<" value="<">
-          <input type="button" class="small-button forward" placeholder=">" value=">">
+          <input type="button" class="button secondary circular-button backward no-border" placeholder="<" value="<">
+          <input type="button" class="button secondary circular-button forward no-border" placeholder=">" value=">">
         </div>
       </div>
 
       <div class="time-slots">
         @for(i of timeBlock.keys(); track i){
-        <input type="button" class="appointment-time-button" value="{{timeBlock.get(i)}}">
+        <input type="button" class="button button-medium secondary default-text" value="{{timeBlock.get(i)}}">
         }
       </div>
     </div>

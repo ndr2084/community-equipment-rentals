@@ -47,6 +47,10 @@ throw new Error('Method not implemented.');
   rentalButtonClicked = signal(false);
   browseItemsButtonClicked = signal(false);
   getStartedButtonClicked = signal(false);
+
+  /*maybe put the css logic below into its own file? BEGIN*/
+
+
   /*only show one and only one of the 3 options at any time (buy, sell, request*/
 
   toggleBuy() {

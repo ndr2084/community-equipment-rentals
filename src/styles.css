@@ -108,6 +108,10 @@ button {
   cursor: pointer;
 }
 
+.button:hover{
+  animation: borderOnHover 0.12s forwards;
+}
+
 .button-medium {
   width: var(--medium-button-width);
 }
@@ -123,14 +127,9 @@ button {
 /*Primary button begins*/
 
 .primary {
-  transition: all 0.12s ease;
   border: none;
   background-color: rgb(15, 32, 128);
   border: 1px solid rgba(128, 128, 128, 0.322);
-}
-
-.primary:hover {
-  border: 1px solid rgba(128, 128, 128, 0.628);
 }
 
 .primary:active {
@@ -149,17 +148,21 @@ button {
 }
 
 .secondary:active {
-  background-color: #020000;
-  box-shadow: rgba(255, 255, 255, 0.497) 0px 0px 1px;
-  animation: buttonFeedbackOnClick 0.05s forwards;
+  background-color: #262626;
 }
 
-.secondary:hover {
-  border: 1px solid rgba(128, 128, 128, 0.183);
-}
-
-.secondary-change-background-on-click {
+.secondary-change-button-style-on-click {
   background-color: #100f0fcc;
+  border: 1px solid rgba(255, 255, 255, 0.511);
+
+}
+/*The rule below allows for a depressed button to do two things:
+  1. Have the border stay actively highlighted (i.e. no flickering during :hover)
+  2. The box shadow gives the user feeback on :hover, signifying that the page remains responsive
+*/
+.secondary-change-button-style-on-click:hover{
+  animation: borderOnHover 0s forwards,
+  boxShadowOnHover 0.1s forwards;
 }
 
 /*Secondary button ends*/
@@ -167,13 +170,9 @@ button {
 /*Danger button begins*/
 
 .danger{
-  transition: all 0.12s ease;
+
   background: rgba(255, 60, 0, 0.442) ;
   border: 1px solid rgba(94, 97, 105, 0.22);
-}
-
-.danger:hover{
- border: 1px solid rgba(128, 128, 128, 0.612);
 }
 
 .danger:active{
@@ -183,6 +182,17 @@ button {
 
 /*Danger button ends*/
 
+/*Circular button begins*/
+
+.circular-button {
+  font-size: var(--default-font-size);
+  border-radius: var(--default-border-radius-for-navigation);
+  width: 25px;
+  height: 25px;
+}
+
+/*Circular button ends*/
+
 /*Button animations begin*/
 
 @keyframes boxShadowOnHover {
@@ -191,7 +201,7 @@ button {
   }
 
   100% {
-    box-shadow: rgba(255, 255, 255, 0.371) 0px 0px 2px;
+    box-shadow: rgba(255, 255, 255, 0.675) 0px 0px 1.5px;
   }
 }
 
@@ -204,7 +214,36 @@ button {
   }
 }
 
+@keyframes borderOnHover{
+  0%{
+    border: 1px solid rgba(255, 255, 255, 0.183);
+  }
+  100%{
+    border: 1px solid rgba(255, 255, 255, 0.511);
+  }
+}
+
+
+
 /*Button animations end*/
+
+/*Additional button classes*/
+.no-border{
+  border: none;
+  box-shadow: none;
+}
+
+.no-border:hover{
+  border: none;
+  box-shadow: none;
+}
+
+.no-border:active{
+  border: none;
+  box-shadow: none;
+}
+
+
 /*GLOBAL BUTTON LOGIC ENDS*/
 
 /*GLOBAL TYPOGRAPHY BEGINS*/

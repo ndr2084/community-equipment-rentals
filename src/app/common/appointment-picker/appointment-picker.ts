@@ -36,7 +36,7 @@ export class AppointmentPicker {
         [16, "2:30PM"],
         [17, "3:00PM"],
         [18, "3:30PM"],
-        [19, "4:00OPM"],
+        [19, "4:00PM"],
         [20, "4:30PM"],
     ]);
 
