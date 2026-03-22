@@ -147,6 +147,10 @@ button {
   box-shadow: rgba(255, 255, 255, 0.11) 0px 1px 1px;
 }
 
+.secondary:hover{
+  background: rgba(255, 255, 255, 0.03);
+}
+
 .secondary:active {
   background-color: #262626;
 }
@@ -184,12 +188,6 @@ button {
 
 /*Circular button begins*/
 
-.circular-button {
-  font-size: var(--default-font-size);
-  border-radius: var(--default-border-radius-for-navigation);
-  width: 25px;
-  height: 25px;
-}
 
 /*Circular button ends*/
 
@@ -227,21 +225,7 @@ button {
 
 /*Button animations end*/
 
-/*Additional button classes*/
-.no-border{
-  border: none;
-  box-shadow: none;
-}
 
-.no-border:hover{
-  border: none;
-  box-shadow: none;
-}
-
-.no-border:active{
-  border: none;
-  box-shadow: none;
-}
 
 
 /*GLOBAL BUTTON LOGIC ENDS*/
@@ -405,3 +389,5 @@ button {
   gap: var(--default-button-gap);
 }
 /*MODAL STYLING ENDS*/
+
+/*Additional button classes*/

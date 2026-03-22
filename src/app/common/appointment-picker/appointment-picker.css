@@ -129,17 +129,44 @@
   flex-direction: row;
   gap: 6px;
   color: black;
-  border: 1px solid rgba(255, 255, 255, 0.135);
+  border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: var(--default-border-radius-for-media);
+}
+
+
+.appointment-picker-button {
+  font-size: var(--default-font-size);
+  width: 25px;
+  height: 25px;
+  box-shadow: none;
+  border: none;
+  animation: none;
+
 }
 
 .time-slots {
   margin-top: 8px;
   display: flex;
   flex-flow: row wrap;
-  gap: 9px;
+  gap:4px;
   justify-content: center;
   overflow: scroll;
-  border: 1px solid rgba(255, 255, 255, 0.135);
+  padding: 3px 3px;
   border-radius: var(--default-border-radius-for-media);
+}
+
+
+.left {
+
+  border-top-left-radius: var(--default-border-radius-for-media);
+  border-bottom-left-radius: var(--default-border-radius-for-media);
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.right {
+  border-top-right-radius: var(--default-border-radius-for-media);
+  border-bottom-right-radius: var(--default-border-radius-for-media);
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
