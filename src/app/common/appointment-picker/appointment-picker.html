@@ -1,9 +1,8 @@
   <div class="appointment-picker">
     <div class="calendar">
       <div class="calendary-date-day-month-year-flexbox">
-        <p>30/11/2022</p>
-        <i class="fa-regular fa-calendar"></i>
-      </div>
+        <p class="default-text">30/11/2022</p>
+        </div>
       <div class="month-and-year">
         <p class="month">March</p>
         <p class="year">2026</p>
@@ -19,13 +18,13 @@
       </div>
       <div class="all-days-in-month">
       @for(i of dayBlock.keys(); track i){
-        <div class="date-as-number">{{dayBlock.get(i)}}</div>
+        <input type="button" class="button secondary date-as-number" value="{{dayBlock.get(i)}}">
         }
       </div>
     </div>
     <div class="time-picker">
       <div class="date-time-picker">
-        <p class="default-text">Wednesday, September 2026</p>
+        <p class="">Wed, September 2026</p>
 
         <div class="date-time-picker-buttons">
           <input type="button" class="button secondary full-date-picker-button left" placeholder="<" value="<">

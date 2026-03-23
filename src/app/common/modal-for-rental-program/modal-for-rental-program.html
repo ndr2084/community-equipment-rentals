@@ -38,8 +38,8 @@
 
       @if(!closeButtonClicked()) {
       <div class="button-group">
-        <input (click)="toggleClose()" type="button" value="Close" class="button button-small danger default-text">
-        <input type="submit" value="Send Application" class="button button-medium primary default-text"
+        <input (click)="toggleClose()" type="button" value="Close" class="button button-large secondary default-text">
+        <input type="submit" value="Send Application" class="button button-large primary default-text"
           [disabled]="!formForRentalProgramInitiative.valid">
       </div>
       }
