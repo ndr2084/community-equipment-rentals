@@ -4,7 +4,7 @@ The logic for this component was written based off the article below, and is ver
 ref: https://artofmemory.com/blog/how-to-calculate-the-day-of-the-week/
 */
 
-import { Component } from '@angular/core';
+import { Component, signal, WritableSignal } from '@angular/core';
 
 @Component({
   selector: 'app-appointment-picker',
@@ -13,6 +13,45 @@ import { Component } from '@angular/core';
   styleUrl: './appointment-picker.css',
 })
 export class AppointmentPicker {
+  timeButtonClicked = signal(false);
+  clickedDates = signal(new Set<string>());
+  lastDateClicked: string[] = [];
+
+
+/*ALL ONE LOGICAL BLOCK STARTS*/
+//All of this horseshit just so only one button on the calendar can be illuminated at any given moment!
+toggleDate(date: string) {
+  this.clickedDates.update(set => {
+    const newSet = new Set(set);
+    if (newSet.has(date)) {
+      newSet.delete(date);
+    } else {
+      newSet.add(date);
+      this.lastDateClicked.push(date);
+    }
+    if(this.lastDateClicked.length == 2){
+      newSet.delete(this.lastDateClicked[0]);
+      this.lastDateClicked.splice(0, 1);
+    }
+    return newSet;
+  });
+}
+
+isClicked(date: string): boolean {
+  return this.clickedDates().has(date);
+}
+/*ALL ONE LOGICAL BLOCK ENDS*/
+
+/*TODO: move this son of a bitch somewhere*/
+toggleSignal(genericSignal: WritableSignal<boolean>, event?: MouseEvent){
+    genericSignal.update((genericSignal)=>!genericSignal);
+    console.log(event?.target);
+  }
+
+
+
+
+
   currentYear: number = new Date().getFullYear();
   currentMonth: number = new Date().getMonth() + 1;
   FIRST_DAY = 1;
@@ -55,49 +94,49 @@ export class AppointmentPicker {
         [12, "December"],
     ]);
 
-    dayBlock = new Map<number, string>([
-        [1, "01"],
-        [2, "02"],
-        [3, "03"],
-        [4, "04"],
-        [5, "05"],
-        [6, "06"],
-        [7, "07"],
-        [8, "08"],
-        [9, "09"],
-        [10, "10"],
-        [11, "11"],
-        [12, "12"],
-        [13, "13"],
-        [14, "14"],
-        [15, "15"],
-        [16, "16"],
-        [17, "17"],
-        [18, "18"],
-        [19, "19"],
-        [20, "20"],
-        [21, "21"],
-        [22, "22"],
-        [23, "23"],
-        [24, "24"],
-        [25, "25"],
-        [26, "26"],
-        [27, "27"],
-        [28, "28"],
-        [29, "29"],
-        [30, "30"],
-        [31, "31"],
-        [32, "01"],
-        [33, "02"],
-        [34, "03"],
-        [35, "04"],
-        [36, "05"],
-        [37, "06"],
-        [38, "07"],
-        [39, "08"],
-        [40, "09"],
-        [41, "10"],
-        [42, "11"],
+    dayBlock = new Map<string, string>([
+      ["d1", "01"],
+      ["d2", "02"],
+      ["d3", "03"],
+      ["d4", "04"],
+      ["d5", "05"],
+      ["d6", "06"],
+      ["d7", "07"],
+      ["d8", "08"],
+      ["d9", "09"],
+      ["d10", "10"],
+      ["d11", "11"],
+      ["d12", "12"],
+      ["d13", "13"],
+      ["d14", "14"],
+      ["d15", "15"],
+      ["d16", "16"],
+      ["d17", "17"],
+      ["d18", "18"],
+      ["d19", "19"],
+      ["d20", "20"],
+      ["d21", "21"],
+      ["d22", "22"],
+      ["d23", "23"],
+      ["d24", "24"],
+      ["d25", "25"],
+      ["d26", "26"],
+      ["d27", "27"],
+      ["d28", "28"],
+      ["d29", "29"],
+      ["d30", "30"],
+      ["d31", "31"],
+      ["d32", ""],
+      ["d33", ""],
+      ["d34", ""],
+      ["d35", ""],
+      ["d36", ""],
+      ["d37", ""],
+      ["d38", ""],
+      ["d39", ""],
+      ["d40", ""],
+      ["d41", ""],
+      ["d42", ""],
     ]);
 
     dateCode = new Map<number, string>([

@@ -112,6 +112,7 @@
 }
 
 
+
 .time-picker {
   display: flex;
   flex-direction: column;
@@ -187,3 +188,9 @@
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
 }
+
+.dateButtonClicked{
+    background: #262626;
+}
+
+

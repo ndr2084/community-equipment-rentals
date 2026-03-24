@@ -17,8 +17,13 @@
         <p class="day-of-week">SAT</p>
       </div>
       <div class="all-days-in-month">
-      @for(i of dayBlock.keys(); track i){
-        <input type="button" class="button secondary date-as-number" value="{{dayBlock.get(i)}}">
+      @for(date of dayBlock.keys(); track date){
+        <input
+          (click)="toggleDate(date)"
+          type="button" class="button secondary date-as-number"
+          value="{{dayBlock.get(date)}}"
+          [class.dateButtonClicked]="isClicked(date)"
+          >
         }
       </div>
     </div>
@@ -33,9 +38,11 @@
       </div>
 
       <div class="time-slots">
-        @for(i of timeBlock.keys(); track i){
-        <input type="button" class="button button-medium secondary default-text" value="{{timeBlock.get(i)}}">
+        @for(item of timeBlock.keys(); track item){
+        <input type="button" class="button button-medium secondary default-text" value="{{timeBlock.get(item)}}">
         }
+
+
       </div>
     </div>
   </div>

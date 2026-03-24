@@ -18,3 +18,5 @@
   2.1. Appointment picker should have flex direction change from row to column  
   2.2. The number of fields per row should change from 2 -> 1 when pixel width is below 800px
 3. Complete ts logic for appointment-picker component
+4. Implement proper nav bar for mobile (bottom of page) 
+5. Implemet proper nav bar for desktop and tablet top of page
