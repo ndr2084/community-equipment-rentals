@@ -13,34 +13,24 @@ import { Component, signal, WritableSignal } from '@angular/core';
   styleUrl: './appointment-picker.css',
 })
 export class AppointmentPicker {
-  timeButtonClicked = signal(false);
-  clickedDates = signal(new Set<string>());
-  lastDateClicked: string[] = [];
+  timeButtonClicked = signal<boolean>(false);
 
+  /*CALENDAR ILLUMINATION LOGIC ON CLICK BEGINS*/
+  selectedDate = signal<string | null>(null);
 
-/*ALL ONE LOGICAL BLOCK STARTS*/
-//All of this horseshit just so only one button on the calendar can be illuminated at any given moment!
-toggleDate(date: string) {
-  this.clickedDates.update(set => {
-    const newSet = new Set(set);
-    if (newSet.has(date)) {
-      newSet.delete(date);
-    } else {
-      newSet.add(date);
-      this.lastDateClicked.push(date);
-    }
-    if(this.lastDateClicked.length == 2){
-      newSet.delete(this.lastDateClicked[0]);
-      this.lastDateClicked.splice(0, 1);
-    }
-    return newSet;
-  });
-}
+  toggleDate(dateCurrentlyPicked: string) {
+    this.selectedDate.update((datePreviouslyPicked) => {
+      if(datePreviouslyPicked === dateCurrentlyPicked){
+          return null;
+      }
+      return dateCurrentlyPicked;
+    });
+  }
 
-isClicked(date: string): boolean {
-  return this.clickedDates().has(date);
-}
-/*ALL ONE LOGICAL BLOCK ENDS*/
+  isClicked(dateCurrentlyPicked: string): boolean {
+    return this.selectedDate() === dateCurrentlyPicked;
+  }
+  /*CALENDAR ILLUMINATION LOGIC ON CLICK ENDS*/
 
 /*TODO: move this son of a bitch somewhere*/
 toggleSignal(genericSignal: WritableSignal<boolean>, event?: MouseEvent){
