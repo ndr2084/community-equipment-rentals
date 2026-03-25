@@ -119,7 +119,7 @@
         }
 
     @if(getStartedButtonClicked()){
-      <app-modal-for-rental-program></app-modal-for-rental-program>
+      <app-modal-for-rental-program (discard)="toggleGetStarted()"></app-modal-for-rental-program>
 
     }
 

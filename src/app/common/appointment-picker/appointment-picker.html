@@ -22,7 +22,7 @@
           (click)="toggleDate(date)"
           type="button" class="button secondary date-as-number"
           value="{{dayBlock.get(date)}}"
-          [class.dateButtonClicked]="isClicked(date)"
+          [class.secondaryButtonDepressed]="dateButtonClicked(date)"
           >
         }
       </div>
@@ -39,10 +39,13 @@
 
       <div class="time-slots">
         @for(item of timeBlock.keys(); track item){
-        <input type="button" class="button button-medium secondary default-text" value="{{timeBlock.get(item)}}">
+        <input type="button"
+        (click)="toggleTimeButton(item)"
+        class="button button-medium secondary default-text"
+        value="{{timeBlock.get(item)}}"
+        [class.secondaryButtonDepressed]="timeButtonClicked(item)"
+        >
         }
-
-
       </div>
     </div>
   </div>

@@ -147,6 +147,11 @@ button {
   background-color: #262626;
 }
 
+.secondaryButtonDepressed{
+  background-color: #262626;
+}
+
+
 .secondary-change-button-style-on-click {
   background-color: #ffffff07;
   border: 1px solid rgba(255, 255, 255, 0.511);
@@ -377,10 +382,9 @@ button {
 .button-group{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap:var(--default-button-gap);
 }
 /*MODAL STYLING ENDS*/
 
 /*Additional button styling classes*/
-

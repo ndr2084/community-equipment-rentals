@@ -13,7 +13,6 @@ import { Component, signal, WritableSignal } from '@angular/core';
   styleUrl: './appointment-picker.css',
 })
 export class AppointmentPicker {
-  timeButtonClicked = signal<boolean>(false);
 
   /*CALENDAR ILLUMINATION LOGIC ON CLICK BEGINS*/
   selectedDate = signal<string | null>(null);
@@ -27,7 +26,8 @@ export class AppointmentPicker {
     });
   }
 
-  isClicked(dateCurrentlyPicked: string): boolean {
+  dateButtonClicked(dateCurrentlyPicked: string): boolean {
+    console.log(this.selectedDate() === dateCurrentlyPicked);
     return this.selectedDate() === dateCurrentlyPicked;
   }
   /*CALENDAR ILLUMINATION LOGIC ON CLICK ENDS*/
@@ -38,6 +38,22 @@ toggleSignal(genericSignal: WritableSignal<boolean>, event?: MouseEvent){
     console.log(event?.target);
   }
 
+/*TIME ILLUMINATION LOGIC ON CLICK BEGINS*/
+
+selectedTime = signal<number | null>(null);
+
+toggleTimeButton = (timeCurrentlyPicked : number) =>{
+  this.selectedTime.update((timePreviouslyPicked)=>{
+    if(timeCurrentlyPicked === timePreviouslyPicked){
+      return null;
+    }
+    return timeCurrentlyPicked;
+  });
+}
+
+timeButtonClicked = (timeCurrentlyPicked : number): boolean => {
+  return this.selectedTime() === timeCurrentlyPicked;
+}
 
 
 

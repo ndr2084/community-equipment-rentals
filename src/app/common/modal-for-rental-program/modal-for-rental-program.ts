@@ -27,15 +27,15 @@ discard = output<void>();
 closeButtonClicked = signal(false);
 
 onSubmit() {
-throw new Error('Method not implemented.');
+  console.warn(this.formForRentalProgramInitiative.value);
 }
 
 toggleClose() {
-  throw new Error('Method not implemented.');
-  }
+  this.closeButtonClicked.update((closeButtonClicked) => !closeButtonClicked);
+}
 
 onClose(){
-  this.discard.emit();
+this.discard.emit();
 }
 
 

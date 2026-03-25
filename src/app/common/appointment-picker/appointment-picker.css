@@ -19,9 +19,9 @@
   height: fit-content;
   border-radius: var(--default-border-radius-for-media);
   border: 1px solid #ffffff12;
-  background: black;
   width: 300px;
   overflow: hidden;
+  height: 100%;
 }
 
 .calendary-date-day-month-year-flexbox {
@@ -93,7 +93,6 @@
   border-radius: 0px;
   box-shadow: none;
   border: 1px solid rgba(255, 255, 255, 0);
-  background: black;
   font-size: 11px;
   font-weight: 400;
   box-shadow: none;
@@ -189,8 +188,6 @@
   border-bottom-left-radius: 0px;
 }
 
-.dateButtonClicked{
-    background: #262626;
-}
+
 
 
