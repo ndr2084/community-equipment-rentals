@@ -24,7 +24,7 @@
       @if(!closeButtonClicked()) {
       <div class="button-group">
         <input (click)="toggleClose()" type="button" value="Close" class="button button-small danger default-text">
-        <input type="submit" value="Send message" class="button button-medium primary default-text"
+        <input type="submit" value="Send message" class="button button-medium primary"
           [disabled]="!formForBuying.valid">
       </div>
       }
@@ -35,7 +35,7 @@
       </app-warning-popup>
       <div class="button-group">
         <input (click)="toggleClose()" type="button" value="Continue editing" class="button button-medium danger default-text">
-        <input (click)="onClose()" type="submit" value="Discard" class="button button-small primary default-text">
+        <input (click)="onClose()" type="submit" value="Discard" class="button button-small primary">
       </div>
       }
     </form>

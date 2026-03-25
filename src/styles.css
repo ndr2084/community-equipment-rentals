@@ -101,11 +101,8 @@ button {
   border-radius: var(--default-border-radius-for-media);
   color: var(--default-font-color);
   cursor: pointer;
-  height: 34px;
-}
-
-.button:hover{
-  animation: borderOnHover 0.12s forwards;
+  height: 33px;
+  font-size: var(--default-font-size);
 }
 
 .button-medium {
@@ -124,13 +121,17 @@ button {
 
 .primary {
   border: none;
-  background-color: rgb(15, 32, 128);
+  background-color: rgb(3, 8, 39);
   border: 1px solid rgba(128, 128, 128, 0.322);
+}
+
+.primary:hover{
+  animation: primaryOnHover 0.12s forwards;
 }
 
 .primary:active {
   border: 1px solid rgba(225, 226, 231, 0.401);
-  background-color: rgb(8, 18, 75);
+  animation: primaryOnActive 0.12 forwards;
 }
 
 /*Primary button ends*/
@@ -140,22 +141,27 @@ button {
 .secondary {
   border: 1px solid rgba(128, 128, 128, 0.092);
   background-color: black;
+}
 
+.secondary:hover{
+  animation: secondaryOnHover 0.12s forwards;
 }
 
 .secondary:active {
-  background-color: #262626;
+  animation: secondaryOnActive 0.12s forwards;
 }
 
 .secondaryButtonDepressed{
   background-color: #262626;
 }
 
+.secondaryButtonDepressed:hover{
+  background-color:#262626;
+}
 
 .secondary-change-button-style-on-click {
   background-color: #ffffff07;
   border: 1px solid rgba(255, 255, 255, 0.511);
-
 }
 /*The rule below allows for a depressed button to do two things:
   1. Have the border stay actively highlighted (i.e. no flickering during :hover)
@@ -171,14 +177,16 @@ button {
 /*Danger button begins*/
 
 .danger{
-
-  background: rgba(255, 60, 0, 0.442) ;
-  border: 1px solid rgba(94, 97, 105, 0.22);
+  background-color: rgb(22, 0, 0);
+  border: 1px solid rgba(255, 0, 0, 0.065);
 }
 
+.danger:hover{
+    animation: dangerOnHover 0.12s forwards;
+  }
+
 .danger:active{
-  border: 1px solid rgba(225, 226, 231, 0.533);
-  background-color: rgb(80, 17, 2);
+  animation: dangerOnActive 1s infinite;
 }
 
 /*Danger button ends*/
@@ -209,14 +217,77 @@ button {
   }
 }
 
-@keyframes borderOnHover{
+@keyframes primaryOnHover{
   0%{
     border: 1px solid rgba(255, 255, 255, 0.183);
   }
   100%{
-    border: 1px solid rgba(255, 255, 255, 0.511);
+    border: 1px solid rgba(255, 255, 255, 0.298);
+    background-color: rgb(8, 18, 75);
   }
 }
+
+@keyframes primaryOnActive{
+  0%{
+    border: 1px solid rgba(255, 255, 255, 0.183);
+    background-color: rgb(8, 18, 75);
+  }
+  100%{
+    border: 1px solid rgba(255, 255, 255, 0.259);
+    background-color: rgb(0, 30, 200);
+  }
+}
+
+@keyframes secondaryOnHover{
+  0%{
+    border: 1px solid rgba(255, 255, 255, 0.183);
+  }
+  100%{
+    border: 1px solid rgba(255, 255, 255, 0.298);
+    background-color: #020202;
+  }
+}
+
+@keyframes secondaryOnActive{
+  0%{
+    border: 1px solid rgba(255, 255, 255, 0.183);
+    background-color: #040404;
+
+  }
+  100%{
+    border: 1px solid rgba(255, 255, 255, 0.259);
+    background-color: rgb(13, 13, 13);
+  }
+}
+
+@keyframes dangerOnHover{
+  0%{
+    border: 1px solid rgba(50, 1, 1, 0.279);
+  }
+  100%{
+    border: 1px solid rgba(109, 2, 2, 0.511);
+    background-color: rgb(36, 0, 0);
+  }
+
+}
+
+@keyframes dangerOnActive{
+  0%{
+    border: 1px solid rgba(134, 4, 4, 0.511);
+    background-color: rgb(36, 0, 0);
+
+  }
+  50%{
+    border: 1px solid rgb(134, 4, 4);
+    background-color: rgb(75, 0, 0);
+
+  }
+  100%{
+    border: 1px solid rgba(134, 4, 4, 0.511);
+    background-color: rgb(36, 0, 0);
+  }
+}
+
 
 
 
@@ -267,6 +338,7 @@ button {
   font-weight: 500;
   line-height: var(--default-line-height);
   color: white;
+  display: flex;
 }
 
 .small-text {

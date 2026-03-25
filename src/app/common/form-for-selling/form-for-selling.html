@@ -21,7 +21,7 @@
       @if(closeButtonClicked()) {
       <div class="button-group">
         <input (click)="toggleClose()" type="button" value="Close" class="button button-small danger default-text">
-        <input type="button" value="Send message" class="button button-medium primary default-text">
+        <input type="button" value="Send message" class="button button-medium primary">
       </div>
       }
 
@@ -30,8 +30,8 @@
         <p class="tiny-text">Warning: You have an unsent message. Are you sure you want to discard it?</p>
       </app-warning-popup>
       <div class="button-group">
-        <input (click)="toggleClose()" type="button" value="Continue editing" class="button button-medium danger default-text">
-        <input (click)="onClose()" type="button" value="Discard" class="button button-small primary default-text">
+        <input (click)="toggleClose()" type="button" value="Continue editing" class="button button-medium danger">
+        <input (click)="onClose()" type="button" value="Discard" class="button button-small primary">
       </div>
       }
     </form>

@@ -20,3 +20,5 @@
 3. Complete ts logic for appointment-picker component
 4. Implement proper nav bar for mobile (bottom of page) 
 5. Implemet proper nav bar for desktop and tablet top of page
+6. create secondary button component to solve the complexities that have arised from needing the background color on :hover to be *brighter* than the background color when the button is depressed (such cases: picking date/time slot for appointment picker)
+7. Standardize the colors for the buttons, then rewrite the background colors for the buttons in styles.css 
