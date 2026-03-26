@@ -31,7 +31,7 @@ export class FormForSelling {
       this.closeButtonClicked.update((closeButtonClicked) => !closeButtonClicked);
   }
 
-  toggleDiscardSellForm(){
+  discard(){
     this.discardFormForSelling.emit();
   }
 

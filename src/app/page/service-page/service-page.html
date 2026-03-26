@@ -5,15 +5,15 @@
 
     <div class="button-container">
 
-      @for(item of serviceButtonMap.keys(); track item){
-      <label for="{{serviceButtonMap.get(item)}}"></label>
-      <input (click)="toggleServiceButton(item)" type="button" class=" button button-medium secondary"
-        [class.secondary-change-button-style-on-click]="serviceButtonClicked(item)" value="{{serviceButtonMap.get(item)}}">
+      @for(item of serviceButtonArray ; track item){
+      <label for="{{item}}"></label>
+      <input (click)="toggle(item, serviceSignal)" type="button" class=" button button-medium secondary"
+        [class.secondary-change-button-style-on-click]="serviceSignal() === item" value="{{item}}">
       }
     </div>
 
     <!-- BUY BUTTON AND ASSOCIATED COMPONENTS BEGINS -->
-    @if(serviceButtonClicked("Buy")){
+    @if(serviceSignal() === "Buy"){
     <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Get your hands on some previously loved
       equipment</p>
 
@@ -21,7 +21,7 @@
       @if (product().length > 0){
 
       @for (products of product(); track products.productName){
-      <app-card (click)="toggle('modalForBuying')" class="illuminate-border-transition">
+      <app-card (click)="toggle('modalForBuying', interServiceSignal)" class="illuminate-border-transition">
         <app-photo-for-card>
           <!--insert-photo-here-->
         </app-photo-for-card>
@@ -41,20 +41,20 @@
     </app-photo-gallery-grid>
     }
 
-    @if(formSignal()==='modalForBuying'){
-    <app-modal-for-buying (discard)="checkCurrentForm('modalForBuying')"></app-modal-for-buying>
+    @if(interServiceSignal()==='modalForBuying'){
+    <app-modal-for-buying (discard)="toggle('modalForBuying', interServiceSignal)"></app-modal-for-buying>
     }
     <!-- BUY BUTTON AND ASSOCIATED COMPONENTS ENDS -->
 
-    @if(serviceButtonClicked("Sell")){
+    @if(serviceSignal() === "Sell"){
     <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Make some cash for new shiny toys</p>
     <div class="form-flex-container">
-      <app-form-for-selling (toggleDiscardSellForm)="checkCurrentForm('modalForRentalProgram')" >
+      <app-form-for-selling (discard)="toggle('modalForRentalProgram', interServiceSignal)" >
       </app-form-for-selling>
     </div>
     }
 
-    @if(serviceButtonClicked("Rentals")){
+    @if(serviceSignal() === "Rentals"){
     <div class="hero-flex-container">
       <div class="hero-business-photo">
         <app-hero>
@@ -62,7 +62,7 @@
             <h1>Rental Program Initiative</h1>
             <p>Become part of the business. Allow members to rent your equipment</p>
             <label for="get-Started"></label>
-            <input (click)="toggle('modalForRentalProgram')" type="button" class=" button button-medium secondary" value="Get Started">
+            <input (click)="toggle('modalForRentalProgram', interServiceSignal)" type="button" class=" button button-medium secondary" value="Get Started">
           </div>
         </app-hero>
       </div>
@@ -72,13 +72,13 @@
             <h1>Rent From a Member</h1>
             <p>Support your neighbours. Find what you need from your fellow community.</p>
             <label for="browse-Items"></label>
-            <input (click)="toggle('Browse Items')" type="button" class=" button button-medium secondary" value="Browse Items">
+            <input (click)="toggle('Browse Items', interServiceSignal)" type="button" class=" button button-medium secondary" value="Browse Items">
           </div>
         </app-hero>
       </div>
     </div>
   }
-      @if(formSignal() === 'Browse Items'){
+      @if(interServiceSignal() === 'Browse Items'){
       <app-photo-gallery-grid>
           @if (product().length > 0){
 
@@ -107,14 +107,11 @@
         <app-modal-for-buying (discard)="false"></app-modal-for-buying>
         }
 
-    @if(formSignal() === "modalForRentalProgram"){
-      <app-modal-for-rental-program (discard)="checkCurrentForm('modalForRentalProgram')"></app-modal-for-rental-program>
+    @if(interServiceSignal() === "modalForRentalProgram"){
+      <app-modal-for-rental-program (discard)="toggle('modalForRentalProgram', interServiceSignal)"></app-modal-for-rental-program>
     }
 
-
-
-
-    @if(serviceButtonClicked("Request")){
+    @if(serviceSignal() === "Request"){
     <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Not seeing what you want? Let the
       community hear your needs!</p>
     }

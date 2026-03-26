@@ -1,8 +1,6 @@
 import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core';
 import { ProductService } from '../../service/product-service';
-import { Subscription } from 'rxjs';
 import { ProductInterface } from '../../interface/product-interface';
-import { Container } from "../../common/container/container";
 import { PhotoForCard } from "../../common/photo-for-card/photo-for-card";
 import { ModalForBuying } from "../../common/modal-for-buying/modal-for-buying";
 import { FormForSelling } from "../../common/form-for-selling/form-for-selling";
@@ -21,8 +19,10 @@ import { ModalForRentalProgram } from "../../common/modal-for-rental-program/mod
 export class ServicePage implements OnInit {
 
   private readonly productService = inject(ProductService);
+  readonly serviceButtonArray: string[] = ["Buy", "Sell", "Rentals", "Request"];
   readonly product = signal<ProductInterface[]>([]);
-
+  serviceSignal = signal<string | null>(null);
+  interServiceSignal = signal<string | null>(null);
 
   ngOnInit(): void {
     this.productService.getAllProduct()
@@ -33,49 +33,15 @@ export class ServicePage implements OnInit {
       });
   }
 
-/*Service Button Logic Begins*/
-serviceSignal = signal<string | null>(null);
-
-toggleServiceButton = (currentServiceButtonValue: string) => {
-  this.serviceSignal.update((previousServiceButtonValue) => {
-    if(currentServiceButtonValue === previousServiceButtonValue){
-      return null;
-    }
-    return currentServiceButtonValue;
-  });
-}
-serviceButtonClicked = (currentServiceButtonValue: string) =>{
-  return this.serviceSignal() === currentServiceButtonValue;
-}
-serviceButtonMap = new Map<string, string>([
-  ["Buy", "Buy"],
-  ["Sell", "Sell"],
-  ["Rentals", "Rentals"],
-  ["Request", "Request"]
-])
-/*Service Button Logic Ends*/
-
-/*form and modal logic begins*/
-formSignal = signal<string | boolean | null >(false);
-
-toggle = (currentForm: string) => {
-  this.formSignal.update((previousForm) => {
-    if(previousForm===currentForm){
-      return null;
-    }
-    return currentForm;
-  });
+  toggle = (currentString: string, signalArgument: WritableSignal<string | null>) => {
+    signalArgument.update((previousString) => {
+      if (previousString === currentString) {
+        return null;
+      }
+      return currentString;
+    });
+  }
 }
 
-checkCurrentForm = (currentlyClickedForm: string) => {
-  this.formSignal.update((previouslyClickedForm) =>{
-    if(previouslyClickedForm === currentlyClickedForm){
-      return false;
-    }
-    return true;
 
-  })
-}
-/*form and modal logic ends*/
-}
 
