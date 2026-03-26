@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core';
 import { ProductService } from '../../service/product-service';
 import { Subscription } from 'rxjs';
 import { ProductInterface } from '../../interface/product-interface';
@@ -19,11 +19,6 @@ import { ModalForRentalProgram } from "../../common/modal-for-rental-program/mod
   styleUrl: './service-page.css',
 })
 export class ServicePage implements OnInit {
-toggleRent() {
-throw new Error('Method not implemented.');
-}
-
-
 
   private readonly productService = inject(ProductService);
   readonly product = signal<ProductInterface[]>([]);
@@ -38,112 +33,49 @@ throw new Error('Method not implemented.');
       });
   }
 
+/*Service Button Logic Begins*/
+serviceSignal = signal<string | null>(null);
 
-  changeButtonBackgroundOnClick = signal(false);
-  buyButtonClicked = signal(false);
-  sellButtonClicked = signal(false);
-  requestButtonClicked = signal(false);
-  messageSellerClicked = signal(false);
-  rentalButtonClicked = signal(false);
-  browseItemsButtonClicked = signal(false);
-  getStartedButtonClicked = signal(false);
-
-  /*only show one and only one of the 3 options at any time (buy, sell, request*/
-
-  toggleBuy() {
-
-    if (this.sellButtonClicked()) {
-      this.sellButtonClicked.update((sellButtonClicked) => !sellButtonClicked)
+toggleServiceButton = (currentServiceButtonValue: string) => {
+  this.serviceSignal.update((previousServiceButtonValue) => {
+    if(currentServiceButtonValue === previousServiceButtonValue){
+      return null;
     }
+    return currentServiceButtonValue;
+  });
+}
+serviceButtonClicked = (currentServiceButtonValue: string) =>{
+  return this.serviceSignal() === currentServiceButtonValue;
+}
+serviceButtonMap = new Map<string, string>([
+  ["Buy", "Buy"],
+  ["Sell", "Sell"],
+  ["Rentals", "Rentals"],
+  ["Request", "Request"]
+])
+/*Service Button Logic Ends*/
 
-    if (this.requestButtonClicked()) {
-      this.requestButtonClicked.update((requestButtonClicked) => !requestButtonClicked)
+/*form and modal logic begins*/
+formSignal = signal<string | boolean | null >(false);
+
+toggle = (currentForm: string) => {
+  this.formSignal.update((previousForm) => {
+    if(previousForm===currentForm){
+      return null;
     }
+    return currentForm;
+  });
+}
 
-    if (this.rentalButtonClicked()){
-      this.rentalButtonClicked.update((rentalButtonClicked) => !rentalButtonClicked);
+checkCurrentForm = (currentlyClickedForm: string) => {
+  this.formSignal.update((previouslyClickedForm) =>{
+    if(previouslyClickedForm === currentlyClickedForm){
+      return false;
     }
+    return true;
 
-    if (this.browseItemsButtonClicked()){
-      this.browseItemsButtonClicked.update((browseItemsButtonClicked) => !browseItemsButtonClicked)
-    }
-
-    this.buyButtonClicked.update((buyButtonClicked) => !buyButtonClicked)
-  }
-
-  toggleMessageSellerModal() {
-    this.messageSellerClicked.update((messageSellerClicked) => !messageSellerClicked)
-  }
-
-  toggleSell() {
-    if (this.buyButtonClicked()) {
-      this.buyButtonClicked.update((buyButtonClicked) => !buyButtonClicked)
-    }
-
-    if (this.requestButtonClicked()) {
-      this.requestButtonClicked.update((requestButtonClicked) => !requestButtonClicked)
-    }
-
-    if (this.rentalButtonClicked()){
-      this.rentalButtonClicked.update((rentalButtonClicked) => !rentalButtonClicked);
-    }
-
-    if (this.browseItemsButtonClicked()){
-      this.browseItemsButtonClicked.update((browseItemsButtonClicked) => !browseItemsButtonClicked)
-    }
-
-    this.sellButtonClicked.update((sellButtonClicked) => !sellButtonClicked)
-  }
-
-  toggleSellItemModal(){
-    this.sellButtonClicked.update((sellButtonClicked) => !sellButtonClicked);
-  }
-
-  toggleRequest() {
-    if (this.sellButtonClicked()) {
-      this.sellButtonClicked.update((sellButtonClicked) => !sellButtonClicked)
-    }
-
-    if (this.buyButtonClicked()) {
-      this.buyButtonClicked.update((buyButtonClicked) => !buyButtonClicked)
-    }
-
-    if (this.rentalButtonClicked()){
-      this.rentalButtonClicked.update((rentalButtonClicked) => !rentalButtonClicked);
-    }
-
-    if (this.browseItemsButtonClicked()){
-      this.browseItemsButtonClicked.update((browseItemsButtonClicked) => !browseItemsButtonClicked)
-    }
-
-    this.requestButtonClicked.update((requestButtonClicked) => !requestButtonClicked)
-  }
-
-  toggleRental(){
-
-    if (this.sellButtonClicked()) {
-      this.sellButtonClicked.update((sellButtonClicked) => !sellButtonClicked)
-    }
-
-    if (this.requestButtonClicked()) {
-      this.requestButtonClicked.update((requestButtonClicked) => !requestButtonClicked)
-    }
-    if (this.buyButtonClicked()){
-      this.buyButtonClicked.update((buyButtonClicked) => !buyButtonClicked)
-    }
-
-    if (this.browseItemsButtonClicked()){
-      this.browseItemsButtonClicked.update((browseItemsButtonClicked) => !browseItemsButtonClicked)
-    }
-    this.rentalButtonClicked.update((rentalButtonClicked) => !rentalButtonClicked);
-  }
-
-  toggleBrowseItems(){
-    this.browseItemsButtonClicked.update((browseItemsButtonClicked) => !browseItemsButtonClicked)
-  }
-
-  toggleGetStarted(){
-    this.getStartedButtonClicked.update((getStartedButtonClicked) => !getStartedButtonClicked);
-  }
+  })
+}
+/*form and modal logic ends*/
 }
 

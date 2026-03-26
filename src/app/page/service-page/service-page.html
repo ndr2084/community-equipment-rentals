@@ -5,26 +5,15 @@
 
     <div class="button-container">
 
-      <label for="buy-button"></label>
-      <input (click)="toggleBuy()" type="button" class=" button button-medium secondary"
-        [class.secondary-change-button-style-on-click]="buyButtonClicked()" value="Buy">
-
-      <label for="sell-button"></label>
-      <input (click)="toggleSell()" type="button" class=" button button-medium secondary"
-        [class.secondary-change-button-style-on-click]="sellButtonClicked()" value="Sell">
-
-      <label for="rent-button"></label>
-      <input (click)="toggleRental()" type="button" class=" button button-medium secondary"
-        [class.secondary-change-button-style-on-click]="rentalButtonClicked()" value="Rentals">
-
-      <label for="request-button"></label>
-      <input (click)="toggleRequest()" type="button" class=" button button-medium secondary"
-        [class.secondary-change-button-style-on-click]="requestButtonClicked()" value="Request">
-
+      @for(item of serviceButtonMap.keys(); track item){
+      <label for="{{serviceButtonMap.get(item)}}"></label>
+      <input (click)="toggleServiceButton(item)" type="button" class=" button button-medium secondary"
+        [class.secondary-change-button-style-on-click]="serviceButtonClicked(item)" value="{{serviceButtonMap.get(item)}}">
+      }
     </div>
 
     <!-- BUY BUTTON AND ASSOCIATED COMPONENTS BEGINS -->
-    @if(buyButtonClicked()){
+    @if(serviceButtonClicked("Buy")){
     <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Get your hands on some previously loved
       equipment</p>
 
@@ -32,7 +21,7 @@
       @if (product().length > 0){
 
       @for (products of product(); track products.productName){
-      <app-card (click)="toggleMessageSellerModal()" class="illuminate-border-transition">
+      <app-card (click)="toggle('modalForBuying')" class="illuminate-border-transition">
         <app-photo-for-card>
           <!--insert-photo-here-->
         </app-photo-for-card>
@@ -52,28 +41,28 @@
     </app-photo-gallery-grid>
     }
 
-    @if(messageSellerClicked()){
-    <app-modal-for-buying (discard)="toggleMessageSellerModal()"></app-modal-for-buying>
+    @if(formSignal()==='modalForBuying'){
+    <app-modal-for-buying (discard)="checkCurrentForm('modalForBuying')"></app-modal-for-buying>
     }
     <!-- BUY BUTTON AND ASSOCIATED COMPONENTS ENDS -->
 
-    @if(sellButtonClicked()){
+    @if(serviceButtonClicked("Sell")){
     <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Make some cash for new shiny toys</p>
     <div class="form-flex-container">
-      <app-form-for-selling (discard)="toggleSellItemModal()">
+      <app-form-for-selling (toggleDiscardSellForm)="checkCurrentForm('modalForRentalProgram')" >
       </app-form-for-selling>
     </div>
     }
 
-    @if(rentalButtonClicked()){
+    @if(serviceButtonClicked("Rentals")){
     <div class="hero-flex-container">
       <div class="hero-business-photo">
         <app-hero>
           <div class="hero-content-box">
             <h1>Rental Program Initiative</h1>
             <p>Become part of the business. Allow members to rent your equipment</p>
-            <label for="sell-button"></label>
-            <input (click)="toggleGetStarted()" type="button" class=" button button-medium secondary" value="Get Started">
+            <label for="get-Started"></label>
+            <input (click)="toggle('modalForRentalProgram')" type="button" class=" button button-medium secondary" value="Get Started">
           </div>
         </app-hero>
       </div>
@@ -82,19 +71,19 @@
           <div class="hero-content-box">
             <h1>Rent From a Member</h1>
             <p>Support your neighbours. Find what you need from your fellow community.</p>
-            <label for="sell-button"></label>
-            <input (click)="toggleBrowseItems()" type="button" class=" button button-medium secondary" value="Browse Items">
+            <label for="browse-Items"></label>
+            <input (click)="toggle('Browse Items')" type="button" class=" button button-medium secondary" value="Browse Items">
           </div>
         </app-hero>
       </div>
     </div>
   }
-      @if(browseItemsButtonClicked()){
+      @if(formSignal() === 'Browse Items'){
       <app-photo-gallery-grid>
           @if (product().length > 0){
 
           @for (products of product(); track products.productName){
-          <app-card (click)="toggleMessageSellerModal()" class="illuminate-border-transition">
+          <app-card (click)="false" class="illuminate-border-transition">
             <app-photo-for-card>
               <!--insert-photo-here-->
             </app-photo-for-card>
@@ -114,19 +103,18 @@
         </app-photo-gallery-grid>
         }
 
-        @if(messageSellerClicked()){
-        <app-modal-for-buying (discard)="toggleMessageSellerModal()"></app-modal-for-buying>
+        @if(false){
+        <app-modal-for-buying (discard)="false"></app-modal-for-buying>
         }
 
-    @if(getStartedButtonClicked()){
-      <app-modal-for-rental-program (discard)="toggleGetStarted()"></app-modal-for-rental-program>
-
+    @if(formSignal() === "modalForRentalProgram"){
+      <app-modal-for-rental-program (discard)="checkCurrentForm('modalForRentalProgram')"></app-modal-for-rental-program>
     }
 
 
 
 
-    @if(requestButtonClicked()){
+    @if(serviceButtonClicked("Request")){
     <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Not seeing what you want? Let the
       community hear your needs!</p>
     }

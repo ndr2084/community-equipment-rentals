@@ -25,14 +25,14 @@ export class FormForSelling {
     console.warn(this.formForSelling.value);
   }
 
-  discard = output<void>();
+  discardFormForSelling = output<void>();
 
   toggleClose() {
       this.closeButtonClicked.update((closeButtonClicked) => !closeButtonClicked);
   }
 
-  onClose(){
-    this.discard.emit();
+  toggleDiscardSellForm(){
+    this.discardFormForSelling.emit();
   }
 
 }

@@ -32,11 +32,6 @@ export class AppointmentPicker {
   }
   /*CALENDAR ILLUMINATION LOGIC ON CLICK ENDS*/
 
-/*TODO: move this son of a bitch somewhere*/
-toggleSignal(genericSignal: WritableSignal<boolean>, event?: MouseEvent){
-    genericSignal.update((genericSignal)=>!genericSignal);
-    console.log(event?.target);
-  }
 
 /*TIME ILLUMINATION LOGIC ON CLICK BEGINS*/
 
