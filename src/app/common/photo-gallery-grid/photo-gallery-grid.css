@@ -1,11 +1,11 @@
 .grid-image-gallery{
   display: grid;
   max-width: fit-content;
-  padding: auto;
+  padding: var(--default-padding);
   margin: 0 auto;
   align-items: center;
   column-gap: var(--column-gap-desktop);
-  grid-auto-rows: 450px;
+  row-gap: var(--column-gap-desktop);
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -16,8 +16,6 @@
     display: grid;
     max-width: fit-content;
     align-items: center;
-    column-gap: var(--column-gap-desktop);
-    grid-auto-rows: 450px;
     grid-template-columns: repeat(4, 1fr);
   }
 }

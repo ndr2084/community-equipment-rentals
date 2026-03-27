@@ -1,4 +1,4 @@
-import { Component, signal, WritableSignal, ChangeDetectionStrategy, output } from '@angular/core';
+import { Component, signal, input, WritableSignal, ChangeDetectionStrategy, output } from '@angular/core';
 import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { Container } from "../container/container";
 import { Overlay } from "../overlay/overlay";
@@ -19,7 +19,9 @@ export class ModalForBuying {
   });
 
   discard = output<void>();
+  name = input<string>();
   closeButtonClicked = signal(false);
+
   //discardButtonClicked = signal(false);
 
   /*you gotta do something diff with this man*/

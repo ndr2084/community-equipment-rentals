@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-  --default-background-color: black;
+  --default-background-color: rgb(6, 1, 6);
   --default-font-color: white;
   --default-font-family: "Space Mono", monospace;
   --default-border-radius-for-media: 10px;
@@ -28,6 +28,7 @@
   --medium-button-width: 150px;
   --small-button-width: 75px;
   --z-index-modal: 1000;
+  --component-gap: 24px;
 
   background-color: var(--default-background-color);
   color: var(--default-font-color);
@@ -38,9 +39,8 @@
 
 html,
 body {
-  width: 100%;
   font-size: var(--default-font-size);
-  overflow: hidden;
+  overflow: scroll;
 }
 
 *,
@@ -49,16 +49,6 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-body {
-  background-image: linear-gradient(
-    to top,
-    #000000,
-    #050102,
-    #010101,
-    #070007,
-    #07010b
-  );
 }
 
 /*GLOBAL FORM LOGIC BEGINS*/
@@ -302,13 +292,11 @@ button {
 
 .huge-title-dynamic {
   font-size: clamp(1.4rem, 3vw, 2.5rem);
-  padding: clamp(0.2rem, 0.5vw, 1.2rem);
   font-weight: 500;
 }
 
 .large-title-dynamic {
   font-size: clamp(1rem, 1.5vw, 2rem);
-  padding: clamp(2px, calc(0.318px + 0.841vw), 12px);
   font-weight: 500;
 }
 
@@ -318,7 +306,6 @@ button {
 
 .tiny-text{
   font-size: var(--tiny-font-size);
-  padding: var(--default-padding);
 }
 
 .underline{
@@ -357,6 +344,10 @@ button {
 
 .brand-color-yellow {
   color: yellow;
+}
+
+.default-padding{
+  padding: var(--default-padding);
 }
 
 /*GLOBAL TYPOGRAPHY ENDS*/
@@ -459,4 +450,9 @@ button {
 }
 /*MODAL STYLING ENDS*/
 
-/*Additional button styling classes*/
+/*Container Styling*/
+.container{
+border-radius: var(--default-border-radius-for-media);
+background-color: rgba(0, 0, 0, 0.232);
+box-shadow: inset 0 0 0 1px #2422224e;
+}

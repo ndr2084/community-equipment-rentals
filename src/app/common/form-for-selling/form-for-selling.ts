@@ -6,7 +6,7 @@ import { WarningPopup } from '../warning-popup/warning-popup';
 
 @Component({
   selector: 'app-form-for-selling',
-  imports: [ReactiveFormsModule, Container, WarningPopup],
+  imports: [ReactiveFormsModule, Container, WarningPopup, Overlay],
   templateUrl: './form-for-selling.html',
   styleUrl: './form-for-selling.css',
 })
@@ -25,14 +25,14 @@ export class FormForSelling {
     console.warn(this.formForSelling.value);
   }
 
-  discardFormForSelling = output<void>();
+  discard = output<void>();
 
   toggleClose() {
       this.closeButtonClicked.update((closeButtonClicked) => !closeButtonClicked);
   }
 
-  discard(){
-    this.discardFormForSelling.emit();
+  onClose(){
+    this.discard.emit();
   }
 
 }

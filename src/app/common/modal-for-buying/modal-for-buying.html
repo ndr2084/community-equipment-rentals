@@ -2,7 +2,7 @@
   <app-container class="modal">
     <form [formGroup]="formForBuying" (ngSubmit)="onSubmit()" class="default-form">
 
-      <h1 class="form-title">Message Seller</h1>
+      <h1 class="form-title">Message {{name()}}</h1>
       <label for="first-name"></label>
       <input class="default-text default-input" id="first-name" type="text" formControlName="firstName"
         placeholder="First Name *" />

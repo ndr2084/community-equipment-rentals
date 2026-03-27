@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core';
+import { Component, inject, input, OnInit, signal, WritableSignal } from '@angular/core';
 import { ProductService } from '../../service/product-service';
 import { ProductInterface } from '../../interface/product-interface';
 import { PhotoForCard } from "../../common/photo-for-card/photo-for-card";
@@ -9,10 +9,12 @@ import { InfoForCard } from "../../common/info-for-card/info-for-card";
 import { Hero } from "../../common/hero/hero";
 import { PhotoGalleryGrid } from '../../common/photo-gallery-grid/photo-gallery-grid';
 import { ModalForRentalProgram } from "../../common/modal-for-rental-program/modal-for-rental-program";
+import { Navigation } from "../../common/navigation/navigation";
+import { Container } from "../../common/container/container";
 
 @Component({
   selector: 'app-service-page',
-  imports: [PhotoForCard, ModalForBuying, FormForSelling, Card, InfoForCard, Hero, PhotoGalleryGrid, ModalForRentalProgram],
+  imports: [PhotoForCard, ModalForBuying, FormForSelling, Card, InfoForCard, Hero, PhotoGalleryGrid, ModalForRentalProgram, Navigation, Container],
   templateUrl: './service-page.html',
   styleUrl: './service-page.css',
 })
@@ -23,6 +25,7 @@ export class ServicePage implements OnInit {
   readonly product = signal<ProductInterface[]>([]);
   serviceSignal = signal<string | null>(null);
   interServiceSignal = signal<string | null>(null);
+
 
   ngOnInit(): void {
     this.productService.getAllProduct()

@@ -1,11 +1,18 @@
-<nav class="nav-component-open"[class]="!mouseInNavBar()? 'nav-component-open' : 'nav-component-closed'" >
-  <ul class="unordered-list" >
-    <li (click)="toggle()" >𓃑</li>
-  </ul>
-  <ul class="unordered-list">
-    <a routerLink="service-page">Services</a>
-    <a routerLink="about-page">About</a>
-    <a>Blog</a>
-    <a>Contact</a>
-  </ul>
-</nav>
+
+
+  <div class="content-container container">
+
+    <div class="company-name">
+      <h3>Community</h3>
+      <h3>Share</h3>
+    </div>
+
+    <nav class="nav-container">
+      <ul class="nav-list">
+        <a routerLink="service-page">Services</a>
+        <a routerLink="about-page">About</a>
+        <a>Blog</a>
+        <a>Contact</a>
+      </ul>
+    </nav>
+  </div>
