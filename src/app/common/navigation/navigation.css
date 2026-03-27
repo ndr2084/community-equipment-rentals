@@ -10,6 +10,8 @@
 .content-container{
   height: 98vh;
   width: 200px;
+  position: sticky;
+  top: 1vh;
 }
 
 .company-name{
