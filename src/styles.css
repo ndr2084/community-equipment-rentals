@@ -28,7 +28,8 @@
   --medium-button-width: 150px;
   --small-button-width: 75px;
   --z-index-modal: 1000;
-  --component-gap: 24px;
+  --component-gap: 6px;
+  --secondary-button-color: black;
 
   background-color: var(--default-background-color);
   color: var(--default-font-color);
@@ -93,6 +94,7 @@ button {
   cursor: pointer;
   height: 33px;
   font-size: var(--default-font-size);
+  background: none;
 }
 
 .button-medium {
@@ -181,10 +183,22 @@ button {
 
 /*Danger button ends*/
 
-/*Circular button begins*/
+.symbol-button{
+border-radius: 5px;
+width: 20px;
+height: fit-content;
+background-color: none;
+transition: 0.12s all;
+}
 
+.symbol-button:hover{
+  background-color: #26262637;
+}
 
-/*Circular button ends*/
+.symbol-button:active{
+  background-color: #26262675;
+}
+
 
 /*Button animations begin*/
 
@@ -230,23 +244,23 @@ button {
 
 @keyframes secondaryOnHover{
   0%{
-    border: 1px solid rgba(255, 255, 255, 0.183);
+    border: 1px solid rgba(255, 255, 255, 0.298);
   }
   100%{
     border: 1px solid rgba(255, 255, 255, 0.298);
-    background-color: #020202;
+
   }
 }
 
 @keyframes secondaryOnActive{
   0%{
-    border: 1px solid rgba(255, 255, 255, 0.183);
     background-color: #040404;
+    border: 1px solid rgba(255, 255, 255, 0.298);
 
   }
   100%{
-    border: 1px solid rgba(255, 255, 255, 0.259);
     background-color: rgb(13, 13, 13);
+    border: 1px solid rgba(255, 255, 255, 0.298);
   }
 }
 
@@ -453,7 +467,12 @@ button {
 /*Container Styling*/
 .container{
 border-radius: var(--default-border-radius-for-media);
-background-color: rgb(16, 2, 14);
+background-color: rgba(2, 9, 82, 0.119);
 box-shadow: inset 0 0 0 1px #242222;
 height: fit-content;
 }
+
+/*Circular button begins*/
+
+
+/*Circular button ends*/

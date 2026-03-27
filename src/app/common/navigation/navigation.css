@@ -19,5 +19,23 @@
 
 }
 
+.company-name-container{
+  display: flex;
+}
+
+.company-name-container > *{
+  width: 100%;
+}
+
+.open-close-sidebar{
+  display: flex;
+  justify-content: end;
+
+  padding-right: var(--default-padding);
+  padding-top: var(--default-padding);
+
+
+}
+
 
 
