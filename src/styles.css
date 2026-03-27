@@ -453,7 +453,7 @@ button {
 /*Container Styling*/
 .container{
 border-radius: var(--default-border-radius-for-media);
-background-color: rgba(0, 0, 0, 0.232);
-box-shadow: inset 0 0 0 1px #2422224e;
+background-color: rgb(16, 2, 14);
+box-shadow: inset 0 0 0 1px #242222;
 height: fit-content;
 }

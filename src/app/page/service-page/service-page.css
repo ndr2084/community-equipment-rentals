@@ -10,11 +10,17 @@
 
 .grid-wrapper{
   display: grid;
+  width: 100vw;
   gap: var(--component-gap);
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 10fr;
+  grid-template-rows: 140px;
   grid-template-areas:
-  "hero-header-and-button-container"
-  "toggle-content"
+  "nav-grid-area hero-header-and-button-container"
+  "nav-grid-area toggle-content"
+}
+
+.nav-grid-area{
+  grid-area: nav-grid-area;
 }
 
 .hero-header-and-button-container{
@@ -23,6 +29,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 300px;
 }
 
 
@@ -41,6 +48,8 @@
   gap: 12px;
   padding: var(--default-padding);
   padding-top: 0;
+  width: 100%;
+  justify-content: center;
 }
 
 .toggle-content{
@@ -99,7 +108,6 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
   gap: var(--column-gap-desktop);
 }
 

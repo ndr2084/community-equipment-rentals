@@ -1,29 +1,27 @@
 <div class="service-page">
-
-
-  <app-navigation></app-navigation>
-
-
   <div class="grid-wrapper">
+    <div class="nav-grid-area">
+      <app-navigation></app-navigation>
+    </div>
     <div class="hero-header-and-button-container container">
+      <div class="hero-header">
+        <h1 class="huge-title-dynamic center-text">Services</h1>
+        <p class="center-text">Created for you; Powered by you. Find what you're looking for, today.</p>
+      </div>
 
-        <div class="hero-header">
-          <h1 class="huge-title-dynamic center-text">Services</h1>
-          <p class="center-text">Created for you; Powered by you. Find what you're looking for, today.</p>
-        </div>
-
-        <div class="button-container">
-          @for(item of serviceButtonArray ; track item){
-          <label for="{{item}}"></label>
-          <input (click)="toggle(item, serviceSignal)" type="button" class=" button button-medium secondary"
-            [class.secondary-change-button-style-on-click]="serviceSignal() === item" value="{{item}}">
-          }
-        </div>
+      <div class="button-container">
+        @for(item of serviceButtonArray ; track item){
+        <label for="{{item}}"></label>
+        <input (click)="toggle(item, serviceSignal)" type="button" class=" button button-medium secondary"
+          [class.secondary-change-button-style-on-click]="serviceSignal() === item" value="{{item}}">
+        }
+      </div>
     </div>
     <div class="toggle-content">
       <!-- BUY BUTTON AND ASSOCIATED COMPONENTS BEGINS -->
       @if(serviceSignal() === "Buy"){
-      <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding">Get your hands on some previously loved
+      <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding">Get your hands on some
+        previously loved
         equipment</p>
 
       <app-photo-gallery-grid>
@@ -57,7 +55,7 @@
       <!-- BUY BUTTON AND ASSOCIATED COMPONENTS ENDS -->
 
       @if(serviceSignal() === "Sell"){
-      <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Make some cash for new shiny toys</p>
+      <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding">Make some cash for new shiny toys</p>
       <div class="form-flex-container">
         <app-form-for-selling (discard)="toggle('Sell', serviceSignal)">
         </app-form-for-selling>
@@ -65,6 +63,7 @@
       }
 
       @if(serviceSignal() === "Rentals"){
+        <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding">Make some cash for new shiny toys</p>
       <div class="hero-flex-container">
         <div class="hero-business-photo">
           <app-hero>
@@ -121,7 +120,7 @@
       }
 
       @if(serviceSignal() === "Request"){
-      <p class="sub-text center-text brand-color-yellow fade-in-transition-slow">Not seeing what you want? Let the
+      <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding">Not seeing what you want? Let the
         community hear your needs!</p>
       }
     </div>
