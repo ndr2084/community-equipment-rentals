@@ -19,16 +19,18 @@
   position: sticky;
   overflow: hidden;
   top: 1vh;
-  animation: closingAnimation 0.3s forwards;
+  animation: openingAnimation 0.12s forwards;
+
 }
 
 .content-container-close{
   display: flex;
   flex-direction: column;
   height: 98vh;
-  width: 50px;
+  width: 200px;
   position: sticky;
   top: 1vh;
+  animation: closingAnimation 0.48s forwards;
 }
 
 .company-name-container{
@@ -81,12 +83,25 @@
 @keyframes closingAnimation {
   0%{
     width: 100%;
-    color: rgba(255, 255, 255, 0.500)
+  }
+  50%{
+    width: 50px;
   }
   100%{
-    width: 20%;
-    color: rgba(0, 0, 0, 0);
 
+    width: 50px;
+  }
+}
+
+@keyframes openingAnimation {
+  0%{
+    width: 50px;
+  }
+  99%{
+    width: 100%;
+  }
+  100%{
+    width: 100%;
   }
 }
 
