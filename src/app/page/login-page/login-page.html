@@ -14,23 +14,27 @@
     <div class="mobile-login-form-components-container">
 
       <div class="mobile-login-title-container">
-        <h1 class="huge-title-dynamic">Community </h1>
-        <h1 class="huge-title-dynamic">Equipment</h1>
-        <h1 class="huge-title-dynamic">Rentals</h1>
+        <div class="title-alignment-container">
+          <h1>Community Equipment Rentals</h1>
+        </div>
       </div>
 
-        <app-container>
-        <form [formGroup]="profileForm" class="default-form">
+      <div class="form-container">
+        <form [formGroup]="profileForm" class="default-form container">
           <h1 class="form-title">Login</h1>
           <label for="first-name"></label>
-          <input class="default-text default-input" type="text" formControlName="firstName" placeholder="First Name *" />
+          <input class="default-text default-input" type="text" formControlName="firstName"
+            placeholder="First Name *" />
           <label for="last-name"></label>
           <input class="default-text default-input" type="text" formControlName="lastName" placeholder="Last Name" />
           <label for="last-name"></label>
-          <input class="default-text default-input" type="text" formControlName="discordUsername" placeholder="Discord Username *" />
-          <input type="submit" value="Submit" class=" button button-large primary">
+          <input class="default-text default-input" type="text" formControlName="discordUsername"
+            placeholder="Discord Username *" />
+          <div class="button-container">
+            <input type="submit" value="Submit" class=" button button-large primary">
+          </div>
         </form>
-      </app-container>
+      </div>
     </div>
   </div>
 </div>

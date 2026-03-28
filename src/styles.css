@@ -417,7 +417,7 @@ transition: 0.12s all;
   flex-direction: column;
   gap: var(--default-form-gap);
   padding: var(--default-form-padding);
-  width: clamp(300px, calc(100px + 66.667vw), 650px);
+  width: 100%;
 }
 
 .default-input {

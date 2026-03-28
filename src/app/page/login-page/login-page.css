@@ -2,11 +2,25 @@
   display: none;
 }
 
+.login-form{
+  max-width: 40vw;
+  display: flex;
+}
+
+.form-container{
+  max-width: 350px;
+  margin: var(--default-padding);
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+}
+
 .login-title-container {
   display: flex;
   flex-direction: column;
-
-  max-width: fit-content;
+  padding: var(--default-padding);
 }
 
 .login-form-container {
@@ -48,16 +62,17 @@
   .mobile-login-title-container {
     display: flex;
     flex-direction: column;
-    padding: 0px 0px 10px 0px;
-    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
   .mobile-login-form-components-container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     margin: auto;
+    flex-flow: row wrap;
+    width: 350px;
   }
-
 
 }
