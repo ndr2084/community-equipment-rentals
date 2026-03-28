@@ -19,7 +19,7 @@
   position: sticky;
   overflow: hidden;
   top: 1vh;
-  animation: openingAnimation 0.12s forwards;
+  animation: openingAnimation 0.48s forwards;
 
 }
 
@@ -85,7 +85,7 @@
     width: 100%;
   }
   50%{
-    width: 50px;
+    width: 45px;
   }
   100%{
 
@@ -97,8 +97,8 @@
   0%{
     width: 50px;
   }
-  99%{
-    width: 100%;
+  50%{
+    width: 102%;
   }
   100%{
     width: 100%;
