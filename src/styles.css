@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-  --default-background-color: rgb(6, 1, 6);
+  --default-background-color: rgb(5, 5, 5);
   --default-font-color: white;
   --default-font-family: "Space Mono", monospace;
   --default-border-radius-for-media: 10px;
@@ -191,11 +191,11 @@ transition: 0.12s all;
 }
 
 .symbol-button:hover{
-  background-color: #26262637;
+  background-color: #26262675;
 }
 
 .symbol-button:active{
-  background-color: #26262675;
+  background-color: #262626;
 }
 
 
@@ -466,7 +466,7 @@ transition: 0.12s all;
 /*Container Styling*/
 .container{
 border-radius: var(--default-border-radius-for-media);
-
+background-color: #020202;
 box-shadow: inset 0 0 0 1px #232222;
 height: fit-content;
 }
