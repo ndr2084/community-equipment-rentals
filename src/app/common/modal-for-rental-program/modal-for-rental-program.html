@@ -1,5 +1,6 @@
 <app-overlay>
   <app-container class="modal">
+    <div class="form-container">
     <form [formGroup]="formForRentalProgramInitiative" (ngSubmit)="onSubmit()" class="default-form">
 
       <h1 class="form-title landscape-form">Rental Program Application</h1>
@@ -39,7 +40,7 @@
       @if(!closeButtonClicked()) {
       <div class="button-group">
         <input (click)="toggleClose()" type="button" value="Close" class="button button-medium secondary default-text">
-        <input type="submit" value="Send Application" class="button button-medium primary"
+        <input type="submit" value="Send Application" class="button button-medium secondary"
           [disabled]="!formForRentalProgramInitiative.valid">
       </div>
       }
@@ -52,9 +53,10 @@
       </div>
       <div class="button-group">
         <input (click)="toggleClose()" type="button" value="Continue editing" class="button button-medium secondary">
-        <input (click)="onClose()" type="submit" value="Discard" class="button button-small danger">
+        <input (click)="onClose()" type="submit" value="Discard" class="button button-medium danger">
       </div>
       }
     </form>
+  </div>
   </app-container>
 </app-overlay>

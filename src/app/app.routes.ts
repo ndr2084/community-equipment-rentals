@@ -5,7 +5,7 @@ import { ServicePage } from './page/service-page/service-page';
 
 export const routes: Routes = [
   {
-    path: 'service-page',
+    path: 'about-page',
     component: AboutPage,
   },
 

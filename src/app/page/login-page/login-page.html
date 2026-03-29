@@ -1,40 +1,46 @@
-<div class="login-page">
 
-  <div class="company-graphics">
-    <div class="login-title-container">
-      <h1 class="huge-title-dynamic">Community </h1>
-      <h1 class="huge-title-dynamic">Equipment</h1>
-      <h1 class="huge-title-dynamic">Rentals</h1>
-    </div>
+
+<div class="login-page">
+  <div class="video-background">
+    <video autoplay muted loop playsinline>
+      <source src="outdoor-video.mp4" type="video/mp4"> <!-- fallback -->
+    </video>
   </div>
 
-
-  <div class="login-form-container">
-
-    <div class="mobile-login-form-components-container">
-
-      <div class="mobile-login-title-container">
-        <div class="title-alignment-container">
-          <h1>Community Equipment Rentals</h1>
-        </div>
-      </div>
-
-      <div class="form-container">
-        <form [formGroup]="profileForm" class="default-form container">
-          <h1 class="form-title">Login</h1>
-          <label for="first-name"></label>
-          <input class="default-text default-input" type="text" formControlName="firstName"
-            placeholder="First Name *" />
-          <label for="last-name"></label>
-          <input class="default-text default-input" type="text" formControlName="lastName" placeholder="Last Name" />
-          <label for="last-name"></label>
-          <input class="default-text default-input" type="text" formControlName="discordUsername"
-            placeholder="Discord Username *" />
-          <div class="button-container">
-            <input type="submit" value="Submit" class=" button button-large primary">
-          </div>
-        </form>
-      </div>
+  <div class="hero-container">
+    <div class="hero-container-elements">
+      <h1 class="hero-title">Community Co-op</h1>
+      <div class="title-container">
+    </div>
+    <div class="caption-container">
+      <h1 class="hero-caption brand-color-yellow">Find everything you need for your next outdoor adventure</h1>
+    </div>
+    </div>
+    <div class="button-container">
+      <input type="button" value="Get Stared" class="button hero-button">
+      <input type="button" value="Sign In" class="button hero-button">
     </div>
   </div>
 </div>
+
+
+<!--
+  <div class="form-container">
+
+    <form [formGroup]="profileForm" class="default-form container">
+      <h1 class="form-title">Login</h1>
+      <label for="first-name"></label>
+      <input class="default-text default-input" type="text" formControlName="firstName" placeholder="First Name *" />
+      <label for="last-name"></label>
+      <input class="default-text default-input" type="text" formControlName="lastName" placeholder="Last Name" />
+      <label for="last-name"></label>
+      <input class="default-text default-input" type="text" formControlName="discordUsername"
+        placeholder="Discord Username *" />
+
+      <div class="button-container">
+        <input type="submit" value="Submit" class=" button button-large primary">
+      </div>
+
+    </form>
+  </div>
+-->

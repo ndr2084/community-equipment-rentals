@@ -1,20 +1,91 @@
-.mobile-login-title-container {
-  display: none;
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;        /* Sits behind everything */
+  overflow: hidden;
 }
 
-.login-form{
-  max-width: 40vw;
+.login-page{
+  background: transparent;
+  height: 100vh;
+  width: 100%;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+
+.hero-container{
+ display: flex;
+ flex-direction: column;
+ gap: 32px;
+ width:fit-content;
+}
+
+.title-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-title{
+  font-size: 80px;
+}
+
+.hero-sub-title{
+  font-size: 60px;
+  padding-left: 3px;
+}
+
+.caption-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-caption{
+  font-size: 20px;
+  text-align: center;
+  padding: none;
+
+}
+
+.hero-button{
+  background: none;
+  width: 300px;
+  height: 75px;
+  border-radius: var(--default-border-radius-for-media);
+  font-size: 25px;
+  transition: 1.2s all;
+}
+
+.hero-button:hover{
+  border: 1px solid rgba(255, 255, 255, 0.463);
+  background: rgba(255, 255, 255, 0.088);
+}
+
+.hero-button:active{
+  background: rgba(255, 255, 255, 0.475);
 }
 
 .form-container{
+  display: flex;
+  flex-direction: column;
   max-width: 350px;
-  margin: var(--default-padding);
+  border: var(--default-padding);
+  justify-content: center;
+  align-items: center;
 }
 
 .button-container{
   display: flex;
-  justify-content: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: var(--default-padding);
 }
 
 .login-title-container {
@@ -32,47 +103,49 @@
   background-color: rgba(5, 39, 70, 0.099);
 }
 
-.login-page {
-  display: flex;
-}
-
-.company-graphics {
-  width: 60vw;
-  background-image: url("../../../../public/female-climber.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-@media screen and (min-width: 0px) and (max-width: 1000px) {
-  .company-graphics {
-    display: none;
-  }
-
-  .login-form-container {
+@media screen and (300px < width <= 1000px) {
+  .hero-container{
     display: flex;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("../../../../public/female-climber.jpg");
-    background-repeat: none;
-    background-position: center;
-    background-size: cover;
-    overflow: scroll;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+
   }
-  .mobile-login-title-container {
+
+  .hero-title{
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .hero-caption{
+    font-size: 13px;
+    text-align: center;
+  }
+
+
+
+  .hero-container-elements{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+  }
+
+  .button-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    gap: 16px;
+    padding: 0;
   }
 
-  .mobile-login-form-components-container {
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    flex-flow: row wrap;
-    width: 350px;
+  .hero-button{
+    width: 300px;
+    height: 50px;
+    border-radius: var(--default-border-radius-for-media);
+    font-size: 20px;
   }
 
 }
+

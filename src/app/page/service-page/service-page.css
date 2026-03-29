@@ -1,4 +1,10 @@
 .service-page {
+  background-image: url("background-darkened.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* optional: prevents scrolling with page */
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   padding: 1vh;
@@ -10,7 +16,7 @@
 .grid-wrapper{
   display: grid;
   width: 100vw;
-  gap: var(--component-gap);
+  gap: 64px;
   grid-template-columns: 1fr 10fr;
   grid-template-rows: 140px;
   grid-template-areas:
@@ -29,6 +35,8 @@
   justify-content: center;
   align-items: center;
   min-width: 300px;
+  /*DO NOT fuck with the margin-right*/
+  margin-right: var(--component-gap);
 }
 
 

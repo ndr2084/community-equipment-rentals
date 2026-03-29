@@ -3,7 +3,7 @@
     <div class="nav-grid-area">
       <app-navigation></app-navigation>
     </div>
-    <div class="hero-header-and-button-container">
+    <div class="hero-header-and-button-container container">
       <div class="hero-header">
         <h1 class="huge-title-dynamic center-text">Services</h1>
         <p class="center-text">Created for you; Powered by you. Find what you're looking for, today.</p>
@@ -55,7 +55,8 @@
       <!-- BUY BUTTON AND ASSOCIATED COMPONENTS ENDS -->
 
       @if(serviceSignal() === "Sell"){
-      <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding">Make some cash for new shiny toys</p>
+        <!--
+      <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding">Make some cash for new shiny toys</p> -->
       <div class="form-flex-container">
         <app-form-for-selling (discard)="toggle('Sell', serviceSignal)">
         </app-form-for-selling>
@@ -63,9 +64,9 @@
       }
 
       @if(serviceSignal() === "Rentals"){
-        <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding">Make some cash for new shiny toys</p>
+        <!-- <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding"> Make some cash for new shiny toys</p> -->
       <div class="hero-flex-container">
-        <div class="hero-business-photo">
+        <div>
           <app-hero>
             <div class="hero-content-box">
               <h1>Rental Program Initiative</h1>
@@ -76,7 +77,7 @@
             </div>
           </app-hero>
         </div>
-        <div class="hero-business-photo-1">
+        <div class="">
           <app-hero class="illuminate-border-transition">
             <div class="hero-content-box">
               <h1>Rent From a Member</h1>

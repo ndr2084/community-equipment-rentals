@@ -1,15 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-  --default-background-color: rgb(5, 5, 5);
+
   --default-font-color: white;
   --default-font-family: "Space Mono", monospace;
-  --default-border-radius-for-media: 10px;
+  --default-border-radius-for-media: 18px;
   --default-border-radius-for-navigation: 100px;
   --default-font-size: 16px;
   --default-font-size-for-navigation: 1.5vw;
   --default-padding: 12px;
-  --disabled-screen-tint: rgba(0, 0, 0, 0.739);
+  --disabled-screen-tint: rgba(0, 0, 0, 0.249);
   --default-line-height: 2em;
   --default-form-width: 300px;
   --default-button-gap: 16px;
@@ -28,7 +28,7 @@
   --medium-button-width: 150px;
   --small-button-width: 75px;
   --z-index-modal: 1000;
-  --component-gap: 6px;
+  --component-gap: 64px;
   --secondary-button-color: black;
 
   background-color: var(--default-background-color);
@@ -41,6 +41,8 @@
 html,
 body {
   font-size: var(--default-font-size);
+  background: #090c0a;
+  /*DO NOT SET HEIGHT:100%, IT WILL FUCK UP THE STICKY COMPONENTS*/
 }
 
 *,
@@ -91,7 +93,7 @@ button {
   border-radius: var(--default-border-radius-for-media);
   color: var(--default-font-color);
   cursor: pointer;
-  height: 33px;
+  height: 42px;
   font-size: var(--default-font-size);
   background: none;
 }
@@ -122,7 +124,7 @@ button {
 
 .primary:active {
   border: 1px solid rgba(225, 226, 231, 0.401);
-  animation: primaryOnActive 0.12 forwards;
+  animation: primaryOnActive 0.12s forwards;
 }
 
 /*Primary button ends*/
@@ -130,8 +132,8 @@ button {
 /*Secondary button begins*/
 
 .secondary {
-  border: 1px solid rgba(128, 128, 128, 0.092);
-  background-color: black;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  background-color: rgb(0, 0, 0);
 }
 
 .secondary:hover{
@@ -139,20 +141,20 @@ button {
 }
 
 .secondary:active {
-  animation: secondaryOnActive 0.12s forwards;
+  animation: secondaryOnActive 1s forwards;
+
 }
 
 .secondaryButtonDepressed{
-  background-color: #262626;
-}
+  background-color:#262626;}
 
 .secondaryButtonDepressed:hover{
   background-color:#262626;
 }
 
 .secondary-change-button-style-on-click {
-  background-color: #ffffff07;
-  border: 1px solid rgba(255, 255, 255, 0.511);
+  background-color: #000000d8;
+  border: 1px solid rgba(255, 255, 255, 0.39);
 }
 /*The rule below allows for a depressed button to do two things:
   1. Have the border stay actively highlighted (i.e. no flickering during :hover)
@@ -168,7 +170,7 @@ button {
 /*Danger button begins*/
 
 .danger{
-  background-color: rgb(22, 0, 0);
+  background-color: rgba(22, 0, 0, 0.461);
   border: 1px solid rgba(255, 0, 0, 0.065);
 }
 
@@ -226,24 +228,23 @@ transition: 0.12s all;
   }
   100%{
     border: 1px solid rgba(255, 255, 255, 0.298);
-    background-color: rgb(8, 18, 75);
+
+
   }
 }
 
 @keyframes primaryOnActive{
   0%{
-    border: 1px solid rgba(255, 255, 255, 0.183);
     background-color: rgb(8, 18, 75);
   }
   100%{
-    border: 1px solid rgba(255, 255, 255, 0.259);
-    background-color: rgb(0, 30, 200);
+    background-color: rgb(1, 15, 96);
   }
 }
 
 @keyframes secondaryOnHover{
   0%{
-    border: 1px solid rgba(255, 255, 255, 0.298);
+    border: 1px solid rgba(255, 255, 255, 0.114);
   }
   100%{
     border: 1px solid rgba(255, 255, 255, 0.298);
@@ -253,7 +254,7 @@ transition: 0.12s all;
 
 @keyframes secondaryOnActive{
   0%{
-    background-color: #040404;
+    background-color: #262626;
     border: 1px solid rgba(255, 255, 255, 0.298);
 
   }
@@ -356,7 +357,7 @@ transition: 0.12s all;
 }
 
 .brand-color-yellow {
-  color: yellow;
+  color: rgb(199, 199, 67);
 }
 
 .default-padding{
@@ -417,6 +418,7 @@ transition: 0.12s all;
   flex-direction: column;
   gap: var(--default-form-gap);
   padding: var(--default-form-padding);
+  border-radius: var(--default-border-radius-for-media);
   width: 100%;
 }
 
@@ -444,13 +446,16 @@ transition: 0.12s all;
 
 /*MODAL STYLING BEGINS*/
 .modal{
+  background-color: rgba(5, 5, 5, 0.764);
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: var(--z-index-modal);
   max-height: 100%;
-  background: black;
+  box-shadow: inset 0 0 0 2px #070707;
+  border-radius: var(--default-border-radius-for-media);
+
   overflow: scroll;
   width: fit-content;
 }
@@ -466,9 +471,11 @@ transition: 0.12s all;
 /*Container Styling*/
 .container{
 border-radius: var(--default-border-radius-for-media);
-background-color: #020202;
+background: #00000008;
 box-shadow: inset 0 0 0 1px #232222;
 height: fit-content;
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px); /* Safari support */
 }
 
 /*Circular button begins*/
