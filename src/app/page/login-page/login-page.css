@@ -76,7 +76,7 @@
 .form-container{
   display: flex;
   flex-direction: column;
-  max-width: 350px;
+  width: 450px;
   border: var(--default-padding);
   justify-content: center;
   align-items: center;

@@ -30,6 +30,7 @@
   --z-index-modal: 1000;
   --component-gap: 64px;
   --secondary-button-color: black;
+  --default-button-height: 42px;
 
   /*default grid layout begins*/
   --sidebar-grid-portion: 155px;
@@ -90,7 +91,7 @@ button {
   border-radius: var(--default-border-radius-for-media);
   color: var(--default-font-color);
   cursor: pointer;
-  height: 42px;
+  height: var(--default-button-height);
   font-size: var(--default-font-size);
   background: none;
 }
@@ -162,6 +163,13 @@ button {
   boxShadowOnHover 0.1s forwards;
 }
 
+.circular{
+  height: calc(var(--default-button-height) + 5px);
+  width: calc(var(--default-button-height) + 5px);
+  border-radius: 50%;
+}
+
+
 /*Secondary button ends*/
 
 /*Danger button begins*/
@@ -177,6 +185,21 @@ button {
 
 .danger:active{
   animation: dangerOnActive 1s infinite;
+}
+
+.clear{
+  background: none;
+ /* Safari support */
+
+}
+
+.clear:hover{
+  border: 1px solid rgba(255, 255, 255, 0.064);
+  animation: clearOnHover 1.2s forwards;
+}
+
+.clear:active{
+  animation: clearOnActive 0.64s forwards;
 }
 
 /*Danger button ends*/
@@ -196,7 +219,6 @@ transition: 0.12s all;
 .symbol-button:active{
   background-color: #262626;
 }
-
 
 /*Button animations begin*/
 
@@ -289,6 +311,37 @@ transition: 0.12s all;
   }
 }
 
+@keyframes clearOnHover{
+  0%{
+    background: rgba(128, 128, 128, 0.008);
+  }
+
+  50%{
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  100%{
+  background: rgba(128, 128, 128, 0.088);
+  }
+}
+
+@keyframes clearOnActive{
+  0%{
+    background: rgba(128, 128, 128, 0.088);
+    border: 1px solid rgba(255, 255, 255, 0.126);
+  }
+
+  50%{
+    background: rgba(128, 128, 128, 0.088);
+    border: 1px solid rgba(255, 255, 255, 0.256);
+  }
+
+  100%{
+    background: rgba(128, 128, 128, 0.088);
+  border: 1px solid rgba(255, 255, 255, 0.300);
+  }
+}
+
 
 
 
@@ -369,17 +422,24 @@ transition: 0.12s all;
 }
 
 .fade-in-transition-slow {
-  animation: fadeIn 0.5s;
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
+    backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px); /* Safari support */
+    transform: translateY(-8px) scale(0.97);
   }
   100% {
     opacity: 1;
+    backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px); /* Safari support */
+    transform: translateY(0) scale(1);
   }
 }
+
 
 .illuminate-border-transition:hover{
   border-radius: var(--default-border-radius-for-media);

@@ -1,0 +1,3 @@
+interface ButtonInterface{
+  name: string;
+}

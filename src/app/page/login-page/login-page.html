@@ -1,34 +1,39 @@
-
-
 <div class="login-page">
   <div class="video-background">
     <video autoplay muted loop playsinline>
       <source src="outdoor-video.mp4" type="video/mp4"> <!-- fallback -->
     </video>
   </div>
-
-  <div class="hero-container container">
+  @if(loginSignal() === null){
+  <div class="hero-container container fade-in-transition-slow">
     <div class="hero-container-elements">
       <h1 class="hero-title">Community Co-op</h1>
       <div class="title-container">
-    </div>
-    <div class="caption-container">
-      <h1 class="hero-caption brand-color-yellow">Find everything you need for your next outdoor adventure</h1>
-    </div>
+      </div>
+      <div class="caption-container">
+        <h1 class="hero-caption brand-color-yellow">Find everything you need for your next outdoor adventure</h1>
+      </div>
     </div>
     <div class="button-container">
-      <input type="button" value="Get Stared" class="button hero-button">
-      <input type="button" value="Sign In" class="button hero-button">
+      <input (click)="toggle(buttonMap.get('Get Started Button')!, loginSignal)" type="button"
+        value="{{buttonMap.get('Get Started Button')}}" class="button hero-button">
+      <input (click)="toggle(buttonMap.get('Sign In Button')!, loginSignal)" type="button"
+        value="{{buttonMap.get('Sign In Button')}}" type="button" value="{{buttonMap.get('Sign In Button')}}"
+        class="button hero-button">
     </div>
   </div>
-</div>
+  }
+
+  @if(loginSignal() === buttonMap.get('Sign In Button')){
+
+  <div class="form-container fade-in-transition-slow">
 
 
-<!--
-  <div class="form-container">
 
     <form [formGroup]="profileForm" class="default-form container">
-      <h1 class="form-title">Login</h1>
+      <label for="back-button"></label>
+    <input (click)="toggle(null, loginSignal)"type="button" value="く" class="circular button clear">
+      <h1 class="form-title center-text" style="font-size: 32px">Login</h1>
       <label for="first-name"></label>
       <input class="default-text default-input" type="text" formControlName="firstName" placeholder="First Name *" />
       <label for="last-name"></label>
@@ -37,10 +42,11 @@
       <input class="default-text default-input" type="text" formControlName="discordUsername"
         placeholder="Discord Username *" />
 
-      <div class="button-container">
-        <input type="submit" value="Submit" class=" button button-large primary">
-      </div>
+        <input type="submit" value="Submit" class=" button clear button-large" style="margin: 0 auto">
 
     </form>
   </div>
--->
+  }
+
+
+</div>

@@ -23,7 +23,7 @@ export class ServicePage implements OnInit {
 
   private readonly productService = inject(ProductService);
   toggleService = inject(ToggleService);
-  readonly serviceButtonArray: string[] = ["Buy", "Sell", "Rentals", "Request"];
+  readonly serviceButtonArray: Array<string> = ["Buy", "Sell", "Rentals", "Request"];
   readonly product = signal<ProductInterface[]>([]);
   serviceSignal = signal<string | null>(null);
   interServiceSignal = signal<string | null>(null);
