@@ -1,7 +1,7 @@
 .warning-popup{
   border-radius: var(--default-border-radius-for-media);
   background-color: rgba(3, 0, 0, 0);
-  border: 1px solid rgba(255, 0, 0, 0.273);
+  border: 1px solid rgba(255, 0, 0, 0.156);
   padding: var(--default-padding);
-  min-width: max-content;
+  width: 100%;
 }

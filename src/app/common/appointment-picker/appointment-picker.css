@@ -12,6 +12,9 @@
 
 .button-grow{
   width: 49%;
+  background: rgba(34, 33, 33, 0.153);
+  backdrop-filter: (12px);
+
 
 }
 .calendar {
@@ -21,7 +24,7 @@
   height: fit-content;
   border-radius: var(--default-border-radius-for-media);
   border: 1px solid #ffffff12;
-  width: 300px;
+  width: 350px;
   overflow: hidden;
   height: 100%;
 }
@@ -88,19 +91,11 @@
 
 .date-as-number{
   background-color: rgba(0, 0, 0, 0);
-  display: flex;
   color: rgb(255, 255, 255);
   min-width: calc(100% / 7);
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   padding: 7px 0;
-  border-radius: 0px;
-  box-shadow: none;
-  border: 1px solid rgba(255, 255, 255, 0);
   font-size: 11px;
   font-weight: 400;
-  box-shadow: none;
   border: none;
   animation: none;
   height: fit-content;
@@ -194,6 +189,58 @@
   border-bottom-right-radius: var(--default-border-radius-for-media);
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
+}
+
+@media screen and (min-width: 0px) and (max-width: 700px){
+  .appointment-picker{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%
+  }
+
+  .calendar{
+    width: 100%;
+    height: fit-content;
+  }
+
+  .date-as-number{
+    font-size: 10px;
+    padding: 4px 0;
+  }
+
+  .time-picker{
+    width: 100%;
+  }
+
+  .button-grow{
+    width: 24%;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .date-time-picker-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .date-time-picker {
+    font-size: 12px;
+  }
+
+  .default-text{
+    font-size: 12px;
+  }
+
+
+
+
+
 }
 
 

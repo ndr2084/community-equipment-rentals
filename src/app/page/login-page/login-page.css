@@ -24,6 +24,7 @@
  flex-direction: column;
  gap: 32px;
  width:fit-content;
+ padding: var(--default-padding);
 }
 
 .title-container{
@@ -148,4 +149,6 @@
   }
 
 }
+
+
 

@@ -1,3 +1,4 @@
+
 .nav-list-open{
   font-size: var(--small-font-size);
   display: flex;
@@ -82,7 +83,7 @@
 
 @keyframes closingAnimation {
   0%{
-    width: 155px;
+    width: 100%;
   }
   50%{
     width: 48px;
@@ -98,10 +99,10 @@
     width: 50px;
   }
   50%{
-    width: 185px;
+    width: 99%;
   }
   100%{
-    width: 188px;
+    width: 99%
   }
 }
 
