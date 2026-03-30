@@ -11,6 +11,7 @@ import { PhotoGalleryGrid } from '../../common/photo-gallery-grid/photo-gallery-
 import { ModalForRentalProgram } from "../../common/modal-for-rental-program/modal-for-rental-program";
 import { Navigation } from "../../common/navigation/navigation";
 import { Container } from "../../common/container/container";
+import { ToggleService } from '../../service/toggle';
 
 @Component({
   selector: 'app-service-page',
@@ -21,6 +22,7 @@ import { Container } from "../../common/container/container";
 export class ServicePage implements OnInit {
 
   private readonly productService = inject(ProductService);
+  toggleService = inject(ToggleService);
   readonly serviceButtonArray: string[] = ["Buy", "Sell", "Rentals", "Request"];
   readonly product = signal<ProductInterface[]>([]);
   serviceSignal = signal<string | null>(null);
@@ -36,14 +38,10 @@ export class ServicePage implements OnInit {
       });
   }
 
-  toggle = (currentString: string, signalArgument: WritableSignal<string | null>) => {
-    signalArgument.update((previousString) => {
-      if (previousString === currentString) {
-        return null;
-      }
-      return currentString;
-    });
-  }
+toggle(currentString: string, signalArgument: WritableSignal<string | null>): any{
+  this.toggleService.toggle(currentString, signalArgument);
+}
+
 }
 
 
