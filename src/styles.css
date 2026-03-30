@@ -30,7 +30,7 @@
   --z-index-modal: 1000;
   --component-gap: 64px;
   --secondary-button-color: black;
-  --default-button-height: 42px;
+  --default-button-height: 50px;
 
   /*default grid layout begins*/
   --sidebar-grid-portion: 155px;
@@ -332,13 +332,13 @@ transition: 0.12s all;
   }
 
   50%{
-    background: rgba(128, 128, 128, 0.088);
+    background: rgba(128, 128, 128, 0.194);
     border: 1px solid rgba(255, 255, 255, 0.256);
   }
 
   100%{
-    background: rgba(128, 128, 128, 0.088);
-  border: 1px solid rgba(255, 255, 255, 0.300);
+    background: rgba(128, 128, 128, 0.210);
+  border: 1px solid rgba(255, 255, 255, 0.271);
   }
 }
 
@@ -487,6 +487,7 @@ transition: 0.12s all;
   padding: var(--default-padding);
   background: none;
   color: white;
+  height: 50px;
   /*width: calc(100% / var(--fields));*/
   font-size: var(--small-font-size);
 }

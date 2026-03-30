@@ -12,7 +12,7 @@
       <div class="button-container">
         @for(item of serviceButtonArray ; track item){
         <label for="{{item}}"></label>
-        <input (click)="toggle(item, serviceSignal)" type="button" class=" button button-medium secondary"
+        <input (click)="toggle(item, serviceSignal)" type="button" class=" button button-medium secondary" style="height:32px"
           [class.secondary-change-button-style-on-click]="serviceSignal() === item" value="{{item}}">
         }
       </div>
@@ -63,7 +63,7 @@
       </div>
       }
 
-      @if(serviceSignal() === "Rentals"){
+      @if(serviceSignal() === "Rentals" && interServiceSignal() !== "Browse Items"){
         <!-- <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding"> Make some cash for new shiny toys</p> -->
       <div class="hero-flex-container">
         <div>
@@ -90,7 +90,7 @@
         </div>
       </div>
       }
-      @if(interServiceSignal() === 'Browse Items'){
+      @if(interServiceSignal() === 'Browse Items' && serviceSignal() === 'Rentals'){
       <app-photo-gallery-grid>
         @if (product().length > 0){
 

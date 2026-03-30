@@ -16,10 +16,10 @@
     </div>
     <div class="button-container">
       <input (click)="toggle(buttonMap.get('Get Started Button')!, loginSignal)" type="button"
-        value="{{buttonMap.get('Get Started Button')}}" class="button hero-button">
+        value="{{buttonMap.get('Get Started Button')}}" class="button clear hero-button">
       <input (click)="toggle(buttonMap.get('Sign In Button')!, loginSignal)" type="button"
         value="{{buttonMap.get('Sign In Button')}}" type="button" value="{{buttonMap.get('Sign In Button')}}"
-        class="button hero-button">
+        class="button clear hero-button">
     </div>
   </div>
   }
@@ -42,7 +42,7 @@
       <input class="default-text default-input" type="text" formControlName="discordUsername"
         placeholder="Discord Username *" />
 
-        <input type="submit" value="Submit" class=" button clear button-large" style="margin: 0 auto">
+        <input type="submit" value="Submit" class="button clear" style="width: 100%; height: 52px;">
 
     </form>
   </div>

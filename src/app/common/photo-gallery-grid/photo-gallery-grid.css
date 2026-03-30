@@ -4,6 +4,7 @@
   width: fit-content;
   gap: var(--column-gap-desktop);
   justify-content: center;
+  padding-top: var(--default-padding);
 }
 
 
