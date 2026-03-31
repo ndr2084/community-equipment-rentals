@@ -128,6 +128,7 @@
 
 .date-time-picker {
   width: 100%;
+  height: var(--default-button-height);
   display: flex;
   justify-content: space-between;
   padding-left: var(--default-padding);
@@ -163,8 +164,8 @@
 
 .button-tiny-no-border {
   font-size: var(--default-font-size);
-  width: 25px;
-  height: 33px;
+  height: var(--default-button-height);
+  padding: 10px;
   box-shadow: none;
   border: none;
 }

@@ -36,8 +36,9 @@
   justify-content: center;
   align-items: center;
   min-width: 300px;
-
+  gap: 8px;
 }
+
 
 
 .hero-header{
@@ -45,18 +46,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: var(--default-padding);
   padding-top: 0;
 }
 
 .button-container {
   display: flex;
   flex-direction: row;
-  gap: 12px;
   padding: var(--default-padding);
-  padding-top: 0;
-  width: 100%;
+  width: fit-content;
   justify-content: center;
+  gap: 8px;
 }
 
 .toggle-content{
@@ -114,8 +113,9 @@
 .hero-flex-container{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   gap: var(--column-gap-desktop);
+  border-radius: var(--default-border-radius-for-media);
 }
 
 .hero-business-photo{
@@ -138,14 +138,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: var(--default-form-padding);
+  align-items: flex-start;
+
   border-radius: var(--default-border-radius-for-media);
   gap: var(--default-form-gap);
-  width: 350px;
-  height: 400px;
+  width: 700px;
+  height: 100%;
+  overflow: hidden;
 }
-
 
 @media screen and (min-width: 1350px){
 

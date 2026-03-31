@@ -3,20 +3,22 @@
     <div class="nav-grid-area">
       <app-navigation></app-navigation>
     </div>
-    <div class="hero-header-and-button-container container">
+    <div class="hero-header-and-button-container">
       <div class="hero-header">
         <h1 class="huge-title-dynamic center-text">Services</h1>
         <p class="center-text">Created for you; Powered by you. Find what you're looking for, today.</p>
       </div>
 
-      <div class="button-container">
+      <div class="button-container container">
         @for(item of serviceButtonArray ; track item){
         <label for="{{item}}"></label>
-        <input (click)="toggle(item, serviceSignal)" type="button" class=" button button-medium secondary" style="height:32px"
-          [class.secondary-change-button-style-on-click]="serviceSignal() === item" value="{{item}}">
+        <input (click)="toggle(item, serviceSignal)" type="button" class=" button button-medium clear" [class.secondary-change-button-style-on-click]="serviceSignal() === item" style="height: 40px"
+          value="{{item}}">
         }
       </div>
     </div>
+
+
     <div class="toggle-content">
       <!-- BUY BUTTON AND ASSOCIATED COMPONENTS BEGINS -->
       @if(serviceSignal() === "Buy"){
@@ -55,7 +57,7 @@
       <!-- BUY BUTTON AND ASSOCIATED COMPONENTS ENDS -->
 
       @if(serviceSignal() === "Sell"){
-        <!--
+      <!--
       <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding">Make some cash for new shiny toys</p> -->
       <div class="form-flex-container">
         <app-form-for-selling (discard)="toggle('Sell', serviceSignal)">
@@ -63,34 +65,8 @@
       </div>
       }
 
-      @if(serviceSignal() === "Rentals" && interServiceSignal() !== "Browse Items"){
-        <!-- <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding"> Make some cash for new shiny toys</p> -->
-      <div class="hero-flex-container">
-        <div>
-          <app-hero>
-            <div class="hero-content-box">
-              <h1>Rental Program Initiative</h1>
-              <p>Become part of the business. Allow members to rent your equipment</p>
-              <label for="get-Started"></label>
-              <input (click)="toggle('modalForRentalProgram', interServiceSignal)" type="button"
-                class=" button button-medium secondary" value="Get Started">
-            </div>
-          </app-hero>
-        </div>
-        <div class="">
-          <app-hero class="illuminate-border-transition">
-            <div class="hero-content-box">
-              <h1>Rent From a Member</h1>
-              <p>Support your neighbours. Find what you need from your fellow community.</p>
-              <label for="browse-Items"></label>
-              <input (click)="toggle('Browse Items', interServiceSignal)" type="button"
-                class=" button button-medium secondary" value="Browse Items">
-            </div>
-          </app-hero>
-        </div>
-      </div>
-      }
-      @if(interServiceSignal() === 'Browse Items' && serviceSignal() === 'Rentals'){
+      @if(serviceSignal() === "Rentals"){
+      <!-- <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding"> Make some cash for new shiny toys</p> -->
       <app-photo-gallery-grid>
         @if (product().length > 0){
 
@@ -115,13 +91,31 @@
       </app-photo-gallery-grid>
       }
 
+      @if(serviceSignal() === null){
+          <app-hero  class="fade-in-transition-slow">
+            <div class="hero-content-box">
+              <h1 style="font-size: 48px;">Take Part in The Business Today</h1>
+              <p>Partner with Community Co-op Through Your Partnership With Community Co-op. Instead of Letting Your
+                Equipment Sit in Storage, Others Can Enjoy The Great Outdoors For a Fraction of the Cost.</p>
+              <label for="get-Started"></label>
+              <div class="button-container" style="justify-content: flex-start;">
+                <input (click)="toggle('modalForRentalProgram', interServiceSignal)" type="button"
+                  class=" button button-medium secondary" value="Get Started">
+                <label for="learn-More"></label>
+                <input (click)="toggle('modalForRentalProgram', interServiceSignal)" type="button"
+                  class=" button button-medium secondary" value="Learn More" style="background: rgb(61, 4, 61)">
+              </div>
+            </div>
+          </app-hero>
       @if(interServiceSignal() === "modalForRentalProgram"){
-      <app-modal-for-rental-program
-        (discard)="toggle('modalForRentalProgram', interServiceSignal)"></app-modal-for-rental-program>
-      }
+        <app-modal-for-rental-program (discard)="toggle('modalForRentalProgram', interServiceSignal)">
+        </app-modal-for-rental-program>
+        }
+    }
 
       @if(serviceSignal() === "Request"){
-      <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding">Not seeing what you want? Let the
+      <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding">Not seeing what you
+        want? Let the
         community hear your needs!</p>
       }
     </div>

@@ -4,7 +4,7 @@
 
   --default-font-color: white;
   --default-font-family: "Space Mono", monospace;
-  --default-border-radius-for-media: 18px;
+  --default-border-radius-for-media: 25px;
   --default-border-radius-for-navigation: 100px;
   --default-font-size: 16px;
   --default-font-size-for-navigation: 1.5vw;
@@ -14,7 +14,7 @@
   --default-form-width: 300px;
   --default-button-gap: 16px;
   --default-form-padding: 32px;
-  --default-form-gap: 32px;
+  --default-form-gap: 16px;
   --column-gap-desktop: 16px;
   --column-gap-mobile: 10px;
   --row-gap-mobile: 10px;
@@ -143,24 +143,13 @@ button {
 
 }
 
-.secondaryButtonDepressed{
-  background-color:#262626;}
-
-.secondaryButtonDepressed:hover{
-  background-color:#262626;
+.clear:hover{
+  border: 1px solid rgba(255, 255, 255, 0.064);
+  animation: clearOnHover 1.2s forwards;
 }
 
-.secondary-change-button-style-on-click {
-  background-color: #000000d8;
-  border: 1px solid rgba(255, 255, 255, 0.39);
-}
-/*The rule below allows for a depressed button to do two things:
-  1. Have the border stay actively highlighted (i.e. no flickering during :hover)
-  2. The box shadow gives the user feeback on :hover, signifying that the page remains responsive
-*/
-.secondary-change-button-style-on-click:hover{
-  animation: borderOnHover 0s forwards,
-  boxShadowOnHover 0.1s forwards;
+.clear:active{
+  animation: clearOnActive 0.64s forwards;
 }
 
 .circular{
@@ -187,20 +176,7 @@ button {
   animation: dangerOnActive 1s infinite;
 }
 
-.clear{
-  background: none;
- /* Safari support */
 
-}
-
-.clear:hover{
-  border: 1px solid rgba(255, 255, 255, 0.064);
-  animation: clearOnHover 1.2s forwards;
-}
-
-.clear:active{
-  animation: clearOnActive 0.64s forwards;
-}
 
 /*Danger button ends*/
 
@@ -504,7 +480,7 @@ transition: 0.12s all;
   line-height: var(--default-line-height);
   border-radius: var(--default-border-radius-for-media);
   width: 100%;
-  height: 97px;
+  height: 100px;
   padding: var(--default-padding);
 }
 
@@ -535,16 +511,47 @@ transition: 0.12s all;
 /*MODAL STYLING ENDS*/
 
 /*Container Styling*/
+
 .container{
-border-radius: var(--default-border-radius-for-media);
+
+border-radius: 100px;
 background: #00000008;
-box-shadow: inset 0 0 0 1px #232222;
+box-shadow:   0 5px 32px rgba(0, 0, 0, 0.094),
+0 0 120px rgba(0, 0, 0, 0.2);
 height: fit-content;
-backdrop-filter: blur(12px);
--webkit-backdrop-filter: blur(12px); /* Safari support */
+backdrop-filter: blur(6px);
+height: 100%;
+-webkit-backdrop-filter: blur(1px);
+border: 1px solid rgba(255, 255, 255, 0.073);
 }
 
 /*Circular button begins*/
 
 
 /*Circular button ends*/
+.secondary-change-button-style-on-click {
+  background: #3d3d3d5a;
+  border: 1px solid rgba(255, 255, 255, 0.116);
+}
+
+
+/*THE RULES BELOW MUST BE KEPT AT THE BOTTOM TO BE APPLIED STARTS*/
+
+
+/*The rule below allows for a depressed button to do two things:
+  1. Have the border stay actively highlighted (i.e. no flickering during :hover)
+  2. The box shadow gives the user feeback on :hover, signifying that the page remains responsive
+*/
+.secondary-change-button-style-on-click:hover{
+  animation: borderOnHover 0s forwards,
+  boxShadowOnHover 0.1s forwards;
+}
+
+.secondaryButtonDepressed{
+  background-color:#262626;}
+
+.secondaryButtonDepressed:hover{
+  background-color:#262626;
+}
+
+/*THE RULES BELOW MUST BE KEPT AT THE BOTTOM TO BE APPLIED ENDS*/
