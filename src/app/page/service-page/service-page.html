@@ -12,7 +12,7 @@
       <div class="button-container container">
         @for(item of serviceButtonArray ; track item){
         <label for="{{item}}"></label>
-        <input (click)="toggle(item, serviceSignal)" type="button" class=" button button-medium clear" [class.secondary-change-button-style-on-click]="serviceSignal() === item" style="height: 40px"
+        <input (click)="toggle(item, serviceSignal)" type="button" class=" button button-medium clear" [class.secondary-change-button-style-on-click]="serviceSignal() === item" style="height: 100%;"
           value="{{item}}">
         }
       </div>
@@ -92,18 +92,18 @@
       }
 
       @if(serviceSignal() === null){
-          <app-hero  class="fade-in-transition-slow">
-            <div class="hero-content-box">
+        <app-hero>
+          <div class="hero-content-box">
               <h1 style="font-size: 48px;">Take Part in The Business Today</h1>
               <p>Partner with Community Co-op Through Your Partnership With Community Co-op. Instead of Letting Your
                 Equipment Sit in Storage, Others Can Enjoy The Great Outdoors For a Fraction of the Cost.</p>
               <label for="get-Started"></label>
               <div class="button-container" style="justify-content: flex-start;">
                 <input (click)="toggle('modalForRentalProgram', interServiceSignal)" type="button"
-                  class=" button button-medium secondary" value="Get Started">
+                  class=" button button-medium secondary " value="Get Started">
                 <label for="learn-More"></label>
                 <input (click)="toggle('modalForRentalProgram', interServiceSignal)" type="button"
-                  class=" button button-medium secondary" value="Learn More" style="background: rgb(61, 4, 61)">
+                  class=" button button-medium secondary" value="Learn More" style="background: #0422a81d; backdrop-filter: blur(6px)">
               </div>
             </div>
           </app-hero>

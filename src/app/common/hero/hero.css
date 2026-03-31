@@ -1,11 +1,12 @@
 
 .hero{
-  background: rgba(30, 2, 33, 0.1506);
-  border-radius: var(--default-border-radius-for-media);
+  background: rgba(30, 2, 33, 0.049);
+  border-radius: 50px;
   box-shadow:
   0 5px 32px rgba(30, 2, 33, 0.094),
   0 0 120px rgba(30, 2, 33, 0.2);
-  padding: var(--component-gap);
+  padding: 32px;
   width: fit-content;
+  border: 1px solid rgba(255, 255, 255, 0.068);
 }
 

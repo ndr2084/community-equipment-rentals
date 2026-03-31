@@ -52,11 +52,14 @@
 .button-container {
   display: flex;
   flex-direction: row;
-  padding: var(--default-padding);
   width: fit-content;
   justify-content: center;
-  gap: 8px;
+  align-items: center;
+  gap: 16px;
+  overflow: hidden;
 }
+
+
 
 .toggle-content{
   overflow: scroll;
@@ -139,9 +142,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-
   border-radius: var(--default-border-radius-for-media);
-  gap: var(--default-form-gap);
+  gap: 32px;
   width: 700px;
   height: 100%;
   overflow: hidden;
