@@ -9,6 +9,7 @@
   --default-font-size: 16px;
   --default-font-size-for-navigation: 1.5vw;
   --default-padding: 12px;
+  --hero-padding: 32px;
   --disabled-screen-tint: rgba(0, 0, 0, 0.249);
   --default-line-height: 2em;
   --default-form-width: 300px;
@@ -29,7 +30,6 @@
   --small-button-width: 75px;
   --z-index-modal: 1000;
   --component-gap: 64px;
-  --secondary-button-color: black;
   --default-button-height: 50px;
 
   /*default grid layout begins*/
@@ -38,12 +38,53 @@
   --main-grid-portion: 10fr;
   /*default grid layout ends*/
 
+  /*brand colours begin*/
+  --primary-background: rgba(186, 183, 183, 0.046);
+  --primary-background-active-100p: rgba(89, 89, 89, 0.5);
+  --primary-border: rgba(255, 255, 255, 0.183);
+  --primary-border-hover-100p: rgba(255, 255, 255, 0.298);
+
+  --secondary-background: rgba(13, 28, 122, 0.288);
+  --secondary-background-active-100p: rgba(50, 50, 202, 0.47);
+  --secondary-border: rgba(255, 255, 255, 0.183);
+  --secondary-border-hover-100p: rgba(255, 255, 255, 0.333);
+  /*brand colours end*/
+
+  /*transition times start*/
+  --default-button-transition-time: 0.12s;
+  /*transition times end*/
+
   background-color: var(--default-background-color);
   color: var(--default-font-color);
   font-family: var(--default-font-family);
   font-weight: var(--default-font-weight);
   font-size: var(--default-font-size);
 }
+/*ALL MIXINS MUST BE DEFINED AT THE TOP BEGINS*/
+
+@mixin glass{
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+}
+
+.glass {
+@include glass;
+}
+
+.container{
+
+  border-radius: 100px;
+  background: #00000008;
+  box-shadow:   0 5px 32px rgba(0, 0, 0, 0.094),
+  0 0 120px rgba(0, 0, 0, 0.2);
+  height: fit-content;
+  backdrop-filter: blur(6px);
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.073);
+  @include glass;
+  }
+
+/*ALL MIXINS MUST BE DEFINED AT THE TOP ENDS*/
 
 html,
 body {
@@ -109,83 +150,11 @@ button {
   width: var(--small-button-width);
 }
 
-/*Primary button begins*/
-
-.primary {
-  border: none;
-  background-color: rgb(3, 8, 39);
-  border: 1px solid rgba(128, 128, 128, 0.322);
-}
-
-.primary:hover{
-  animation: primaryOnHover 0.12s forwards;
-}
-
-.primary:active {
-  border: 1px solid rgba(225, 226, 231, 0.401);
-  animation: primaryOnActive 0.12s forwards;
-}
-
-/*Primary button ends*/
-
-/*Secondary button begins*/
-
-.secondary {
-  backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.046);
-  border: 1px solid rgba(128, 128, 128, 0.25);
-}
-
-.secondary:hover{
-  border: 1px solid rgba(255, 255, 255, 0.064);
-  animation: clearOnHover 1.2s forwards;
-}
-
-.secondary:active {
-  animation: clearOnActive 0.64s forwards;
-
-}
-
-.clear{
-  backdrop-filter: blur(12px);
-}
-
-.clear:hover{
-  border: 1px solid rgba(255, 255, 255, 0.064);
-  animation: clearOnHover 1.2s forwards;
-}
-
-.clear:active{
-  animation: clearOnActive 0.64s forwards;
-}
-
 .circular{
   height: calc(var(--default-button-height) + 5px);
   width: calc(var(--default-button-height) + 5px);
   border-radius: 50%;
 }
-
-
-/*Secondary button ends*/
-
-/*Danger button begins*/
-
-.danger{
-  background-color: rgba(22, 0, 0, 0.461);
-  border: 1px solid rgba(255, 0, 0, 0.065);
-}
-
-.danger:hover{
-    animation: dangerOnHover 0.12s forwards;
-  }
-
-.danger:active{
-  animation: dangerOnActive 1s infinite;
-}
-
-
-
-/*Danger button ends*/
 
 .symbol-button{
 border-radius: 5px;
@@ -207,11 +176,11 @@ transition: 0.12s all;
 
 @keyframes boxShadowOnHover {
   0% {
-    box-shadow: rgba(255, 255, 255, 0.371) 0px 0px 0px;
+    border: 1px solid rgba(255, 255, 255, 0.496);
   }
 
   100% {
-    box-shadow: rgba(255, 255, 255, 0.675) 0px 0px 1.5px;
+    border: 1px solid white;
   }
 }
 
@@ -224,12 +193,32 @@ transition: 0.12s all;
   }
 }
 
+/*Primary button begins*/
+
+.primary {
+  backdrop-filter: blur(12px);
+  background: var(--primary-background);
+  border: 1px solid var(--primary-border);
+}
+
+.primary:hover{
+  animation: primaryOnHover var(--default-button-transition-time) forwards;
+}
+
+.primary:active {
+  border: 1px solid rgba(225, 226, 231, 0.401);
+  animation: primaryOnActive var(--default-button-transition-time) forwards;
+}
+
+/*Primary button ends*/
+
+
 @keyframes primaryOnHover{
   0%{
-    border: 1px solid rgba(255, 255, 255, 0.183);
+    border: 1px solid var(--primary-border);
   }
   100%{
-    border: 1px solid rgba(255, 255, 255, 0.298);
+    border: 1px solid var(--primary-border-hover-100p);
 
 
   }
@@ -237,33 +226,72 @@ transition: 0.12s all;
 
 @keyframes primaryOnActive{
   0%{
-    background-color: rgb(8, 18, 75);
+    background-color: var(--primary-background);
+    border: 1px solid var(--primary-border-hover-100p);
   }
   100%{
-    background-color: rgb(1, 15, 96);
+    background-color: var(--primary-background-active-100p);
+    border: 1px solid var(--primary-border-hover-100p);
   }
+}
+
+/*Secondary button begins*/
+
+.secondary {
+  backdrop-filter: blur(12px);
+  background: var(--secondary-background);
+  border: 1px solid var(--secondary-border);
+
+}
+
+.secondary:hover{
+  animation: secondaryOnHover var(--default-button-transition-time) forwards;
+}
+
+.secondary:active {
+  animation: secondaryOnActive var(--default-button-transition-time) forwards;
+
 }
 
 @keyframes secondaryOnHover{
   0%{
-    border: 1px solid rgba(255, 255, 255, 0.114);
+    border: 1px solid var(--secondary-border);
   }
   100%{
-    border: 1px solid rgba(255, 255, 255, 0.298);
+    border: 1px solid var(--secondary-border-hover-100p);
 
   }
 }
 
 @keyframes secondaryOnActive{
   0%{
-    background-color: #262626;
-    border: 1px solid rgba(255, 255, 255, 0.298);
+    background: var(--secondary-background);
+    border: 1px solid var(--secondary-border-hover-100p);
 
   }
+
+
   100%{
-    background-color: rgb(13, 13, 13);
-    border: 1px solid rgba(255, 255, 255, 0.298);
+    background: var(--secondary-background-active-100p);
+    border: 1px solid var(--secondary-border-hover-100p);
   }
+}
+
+/*Secondary button ends*/
+
+/*Danger button begins*/
+
+.danger{
+  background-color: rgba(22, 0, 0, 0.461);
+  border: 1px solid rgba(255, 0, 0, 0.065);
+}
+
+.danger:hover{
+    animation: dangerOnHover var(--default-button-transition-time) forwards;
+  }
+
+.danger:active{
+  animation: dangerOnActive 1s infinite;
 }
 
 @keyframes dangerOnHover{
@@ -293,6 +321,24 @@ transition: 0.12s all;
     background-color: rgb(36, 0, 0);
   }
 }
+
+/*Danger button ends*/
+
+/*Clear button begins*/
+
+.clear{
+  backdrop-filter: blur(12px);
+}
+
+.clear:hover{
+  border: 1px solid rgba(255, 255, 255, 0.064);
+  animation: clearOnHover var(--default-button-transition-time) forwards;
+}
+
+.clear:active{
+  animation: clearOnActive var(--default-button-transition-time) forwards;
+}
+
 
 @keyframes clearOnHover{
   0%{
@@ -325,8 +371,7 @@ transition: 0.12s all;
   }
 }
 
-
-
+/*Clear button ends*/
 
 /*Button animations end*/
 
@@ -410,16 +455,14 @@ transition: 0.12s all;
 
 @keyframes fadeIn {
   0% {
-    opacity: 0;
-    backdrop-filter: blur(12px);
--webkit-backdrop-filter: blur(12px); /* Safari support */
+    opacity: 0; /* Safari support */
     transform: translateY(-8px) scale(0.97);
+    @include glass;
   }
   100% {
     opacity: 1;
-    backdrop-filter: blur(12px);
--webkit-backdrop-filter: blur(12px); /* Safari support */
     transform: translateY(0) scale(1);
+    @include glass;
   }
 }
 
@@ -444,6 +487,7 @@ transition: 0.12s all;
 
 /*General Animations End*/
 
+/*general styling begins*/
 
 
 /*FORM STYLING BEGINS*/
@@ -517,28 +561,16 @@ transition: 0.12s all;
 }
 /*MODAL STYLING ENDS*/
 
-/*Container Styling*/
 
-.container{
 
-border-radius: 100px;
-background: #00000008;
-box-shadow:   0 5px 32px rgba(0, 0, 0, 0.094),
-0 0 120px rgba(0, 0, 0, 0.2);
-height: fit-content;
-backdrop-filter: blur(6px);
-height: 100%;
--webkit-backdrop-filter: blur(1px);
-border: 1px solid rgba(255, 255, 255, 0.073);
-}
 
 /*Circular button begins*/
 
 
 /*Circular button ends*/
 .secondary-change-button-style-on-click {
-  background: #3d3d3d5a;
-  border: 1px solid rgba(255, 255, 255, 0.116);
+  background: var(--primary-background-active-100p);
+  border: 1px solid var(--primary-border);
 }
 
 
@@ -550,8 +582,7 @@ border: 1px solid rgba(255, 255, 255, 0.073);
   2. The box shadow gives the user feeback on :hover, signifying that the page remains responsive
 */
 .secondary-change-button-style-on-click:hover{
-  animation: borderOnHover 0s forwards,
-  boxShadowOnHover 0.1s forwards;
+  animation: primaryOnHover 0.1s forwards;
 }
 
 .secondaryButtonDepressed{

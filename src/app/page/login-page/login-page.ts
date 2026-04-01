@@ -2,10 +2,11 @@ import { Component, inject, signal, WritableSignal } from '@angular/core';
 import { Container } from "../../common/container/container";
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ToggleService } from '../../service/toggle';
+import { Hero } from '../../common/hero/hero';
 
 @Component({
   selector: 'app-login-page',
-  imports: [Container, ReactiveFormsModule],
+  imports: [Container, ReactiveFormsModule, Hero],
   templateUrl: './login-page.html',
   styleUrl: './login-page.css',
 })

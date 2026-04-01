@@ -5,7 +5,7 @@
     </video>
   </div>
   @if(loginSignal() === null){
-  <div class="hero-container container fade-in-transition-slow">
+  <app-hero>
     <div class="hero-container-elements">
       <h1 class="hero-title">Community Co-op</h1>
       <div class="title-container">
@@ -16,17 +16,17 @@
     </div>
     <div class="button-container">
       <input (click)="toggle(buttonMap.get('Get Started Button')!, loginSignal)" type="button"
-        value="{{buttonMap.get('Get Started Button')}}" class="button clear hero-button">
+        value="{{buttonMap.get('Get Started Button')}}" class="button primary button-large">
       <input (click)="toggle(buttonMap.get('Sign In Button')!, loginSignal)" type="button"
         value="{{buttonMap.get('Sign In Button')}}" type="button" value="{{buttonMap.get('Sign In Button')}}"
-        class="button clear hero-button">
+        class="button secondary button-large">
     </div>
-  </div>
+  </app-hero>
   }
 
   @if(loginSignal() === buttonMap.get('Sign In Button')){
 
-  <div class="form-container fade-in-transition-slow">
+
 
 
 
@@ -41,11 +41,8 @@
       <label for="last-name"></label>
       <input class="default-text default-input" type="text" formControlName="discordUsername"
         placeholder="Discord Username *" />
-
-        <input type="submit" value="Submit" class="button clear" style="width: 100%; height: 52px;">
-
+        <input type="submit" value="Submit" class="button clear button-large" style="width: 100%; height: 52px;">
     </form>
-  </div>
   }
 
 
