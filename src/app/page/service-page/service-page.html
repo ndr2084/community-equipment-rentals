@@ -9,7 +9,7 @@
         <p class="center-text">Created for you; Powered by you. Find what you're looking for, today.</p>
       </div>
 
-      <div class="button-container container">
+      <div class="button-container glass-container">
         @for(item of serviceButtonArray ; track item){
         <label for="{{item}}"></label>
         <input (click)="toggle(item, serviceSignal)" type="button" class=" button button-medium clear" [class.secondary-change-button-style-on-click]="serviceSignal() === item" style="height: 100%;"

@@ -71,15 +71,7 @@
 @include glass;
 }
 
-.container{
-
-  border-radius: 100px;
-  background: #00000008;
-  box-shadow:   0 5px 32px rgba(0, 0, 0, 0.094),
-  0 0 120px rgba(0, 0, 0, 0.2);
-  height: fit-content;
-  backdrop-filter: blur(6px);
-  height: 100%;
+.glass-container{
   border: 1px solid rgba(255, 255, 255, 0.073);
   @include glass;
   }
@@ -539,26 +531,17 @@ transition: 0.12s all;
 
 /*MODAL STYLING BEGINS*/
 .modal{
-  background-color: rgba(5, 5, 5, 0.764);
+  border: 1px solid rgba(80, 80, 80, 0.032);
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: var(--z-index-modal);
-  max-height: 100%;
-  box-shadow: inset 0 0 0 2px #070707;
-  border-radius: var(--default-border-radius-for-media);
-
-  overflow: scroll;
-  width: fit-content;
+  box-shadow: inset 0 0 0 2px #ffffff05;
+  @include glass;
 }
 
-.button-group{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap:var(--default-button-gap);
-}
+
 /*MODAL STYLING ENDS*/
 
 

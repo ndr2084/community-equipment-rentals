@@ -50,8 +50,10 @@
 }
 
 .button-container {
+  border-radius: 50px;
   display: flex;
   flex-direction: row;
+  height: 100%;
   width: fit-content;
   justify-content: center;
   align-items: center;
