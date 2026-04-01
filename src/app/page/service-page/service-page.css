@@ -18,10 +18,10 @@
   display: grid;
   width: 100vw;
   gap: 32px;
-  grid-template-columns: var(--sidebar-grid-portion) var(--main-grid-portion) var(--rightside-grid-portion);
+  grid-template-columns: var(--sidebar-grid-portion) minmax(300px, var(--main-grid-portion)) var(--rightside-grid-portion);
   grid-template-rows: 140px;
   grid-template-areas:
-  "nav-grid-area hero-header-and-button-container"
+  "nav-grid-area header"
   "nav-grid-area toggle-content"
 }
 
@@ -29,38 +29,17 @@
   grid-area: nav-grid-area;
 }
 
-.hero-header-and-button-container{
-  grid-area: hero-header-and-button-container;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-width: 300px;
+
+
+.header{
+  width: 100%;
   gap: 8px;
-}
-
-
-
-.hero-header{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 0;
-}
 
-.button-container {
-  border-radius: 50px;
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  width: fit-content;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  overflow: hidden;
 }
-
 
 
 .toggle-content{
@@ -72,6 +51,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.button-container{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
 }
 
 .profile-photo{
@@ -123,20 +108,6 @@
   border-radius: var(--default-border-radius-for-media);
 }
 
-.hero-business-photo{
-  background-image: url(./hand-shake-new.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  border-radius: var(--default-border-radius-for-media);
-}
-.hero-business-photo-1{
-  background-image: url(./equipment-exchange.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  border-radius: var(--default-border-radius-for-media);
-}
 
 
 .hero-content-box{
@@ -149,6 +120,11 @@
   width: 700px;
   height: 100%;
   overflow: hidden;
+}
+
+.hero-button-container{
+  display: flex;
+  gap: 8px;
 }
 
 @media screen and (min-width: 1350px){
