@@ -1,3 +1,14 @@
+/*READ ME READ ME READ ME
+*
+*
+*
+*I am pretty sure the only thing stopping the nav bar from not being split up into the if/else statement is the animation is the animation attribute under .content-container-{open/close}.
+*You can easily remedy this with property binding, but ensure that there are no other differences between to open and close nav before going forward
+*
+*
+* @Author: Nathan Rous
+* @Date: 01/04/2026 [DD/MM/YYYY]
+*/
 
 .nav-list{
   /*NEVER EVER FUCKING SET WIDTH TO 100% HERE OR IT BREAKS THE ANIMATION*/
@@ -5,11 +16,11 @@
   font-size: var(--small-font-size);
   display: flex;
   flex-direction: column;
+
 }
 
 .svg-element{
   width: 50px;
-
 }
 
 .content-container-open{
@@ -20,23 +31,23 @@
   overflow: hidden;
   top: 1vh;
   animation: openingAnimation 1s forwards;
+}
 
+.content-container-close{
+  border-radius: var(--default-border-radius-for-media);
+  height: 98vh;
+  width: 200px;
+  position: sticky;
+  overflow: hidden;
+  top: 1vh;
+  animation: closingAnimation 1s forwards;
+
+  /*add*/
 }
 
 .nav-container{
   display: flex;
   align-items: center;
-}
-
-.content-container-close{
-  border-radius: var(--default-border-radius-for-media);
-  display: flex;
-  flex-direction: column;
-  height: 98vh;
-  width: 200px;
-  position: sticky;
-  top: 1vh;
-  animation: closingAnimation 1s forwards;
 }
 
 .company-name-container{
@@ -69,6 +80,7 @@
   display: flex;
   justify-content: center;
   padding: var(--default-padding);
+
 }
 
 .route-container{
@@ -76,15 +88,9 @@
   flex-direction: row;
   align-items: center;
   gap: 8px;
+  width: 150px;
   height: 50px;
-}
-
-.link-container-close{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px ;
-  height: 50px;
+  /*add*/
 }
 
 @keyframes closingAnimation {
@@ -111,7 +117,3 @@
     width: 99%;
   }
 }
-
-
-
-
