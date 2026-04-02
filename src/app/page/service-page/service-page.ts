@@ -12,10 +12,13 @@ import { ModalForRentalProgram } from "../../common/modal-for-rental-program/mod
 import { Navigation } from "../../common/navigation/navigation";
 import { Container } from "../../common/container/container";
 import { ToggleService } from '../../service/toggle';
+import { Header } from "../../common/header/header";
+import { MainService } from "../../common/main-service/main-service";
+import { ServiceCategories } from "../../common/service-categories/service-categories";
 
 @Component({
   selector: 'app-service-page',
-  imports: [PhotoForCard, ModalForBuying, FormForSelling, Card, InfoForCard, Hero, PhotoGalleryGrid, ModalForRentalProgram, Navigation, Container],
+  imports: [PhotoForCard, ModalForBuying, FormForSelling, Card, InfoForCard, Hero, PhotoGalleryGrid, ModalForRentalProgram, Navigation, Container, Header, MainService, ServiceCategories],
   templateUrl: './service-page.html',
   styleUrl: './service-page.css',
 })
@@ -25,8 +28,7 @@ export class ServicePage implements OnInit {
   toggleService = inject(ToggleService);
   readonly serviceButtonArray: Array<string> = ["Buy", "Sell", "Rentals", "Request"];
   readonly product = signal<ProductInterface[]>([]);
-  serviceSignal = signal<string | null>(null);
-  interServiceSignal = signal<string | null>(null);
+
 
 
   ngOnInit(): void {
@@ -37,11 +39,6 @@ export class ServicePage implements OnInit {
         }
       });
   }
-
-toggle(currentString: string, signalArgument: WritableSignal<string | null>): any{
-  this.toggleService.toggle(currentString, signalArgument);
-}
-
 }
 
 

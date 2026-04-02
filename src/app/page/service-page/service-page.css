@@ -17,12 +17,14 @@
 .grid-wrapper{
   display: grid;
   width: 100vw;
-  gap: 32px;
+  row-gap: 16px;
+  column-gap: 32px;
   grid-template-columns: var(--sidebar-grid-portion) minmax(300px, var(--main-grid-portion)) var(--rightside-grid-portion);
-  grid-template-rows: 140px;
+  grid-template-rows: 50px var(--default-button-height);
   grid-template-areas:
   "nav-grid-area header"
-  "nav-grid-area toggle-content"
+  "nav-grid-area categories"
+  "nav-grid-area main"
 }
 
 .nav-grid-area{
@@ -38,13 +40,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
 
+.categories{
+  grid-area: categories;
 }
 
 
-.toggle-content{
+.main{
   overflow: scroll;
-  grid-area: toggle-content;
+  grid-area: main;
 }
 
 .product-seller-profile-photo{

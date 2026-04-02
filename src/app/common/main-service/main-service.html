@@ -1,0 +1,98 @@
+  <!-- BUY BUTTON AND ASSOCIATED COMPONENTS BEGINS -->
+  @if(currentString.sharedState()! === "Buy"){
+  <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding">Get your hands on some
+    previously loved
+    equipment</p>
+
+  <app-photo-gallery-grid>
+    @if (product().length > 0){
+
+    @for (products of product(); track products.productName){
+    <app-card (click)="toggle('modalForBuying', interServiceSignal)" class="illuminate-border-transition">
+      <app-photo-for-card>
+        <!--insert-photo-here-->
+      </app-photo-for-card>
+      <app-info-for-card>
+        <div class="product-information">
+          <div class="sub-text brand-color-grey">{{products.productSellerLocation}}</div>
+          <div class="small-text">{{products.productPrice}}</div>
+          <div class="small-text">{{products.productName}}</div>
+        </div>
+        <div class="product-seller-profile-photo">
+          <img class="profile-photo" [src]="products.productSellerProfilePhoto">
+        </div>
+      </app-info-for-card>
+    </app-card>
+    }
+    }
+  </app-photo-gallery-grid>
+  }
+
+  @if(interServiceSignal()==='modalForBuying'){
+  <app-modal-for-buying name="{{serviceSignal()}}"
+    (discard)="toggle('modalForBuying', interServiceSignal)"></app-modal-for-buying>
+  }
+  <!-- BUY BUTTON AND ASSOCIATED COMPONENTS ENDS -->
+
+  @if(currentString.sharedState()! === "Sell"){
+  <!--
+  <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding">Make some cash for new shiny toys</p> -->
+  <div class="form-flex-container">
+    <app-form-for-selling (discard)="toggle('Sell', serviceSignal)">
+    </app-form-for-selling>
+  </div>
+  }
+
+  @if(currentString.sharedState()! === "Rentals"){
+  <!-- <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding"> Make some cash for new shiny toys</p> -->
+  <app-photo-gallery-grid>
+    @if (product().length > 0){
+
+    @for (products of product(); track products.productName){
+    <app-card (click)="toggle('modalForBuying', interServiceSignal)" class="illuminate-border-transition">
+      <app-photo-for-card>
+        <!--insert-photo-here-->
+      </app-photo-for-card>
+      <app-info-for-card>
+        <div class="product-information">
+          <div class="sub-text brand-color-grey">{{products.productSellerLocation}}</div>
+          <div class="small-text">{{products.productPrice}}</div>
+          <div class="small-text">{{products.productName}}</div>
+        </div>
+        <div class="product-seller-profile-photo">
+          <img class="profile-photo" [src]="products.productSellerProfilePhoto">
+        </div>
+      </app-info-for-card>
+    </app-card>
+    }
+    }
+  </app-photo-gallery-grid>
+  }
+
+  @if(currentString.sharedState()! === null){
+  <app-hero>
+    <div class="hero-content-box">
+      <h1 style="font-size: 48px;">Take Part in The Business Today</h1>
+      <p>Enrich Your Community Through a Partnership With Community Co-op. Instead of Letting Your
+        Equipment Sit in Storage, Others Can Enjoy The Great Outdoors For a Fraction of the Cost.</p>
+      <label for="get-Started"></label>
+      <div class="hero-button-container" style="justify-content: flex-start;">
+        <input (click)="toggle('modalForRentalProgram', interServiceSignal)" type="button"
+          class=" button button-medium primary " value="Get Started">
+        <label for="learn-More"></label>
+        <input (click)="toggle('modalForRentalProgram', interServiceSignal)" type="button"
+          class=" button button-medium secondary" value="Learn More">
+      </div>
+    </div>
+  </app-hero>
+  @if(interServiceSignal() === "modalForRentalProgram"){
+  <app-modal-for-rental-program (discard)="toggle('modalForRentalProgram', interServiceSignal)">
+  </app-modal-for-rental-program>
+  }
+  }
+
+  @if(currentString.sharedState()! === "Request"){
+  <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding">Not seeing what you
+    want? Let the
+    community hear your needs!</p>
+  }
