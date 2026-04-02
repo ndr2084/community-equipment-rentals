@@ -1,5 +1,5 @@
   <!-- BUY BUTTON AND ASSOCIATED COMPONENTS BEGINS -->
-  @if(currentString.sharedState()! === "Buy"){
+  @if(false){
   <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding">Get your hands on some
     previously loved
     equipment</p>
@@ -28,22 +28,22 @@
   </app-photo-gallery-grid>
   }
 
+  <!--
   @if(interServiceSignal()==='modalForBuying'){
   <app-modal-for-buying name="{{serviceSignal()}}"
     (discard)="toggle('modalForBuying', interServiceSignal)"></app-modal-for-buying>
   }
   <!-- BUY BUTTON AND ASSOCIATED COMPONENTS ENDS -->
 
-  @if(currentString.sharedState()! === "Sell"){
+  @if(false){
   <!--
   <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding">Make some cash for new shiny toys</p> -->
   <div class="form-flex-container">
-    <app-form-for-selling (discard)="toggle('Sell', serviceSignal)">
-    </app-form-for-selling>
   </div>
   }
+-->
 
-  @if(currentString.sharedState()! === "Rentals"){
+  @if(false){
   <!-- <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding"> Make some cash for new shiny toys</p> -->
   <app-photo-gallery-grid>
     @if (product().length > 0){
@@ -69,7 +69,7 @@
   </app-photo-gallery-grid>
   }
 
-  @if(currentString.sharedState()! === null){
+  @if(false === null){
   <app-hero>
     <div class="hero-content-box">
       <h1 style="font-size: 48px;">Take Part in The Business Today</h1>
@@ -91,7 +91,7 @@
   }
   }
 
-  @if(currentString.sharedState()! === "Request"){
+  @if(false){
   <p class="sub-text center-text brand-color-yellow fade-in-transition-slow default-padding">Not seeing what you
     want? Let the
     community hear your needs!</p>

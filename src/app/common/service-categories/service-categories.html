@@ -2,7 +2,7 @@
 <div class="glass-container">
   @for(item of serviceButtonArray ; track item){
   <label for="{{item}}"></label>
-  <input (click)="emitButtonValue(item)" value="{{item}}" type="button" class=" button clear button-medium">
+  <input (click)="buttonValue(item)" value="{{item}}" type="button" class=" button clear button-medium">
   }
 </div>
 

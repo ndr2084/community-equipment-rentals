@@ -11,6 +11,7 @@ import { FormForSelling } from "../form-for-selling/form-for-selling";
 import { Hero } from "../hero/hero";
 import { ModalForRentalProgram } from "../modal-for-rental-program/modal-for-rental-program";
 import { SharedState } from '../../service/shared-state';
+import { SignalRegistry } from '../../service/signal-registry';
 
 @Component({
   selector: 'app-main-service',
@@ -20,15 +21,18 @@ import { SharedState } from '../../service/shared-state';
 })
 export class MainService implements OnInit {
 
+  /*This key also exists in service-categories.ts begins*/
+  readonly signalKey = "service-categories";
+  signalRegistry = inject(SignalRegistry);
+  serviceSignal = this.signalRegistry.getSignal(this.signalKey);
+
+  /*This key also exists in service-categories.ts ends*/
 
   private readonly productService = inject(ProductService);
-  sharedState = inject(SharedState);
   toggleService = inject(ToggleService);
   readonly serviceButtonArray: Array<string> = ["Buy", "Sell", "Rentals", "Request"];
   readonly product = signal<ProductInterface[]>([]);
-  serviceSignal = signal<string | null>(null);
   interServiceSignal = signal<string | null>(null);
-  currentString = this.sharedState;
 
   ngOnInit(): void {
     this.productService.getAllProduct()
@@ -43,8 +47,8 @@ export class MainService implements OnInit {
 
   constructor() {
     setInterval(() => {
-      console.log('mySignal:', this.currentString.sharedState());
-    }, 3000); // every 3 seconds
+      console.log('mySignal:', this.serviceSignal);
+    }, 10000); // every 3 seconds
   }// every 3 seconds
 
 

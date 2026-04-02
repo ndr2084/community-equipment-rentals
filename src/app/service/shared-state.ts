@@ -10,10 +10,8 @@ export class SharedState {
   stateInstance = (currentInstance: string) =>{
     this.sharedState.update((previousInstance) =>{
       if(previousInstance === currentInstance){
-        console.log('tele');
         return null;
       }
-      console.log('phone');
       return currentInstance;
     });
   }
