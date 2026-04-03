@@ -24,7 +24,6 @@ export class MainService implements OnInit {
   /*This key also exists in service-categories.ts begins*/
   readonly signalKey = "service-categories";
   signalRegistry = inject(SignalRegistry);
-  serviceSignal = this.signalRegistry.getSignal(this.signalKey);
 
   /*This key also exists in service-categories.ts ends*/
 
@@ -32,7 +31,10 @@ export class MainService implements OnInit {
   toggleService = inject(ToggleService);
   readonly serviceButtonArray: Array<string> = ["Buy", "Sell", "Rentals", "Request"];
   readonly product = signal<ProductInterface[]>([]);
+  serviceSignal = signal<string | null>(null);
   interServiceSignal = signal<string | null>(null);
+  sharedStateValue = this.signalRegistry.getSignal(this.signalKey)();
+
 
   ngOnInit(): void {
     this.productService.getAllProduct()
@@ -47,8 +49,8 @@ export class MainService implements OnInit {
 
   constructor() {
     setInterval(() => {
-      console.log('mySignal:', this.serviceSignal);
-    }, 10000); // every 3 seconds
+      console.log('mySignal:', this.sharedStateValue);
+    }, 1000); // every 3 seconds
   }// every 3 seconds
 
 
